@@ -1,0 +1,73 @@
+{
+  "draft": true,
+  "name": "Irish Pub in the Fleetenkieker",
+  "url": "https://www.irishpub-fleetenkieker.de",
+  "street": "Börsenbrücke 10",
+  "zip": "20457",
+  "city": "Hamburg",
+  "country": "DE",
+  "phone": "+49 40 36093599",
+  "phoneHref": "tel:+494036093599",
+  "email": "info@irishpub-fleetenkieker.de",
+  "geo": { "lat": 53.5485, "lng": 9.9901 },
+  "mapEmbed": "https://www.google.com/maps?q=B%C3%B6rsenbr%C3%BCcke+10+20457+Hamburg&output=embed",
+  "mapLink": "https://www.google.com/maps/search/?api=1&query=B%C3%B6rsenbr%C3%BCcke+10+20457+Hamburg",
+  "social": {
+    "facebook": "https://www.facebook.com/fleetenkiekeririshpub/",
+    "instagram": "https://www.instagram.com/FleetenkiekerIrishBar/"
+  },
+  "imgBase": "https://www.irishpub-fleetenkieker.de/s/cc_images/",
+  "hours": [
+    { "day": 1, "open": 960, "close": 1440 },
+    { "day": 2, "open": 960, "close": 1440 },
+    { "day": 3, "open": 960, "close": 1440 },
+    { "day": 4, "open": 960, "close": 1440 },
+    { "day": 5, "open": 960, "close": 1560 },
+    { "day": 6, "open": 720, "close": 1560 },
+    { "day": 0, "open": 720, "close": 1440 }
+  ],
+  "musicDays": [5, 6],
+  "musicStart": 1290,
+  "awards": [
+    { "title": "Best Sports Experience", "region": "Global", "year": 2019 },
+    { "title": "Best Sports Experience", "region": "Europe", "year": 2019 },
+    { "title": "Best Community Pub", "region": "Europe", "year": 2018 },
+    { "title": "Best Sports Experience", "region": "Europe", "year": 2017 }
+  ],
+  "awardsSource": "https://irishhospitalityglobalawards.com/the-winners/",
+  "musicians": [
+    { "name": "Tom Brakl", "img": "thumb_66929781.jpg" },
+    { "name": "Alex Walker", "img": "thumb_66929782.jpg" },
+    { "name": "Rico Bowen", "img": "thumb_66929783.jpg" },
+    { "name": "Cliff Miller", "img": "thumb_66929784.jpg" },
+    { "name": "Steve Kavanagh", "img": "thumb_66929785.jpg" },
+    { "name": "The Sam and Tim Band", "img": "thumb_66929787.jpg" }
+  ],
+  "quizPhotos": ["cache_58211445.jpg", "cache_58211446.jpg", "cache_58211447.jpg", "cache_58211448.jpg", "cache_58211449.png", "cache_58211450.jpg"],
+  "barPhoto": "cache_67137277.JPG",
+  "press": [
+    { "outlet": "FFT.ie", "title": "The Full Irish Experience in this Hamburg Bar", "url": "https://www.fft.ie/the-full-irish-experience-in-this-hamburg-bar/21311", "img": "cache_58210348.jpg", "lang": "en" },
+    { "outlet": "Hamburger Abendblatt", "title": "Und am achten Tag schuf Gott ...", "url": "https://www.abendblatt.de/hamburg/article227087797/Fuer-Fans-des-irischen-Whiskeys-der-Pub-in-the-Fleetenkieker.html", "img": "cache_58210349.jpg", "lang": "de" },
+    { "outlet": "Radisson Blu Blog", "title": "Hamburg's emerging craft beer scene", "url": "https://blog.radissonblu.com/hamburgs-emerging-craft-beer-scene/", "img": "cache_58210350.jpg", "lang": "en" },
+    { "outlet": "kiekmo.hamburg", "title": "Kommt mal runter: In den Irish Pub", "url": "https://kiekmo.hamburg/komm-mal-runter-ins-irish-pub-in-the-fleetenkieker-81187", "img": "cache_58210464.jpg", "lang": "de" },
+    { "outlet": "Metro", "title": "Guy goes on holiday to Hamburg with strangers", "url": "https://metro.co.uk/2018/03/31/guy-goes-lads-holiday-hamburg-complete-strangers-mate-dropped-7430074/", "img": "cache_58211772.jpeg", "lang": "en" }
+  ],
+  "gallery": [
+    { "id": "67137273", "ext": "png", "captioned": true },
+    { "id": "67137274", "ext": "jpg", "captioned": true },
+    { "id": "67137275", "ext": "jpg", "captioned": true },
+    { "id": "67137276", "ext": "png", "captioned": false },
+    { "id": "67137277", "ext": "JPG", "captioned": true },
+    { "id": "67137278", "ext": "jpg", "captioned": false },
+    { "id": "67137279", "ext": "jpg", "captioned": false },
+    { "id": "67137280", "ext": "jpg", "captioned": false },
+    { "id": "67137281", "ext": "jpg", "captioned": true },
+    { "id": "67137282", "ext": "jpeg", "captioned": false }
+  ],
+  "company": {
+    "name": "Fleetenkieker Irish Pub UG (haftungsbeschränkt)",
+    "ceo": "Glenn Stockdale",
+    "hrb": "HRB 190049",
+    "authority": "Ordnungsamt Hamburg-Mitte"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "irishpub-fleetenkieker",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "check:parity": "node scripts/check-parity.mjs",
+    "build": "node scripts/check-parity.mjs && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/source-serif-4": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/bevan": "^5.3.0",
+    "astro": "^7.3.8",
+    "typescript": "^7.0.2"
+  }
+}

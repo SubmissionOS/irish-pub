@@ -1,0 +1,261 @@
+{
+  "lang": "de",
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "banner": "Designentwurf von GuddiWeb – noch nicht live",
+    "switchLabel": "Sprache",
+    "call": "Anrufen",
+    "mail": "E-Mail schreiben",
+    "footerNote": "Schließzeiten können ohne Ansage abweichen.",
+    "hoursTitle": "Öffnungszeiten",
+    "addressTitle": "Adresse",
+    "followTitle": "Folgen",
+    "legal": "Rechtliches",
+    "imgMissing": "Bild nicht verfügbar",
+    "oclock": "Uhr"
+  },
+  "nav": {
+    "start": "Start",
+    "live-sport": "Live-Sport",
+    "live-musik": "Live-Musik",
+    "pub-quiz": "Pub Quiz",
+    "getraenke": "Getränke",
+    "speisen": "Speisen",
+    "ueber-uns": "Über uns",
+    "auszeichnungen-presse": "Auszeichnungen & Presse",
+    "galerie": "Galerie",
+    "kontakt-anfahrt": "Kontakt & Anfahrt",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "days": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+  "board": {
+    "title": "Heute im Pub",
+    "staticDay": "Diese Woche",
+    "open": "Geöffnet bis {time} Uhr",
+    "closedToday": "Geschlossen, öffnet heute um {time} Uhr",
+    "closedTomorrow": "Geschlossen, öffnet morgen um {time} Uhr",
+    "staticStatus": "Täglich geöffnet, Zeiten siehe unten",
+    "statusLabel": "Status",
+    "sportLabel": "Live-Sport",
+    "sportValue": "Wochenprogramm auf Facebook",
+    "musicLabel": "Live-Musik",
+    "musicValue": "Freitag und Samstag ab 21:30 Uhr",
+    "musicTonight": "Heute Abend ab 21:30 Uhr",
+    "quizLabel": "Pub Quiz",
+    "quizValue": "Monatlich, Termin auf Facebook",
+    "weekLabel": "Wochenzeiten",
+    "todayMark": "heute",
+    "note": "Schließzeiten können ohne Ansage abweichen."
+  },
+  "pages": {
+    "start": {
+      "title": "Irish Pub in the Fleetenkieker, Hamburg",
+      "description": "Irischer Pub an der Börsenbrücke in Hamburg: 16 Biere vom Fass, Live-Sport auf sechs Bildschirmen, Live-Musik am Freitag und Samstag, monatliches Pub Quiz.",
+      "h1": "Ein irischer Pub an der Börsenbrücke",
+      "lead": "Fassbier, Fußball, Rugby und Livemusik mitten in der Hamburger Altstadt. Kommen Sie rein, wir kennen Sie bald beim Namen.",
+      "ctaCall": "Tisch telefonisch reservieren",
+      "ctaWay": "So finden Sie uns",
+      "welcomeTitle": "Céad míle fáilte",
+      "welcomeSub": "Hunderttausend Willkommen.",
+      "welcome": [
+        "Der Irish Pub in the Fleetenkieker bringt irische Pub-Kultur ins Herz von Hamburg. In Irland ist der Pub der Ort, an dem sich Freunde und Nachbarn treffen und mit Namen begrüßt werden. Genau so halten wir es auch hier.",
+        "Bei uns gibt es Ceol agus craic: Musik und gute Gesellschaft. Am Tresen, vor dem Spiel oder beim Quiz."
+      ],
+      "signature": "Das Fleetenkieker-Team",
+      "highlightsTitle": "Was hier passiert",
+      "highlights": [
+        { "key": "live-sport", "title": "Live-Sport auf sechs Bildschirmen", "text": "Bundesliga, Premier League, Rugby, GAA, NFL, Formel 1 und mehr in HD." },
+        { "key": "live-musik", "title": "Livemusik am Wochenende", "text": "Jeden Freitag und Samstag ab 21:30 Uhr spielen Musiker aus Deutschland, Irland und darüber hinaus." },
+        { "key": "getraenke", "title": "16 Biere vom Fass", "text": "Ale, Lager, IPA und Stout, dazu Craft Beer, Whiskey und Cocktails." },
+        { "key": "pub-quiz", "title": "Pub Quiz einmal im Monat", "text": "Bis zu sieben Leute pro Team, viele Preise. Meist am Tag der Ankündigung ausgebucht." }
+      ],
+      "awardsTitle": "Ausgezeichnet von den Irish Hospitality Global Awards",
+      "awardsLink": "Alle Auszeichnungen und Presse",
+      "wayTitle": "Anfahrt",
+      "wayText": "Sie finden uns an der Börsenbrücke 10 in der Hamburger Altstadt.",
+      "wayLink": "Karte und Kontakt"
+    },
+    "live-sport": {
+      "title": "Live-Sport | Irish Pub in the Fleetenkieker",
+      "description": "Fußball, Rugby, GAA, NFL, Formel 1, Darts und mehr live auf sechs HD-Bildschirmen im Irish Pub an der Börsenbrücke, Hamburg.",
+      "h1": "Live-Sport",
+      "lead": "Sechs HD-Flachbildschirme und ein eigenes TV- und Satellitensystem für Fußball, Rugby, GAA und vieles mehr.",
+      "screensTitle": "Was auf den Schirmen läuft",
+      "sports": ["Bundesliga", "English Premier League", "English Championship", "Scottish Premier League", "La Liga", "Weitere europäische Fußballligen", "Rugby, international und Club", "GAA", "NFL", "Golf", "Formel 1 und Motorsport", "Handball", "Darts", "Tennis"],
+      "programTitle": "Diese Woche",
+      "program": "[Aktuelles Wochenprogramm mit Datum und Anstoßzeit]",
+      "programLink": "Wochenprogramm auf Facebook",
+      "wishTitle": "Ihr Spiel fehlt?",
+      "wishText": "Schreiben Sie uns, welche Sportart Sie sehen möchten. Wir schauen, was sich machen lässt."
+    },
+    "live-musik": {
+      "title": "Live-Musik | Irish Pub in the Fleetenkieker",
+      "description": "Livemusik jeden Freitag und Samstag ab 21:30 Uhr: irischer Folk, Rock-Klassiker und aktuelle Hits im Irish Pub an der Börsenbrücke, Hamburg.",
+      "h1": "Live-Musik",
+      "lead": "Jeden Freitag und Samstag ab 21:30 Uhr. Es spielen einige der besten Kneipenmusiker Deutschlands sowie Musiker aus Irland und darüber hinaus.",
+      "genresTitle": "Was gespielt wird",
+      "genres": ["Traditioneller irischer Folk", "Rock-Klassiker", "Aktuelle Hits"],
+      "musiciansTitle": "Wer hier schon gespielt hat",
+      "lineupTitle": "Wer an diesem Wochenende spielt",
+      "lineup": "[Line-up der kommenden Wochenenden mit Namen und Datum]"
+    },
+    "pub-quiz": {
+      "title": "Pub Quiz | Irish Pub in the Fleetenkieker",
+      "description": "Monatliches Pub Quiz mit vielen Preisen im Irish Pub an der Börsenbrücke, Hamburg. Teams bis sieben Personen, Anmeldung per Telefon oder Nachricht.",
+      "h1": "Pub Quiz",
+      "lead": "Einmal im Monat, mit vielen Preisen. Das Quiz ist meist an dem Tag ausgebucht, an dem wir es auf Facebook ankündigen.",
+      "nextTitle": "Nächster Termin",
+      "next": "[Datum und Uhrzeit des nächsten Quiz]",
+      "howTitle": "So melden Sie Ihr Team an",
+      "steps": [
+        "Rufen Sie im Pub an oder schreiben Sie uns.",
+        "Nennen Sie Ihren Teamnamen und die Zahl der Spieler. Maximal sieben pro Team.",
+        "Damit reservieren wir Ihnen einen Tisch."
+      ],
+      "photosTitle": "Frühere Quizabende",
+      "photoAlt": "Gäste beim Pub Quiz im Fleetenkieker"
+    },
+    "getraenke": {
+      "title": "Getränke | Irish Pub in the Fleetenkieker",
+      "description": "16 Biere vom Fass, Craft Beer, Whiskey, Cocktails, Wein und alkoholfreie Getränke im Irish Pub an der Börsenbrücke, Hamburg.",
+      "h1": "Getränke",
+      "lead": "Sechzehn Zapfhähne, Whiskey, Cocktails und alles, was zu einem guten Abend gehört.",
+      "barAlt": "Die neue Bar mit 16 Zapfhähnen",
+      "barCaption": "Die neue Bar mit 16 Bieren vom Fass",
+      "tapTitle": "Vom Fass",
+      "tapNote": "16 Biere: Ale, Lager, IPA und Stout",
+      "tapHead": { "name": "Bier", "style": "Stil", "price": "Preis" },
+      "tapItems": [
+        { "name": "[Fassbier 1]", "style": "[Stil]", "price": "[Preis]" },
+        { "name": "[Fassbier 2]", "style": "[Stil]", "price": "[Preis]" },
+        { "name": "[Fassbier 3]", "style": "[Stil]", "price": "[Preis]" },
+        { "name": "[Fassbier 4]", "style": "[Stil]", "price": "[Preis]" },
+        { "name": "[Fassbier 5 bis 16]", "style": "[Stil]", "price": "[Preis]" }
+      ],
+      "boardTitle": "Hinter dem Tresen",
+      "groups": [
+        { "name": "Craft Beer", "items": "[Sorten und Preise]" },
+        { "name": "Whiskey", "items": "[Sorten und Preise]" },
+        { "name": "Cocktails", "items": "[Sorten und Preise]" },
+        { "name": "Weißwein und Rotwein", "items": "[Sorten und Preise]" },
+        { "name": "Brandy und Liköre", "items": "[Sorten und Preise]" },
+        { "name": "Longdrinks", "items": "[Sorten und Preise]" },
+        { "name": "Shortdrinks und Shots", "items": "[Sorten und Preise]" },
+        { "name": "Alkoholfrei, Säfte und Limonaden", "items": "[Sorten und Preise]" }
+      ]
+    },
+    "speisen": {
+      "title": "Speisen | Irish Pub in the Fleetenkieker",
+      "description": "Wenige, dafür frische Speisen für kleinen und großen Hunger im Irish Pub an der Börsenbrücke, Hamburg.",
+      "h1": "Speisen",
+      "lead": "Wenige, dafür frische Speisen. Für kleinen und großen Hunger.",
+      "smallTitle": "Kleiner Hunger",
+      "bigTitle": "Großer Hunger",
+      "small": [
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" },
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" },
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" }
+      ],
+      "big": [
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" },
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" },
+        { "name": "[Gericht]", "desc": "[Beschreibung]", "price": "[Preis]" }
+      ],
+      "kitchenLabel": "Küche",
+      "kitchen": "[Küchenzeiten]"
+    },
+    "ueber-uns": {
+      "title": "Über uns | Irish Pub in the Fleetenkieker",
+      "description": "Der Irish Pub in the Fleetenkieker bringt irische Pub-Kultur an die Börsenbrücke in Hamburg. Wer wir sind und wie wir es halten.",
+      "h1": "Über uns",
+      "lead": "Céad míle fáilte. Hunderttausend Willkommen.",
+      "text": [
+        "Der Irish Pub in the Fleetenkieker liegt im Herzen von Hamburg, an der Börsenbrücke. Wir bringen irische Pub-Kultur in die Stadt.",
+        "In Irland treffen sich im Pub Freunde und Nachbarn und werden mit Namen begrüßt. So soll es auch bei uns sein: Ceol agus craic, Musik und gute Gesellschaft."
+      ],
+      "historyTitle": "Geschichte",
+      "history": "[Gründungsjahr und Geschichte des Pubs]",
+      "nameTitle": "Der Name",
+      "name": "[Woher der Name Fleetenkieker kommt]",
+      "teamTitle": "Wer den Pub führt",
+      "team": "Fleetenkieker Irish Pub UG, Geschäftsführer Glenn Stockdale.",
+      "signature": "Das Fleetenkieker-Team"
+    },
+    "auszeichnungen-presse": {
+      "title": "Auszeichnungen & Presse | Irish Pub in the Fleetenkieker",
+      "description": "Viermal ausgezeichnet bei den Irish Hospitality Global Awards, darunter Best Sports Experience Global 2019. Dazu Berichte in Presse und Blogs.",
+      "h1": "Auszeichnungen & Presse",
+      "lead": "Viermal ausgezeichnet bei den Irish Hospitality Global Awards.",
+      "awardsTitle": "Irish Hospitality Global Awards",
+      "source": "Quelle: Liste der Gewinner",
+      "pressTitle": "Über uns geschrieben",
+      "readOn": "Artikel lesen bei"
+    },
+    "galerie": {
+      "title": "Galerie | Irish Pub in the Fleetenkieker",
+      "description": "Fotos aus dem Irish Pub an der Börsenbrücke: St. Patrick's Day, Halloween, die neue Bar und mehr.",
+      "h1": "Galerie",
+      "lead": "Ein paar Abende aus dem Pub.",
+      "open": "Bild vergrößern",
+      "captions": {
+        "67137273": "Europa- und Weltsieger: Best Sports Experience 2019",
+        "67137274": "St. Patrick's Day Party",
+        "67137275": "Team Fleet beim HSH Nordbank Run",
+        "67137277": "Die neue Bar mit 16 Bieren vom Fass",
+        "67137281": "Halloween-Party"
+      },
+      "altDefault": "Foto aus dem Irish Pub in the Fleetenkieker"
+    },
+    "kontakt-anfahrt": {
+      "title": "Kontakt & Anfahrt | Irish Pub in the Fleetenkieker",
+      "description": "Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg. Telefon +49 40 36093599. Öffnungszeiten, Reservierung und Anfahrt.",
+      "h1": "Kontakt & Anfahrt",
+      "lead": "Reservieren Sie per Telefon oder E-Mail.",
+      "reserveTitle": "Reservieren",
+      "reserveText": "Rufen Sie uns an oder schreiben Sie eine E-Mail mit Datum, Uhrzeit und Personenzahl.",
+      "mapTitle": "Karte",
+      "mapNote": "Die Karte wird erst nach Ihrem Klick von Google Maps geladen. Dabei werden Daten an Google übertragen.",
+      "mapButton": "Karte laden",
+      "mapExternal": "In Google Maps öffnen",
+      "mapIframeTitle": "Google-Maps-Karte: Börsenbrücke 10, Hamburg",
+      "transitTitle": "Mit Bus und Bahn",
+      "transit": "[Nächste Haltestellen und Linien]",
+      "parkingTitle": "Parken",
+      "parking": "[Parkmöglichkeiten in der Nähe]"
+    },
+    "impressum": {
+      "title": "Impressum | Irish Pub in the Fleetenkieker",
+      "description": "Impressum des Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg.",
+      "h1": "Impressum",
+      "providerTitle": "Angaben gemäß § 5 DDG",
+      "ceoLabel": "Vertreten durch den Geschäftsführer",
+      "contactTitle": "Kontakt",
+      "registerTitle": "Registereintrag",
+      "court": "Registergericht: [Registergericht]",
+      "vatTitle": "Umsatzsteuer",
+      "vat": "USt-IdNr.: [USt-IdNr.]",
+      "authorityTitle": "Aufsichtsbehörde",
+      "respTitle": "Verantwortlich für den Inhalt",
+      "resp": "[Name und Anschrift V.i.S.d.P.]"
+    },
+    "datenschutz": {
+      "title": "Datenschutz | Irish Pub in the Fleetenkieker",
+      "description": "Datenschutzerklärung des Irish Pub in the Fleetenkieker (Entwurf).",
+      "h1": "Datenschutz",
+      "warning": "[Entwurf: Dieser Text muss vor Livegang rechtlich geprüft werden.]",
+      "sections": [
+        { "title": "Verantwortliche Stelle", "text": "[Fleetenkieker Irish Pub UG, Börsenbrücke 10, 20457 Hamburg, info@irishpub-fleetenkieker.de. Angaben prüfen.]" },
+        { "title": "Hosting und Server-Logs", "text": "[Hoster, Art der Logdaten und Speicherdauer ergänzen.]" },
+        { "title": "Schriften", "text": "[Alle Schriften werden lokal von unserem Server geladen. Es besteht keine Verbindung zu Google Fonts oder anderen Schriftanbietern.]" },
+        { "title": "Karte", "text": "[Die Google-Maps-Karte auf der Seite Kontakt & Anfahrt wird erst geladen, wenn Sie auf „Karte laden“ klicken. Erst dann werden Daten wie Ihre IP-Adresse an Google übertragen. Rechtsgrundlage und Anbieterangaben ergänzen.]" },
+        { "title": "Facebook und Instagram", "text": "[Wir verlinken auf unsere Seiten bei Facebook und Instagram. Es sind keine Plugins eingebunden. Daten werden erst übertragen, wenn Sie einem Link folgen.]" },
+        { "title": "Bilder", "text": "[Bildquellen und Einbindung prüfen. Im Entwurf werden Bilder vom Server der bisherigen Website geladen.]" },
+        { "title": "Kontakt per E-Mail und Telefon", "text": "[Verarbeitung von Anfragen und Reservierungen, Rechtsgrundlage und Speicherdauer ergänzen.]" },
+        { "title": "Ihre Rechte", "text": "[Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch, Datenübertragbarkeit, Beschwerderecht bei der Aufsichtsbehörde.]" }
+      ]
+    }
+  }
+}

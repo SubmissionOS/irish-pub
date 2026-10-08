@@ -1,0 +1,261 @@
+{
+  "lang": "en",
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "banner": "Design draft by GuddiWeb – not live yet",
+    "switchLabel": "Language",
+    "call": "Call",
+    "mail": "Send an email",
+    "footerNote": "Closing times may change without notice.",
+    "hoursTitle": "Opening hours",
+    "addressTitle": "Address",
+    "followTitle": "Follow",
+    "legal": "Legal",
+    "imgMissing": "Image not available",
+    "oclock": ""
+  },
+  "nav": {
+    "start": "Home",
+    "live-sport": "Live sport",
+    "live-musik": "Live music",
+    "pub-quiz": "Pub quiz",
+    "getraenke": "Drinks",
+    "speisen": "Food",
+    "ueber-uns": "About us",
+    "auszeichnungen-presse": "Awards & press",
+    "galerie": "Gallery",
+    "kontakt-anfahrt": "Contact & directions",
+    "impressum": "Legal notice",
+    "datenschutz": "Privacy"
+  },
+  "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  "board": {
+    "title": "Today at the pub",
+    "staticDay": "This week",
+    "open": "Open until {time}",
+    "closedToday": "Closed, opens today at {time}",
+    "closedTomorrow": "Closed, opens tomorrow at {time}",
+    "staticStatus": "Open every day, see hours below",
+    "statusLabel": "Status",
+    "sportLabel": "Live sport",
+    "sportValue": "Weekly schedule on Facebook",
+    "musicLabel": "Live music",
+    "musicValue": "Friday and Saturday from 21:30",
+    "musicTonight": "Tonight from 21:30",
+    "quizLabel": "Pub quiz",
+    "quizValue": "Monthly, date on Facebook",
+    "weekLabel": "Weekly hours",
+    "todayMark": "today",
+    "note": "Closing times may change without notice."
+  },
+  "pages": {
+    "start": {
+      "title": "Irish Pub in the Fleetenkieker, Hamburg",
+      "description": "Irish pub on Börsenbrücke in Hamburg: 16 beers on tap, live sport on six screens, live music on Friday and Saturday, monthly pub quiz.",
+      "h1": "An Irish pub on Börsenbrücke",
+      "lead": "Draught beer, football, rugby and live music in the middle of Hamburg's old town. Come in, we'll soon know you by name.",
+      "ctaCall": "Book a table by phone",
+      "ctaWay": "How to find us",
+      "welcomeTitle": "Céad míle fáilte",
+      "welcomeSub": "A hundred thousand welcomes.",
+      "welcome": [
+        "The Irish Pub in the Fleetenkieker brings Irish pub culture to the heart of Hamburg. In Ireland the pub is where friends and neighbours meet and are greeted by name. That is how we do it here too.",
+        "Expect ceol agus craic: music and good company. At the bar, before the match or at the quiz."
+      ],
+      "signature": "The Fleetenkieker team",
+      "highlightsTitle": "What goes on here",
+      "highlights": [
+        { "key": "live-sport", "title": "Live sport on six screens", "text": "Bundesliga, Premier League, rugby, GAA, NFL, Formula 1 and more in HD." },
+        { "key": "live-musik", "title": "Live music at the weekend", "text": "Every Friday and Saturday from 21:30, musicians from Germany, Ireland and beyond." },
+        { "key": "getraenke", "title": "16 beers on tap", "text": "Ale, lager, IPA and stout, plus craft beer, whiskey and cocktails." },
+        { "key": "pub-quiz", "title": "Pub quiz once a month", "text": "Up to seven people per team, lots of prizes. Usually booked out the day it is announced." }
+      ],
+      "awardsTitle": "Awarded by the Irish Hospitality Global Awards",
+      "awardsLink": "All awards and press",
+      "wayTitle": "Getting here",
+      "wayText": "You will find us at Börsenbrücke 10 in Hamburg's old town.",
+      "wayLink": "Map and contact"
+    },
+    "live-sport": {
+      "title": "Live sport | Irish Pub in the Fleetenkieker",
+      "description": "Football, rugby, GAA, NFL, Formula 1, darts and more live on six HD screens at the Irish pub on Börsenbrücke, Hamburg.",
+      "h1": "Live sport",
+      "lead": "Six HD flat screens and our own TV and satellite system for football, rugby, GAA and much more.",
+      "screensTitle": "What's on the screens",
+      "sports": ["Bundesliga", "English Premier League", "English Championship", "Scottish Premier League", "La Liga", "Other European football leagues", "Rugby, international and club", "GAA", "NFL", "Golf", "Formula 1 and motorsport", "Handball", "Darts", "Tennis"],
+      "programTitle": "This week",
+      "program": "[Current weekly schedule with dates and kick-off times]",
+      "programLink": "Weekly schedule on Facebook",
+      "wishTitle": "Your match missing?",
+      "wishText": "Send us an email with the sport you would like to watch. We'll see what we can do."
+    },
+    "live-musik": {
+      "title": "Live music | Irish Pub in the Fleetenkieker",
+      "description": "Live music every Friday and Saturday from 21:30: Irish folk, rock classics and current hits at the Irish pub on Börsenbrücke, Hamburg.",
+      "h1": "Live music",
+      "lead": "Every Friday and Saturday from 21:30. Some of the best pub musicians in Germany play here, along with musicians from Ireland and beyond.",
+      "genresTitle": "What gets played",
+      "genres": ["Traditional Irish folk", "Rock classics", "Current hits"],
+      "musiciansTitle": "Who has played here",
+      "lineupTitle": "Who's playing this weekend",
+      "lineup": "[Line-up for the coming weekends with names and dates]"
+    },
+    "pub-quiz": {
+      "title": "Pub quiz | Irish Pub in the Fleetenkieker",
+      "description": "Monthly pub quiz with lots of prizes at the Irish pub on Börsenbrücke, Hamburg. Teams of up to seven, sign up by phone or message.",
+      "h1": "Pub quiz",
+      "lead": "Once a month, with lots of prizes. The quiz is usually booked out on the day we announce it on Facebook.",
+      "nextTitle": "Next date",
+      "next": "[Date and time of the next quiz]",
+      "howTitle": "How to sign up your team",
+      "steps": [
+        "Call the pub or send us a message.",
+        "Tell us your team name and number of players. Seven per team at most.",
+        "We'll reserve a table for you."
+      ],
+      "photosTitle": "Past quiz nights",
+      "photoAlt": "Guests at the pub quiz in the Fleetenkieker"
+    },
+    "getraenke": {
+      "title": "Drinks | Irish Pub in the Fleetenkieker",
+      "description": "16 beers on tap, craft beer, whiskey, cocktails, wine and soft drinks at the Irish pub on Börsenbrücke, Hamburg.",
+      "h1": "Drinks",
+      "lead": "Sixteen taps, whiskey, cocktails and everything a good night needs.",
+      "barAlt": "The new bar with 16 beer taps",
+      "barCaption": "The new bar with 16 beers on tap",
+      "tapTitle": "On tap",
+      "tapNote": "16 beers: ale, lager, IPA and stout",
+      "tapHead": { "name": "Beer", "style": "Style", "price": "Price" },
+      "tapItems": [
+        { "name": "[Draught beer 1]", "style": "[Style]", "price": "[Price]" },
+        { "name": "[Draught beer 2]", "style": "[Style]", "price": "[Price]" },
+        { "name": "[Draught beer 3]", "style": "[Style]", "price": "[Price]" },
+        { "name": "[Draught beer 4]", "style": "[Style]", "price": "[Price]" },
+        { "name": "[Draught beers 5 to 16]", "style": "[Style]", "price": "[Price]" }
+      ],
+      "boardTitle": "Behind the bar",
+      "groups": [
+        { "name": "Craft beer", "items": "[Varieties and prices]" },
+        { "name": "Whiskey", "items": "[Varieties and prices]" },
+        { "name": "Cocktails", "items": "[Varieties and prices]" },
+        { "name": "White and red wine", "items": "[Varieties and prices]" },
+        { "name": "Brandy and liqueurs", "items": "[Varieties and prices]" },
+        { "name": "Long drinks", "items": "[Varieties and prices]" },
+        { "name": "Short drinks and shots", "items": "[Varieties and prices]" },
+        { "name": "Soft drinks, juices and lemonades", "items": "[Varieties and prices]" }
+      ]
+    },
+    "speisen": {
+      "title": "Food | Irish Pub in the Fleetenkieker",
+      "description": "A short menu of fresh food for small and big appetites at the Irish pub on Börsenbrücke, Hamburg.",
+      "h1": "Food",
+      "lead": "A short menu, freshly made. For small and big appetites.",
+      "smallTitle": "Small appetite",
+      "bigTitle": "Big appetite",
+      "small": [
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" }
+      ],
+      "big": [
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
+        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" }
+      ],
+      "kitchenLabel": "Kitchen",
+      "kitchen": "[Kitchen hours]"
+    },
+    "ueber-uns": {
+      "title": "About us | Irish Pub in the Fleetenkieker",
+      "description": "The Irish Pub in the Fleetenkieker brings Irish pub culture to Börsenbrücke in Hamburg. Who we are and how we do things.",
+      "h1": "About us",
+      "lead": "Céad míle fáilte. A hundred thousand welcomes.",
+      "text": [
+        "The Irish Pub in the Fleetenkieker sits in the heart of Hamburg, on Börsenbrücke. We bring Irish pub culture to the city.",
+        "In Ireland, friends and neighbours meet at the pub and are greeted by name. That is how we want it here too: ceol agus craic, music and good company."
+      ],
+      "historyTitle": "History",
+      "history": "[Founding year and history of the pub]",
+      "nameTitle": "The name",
+      "name": "[Where the name Fleetenkieker comes from]",
+      "teamTitle": "Who runs the pub",
+      "team": "Fleetenkieker Irish Pub UG, managing director Glenn Stockdale.",
+      "signature": "The Fleetenkieker team"
+    },
+    "auszeichnungen-presse": {
+      "title": "Awards & press | Irish Pub in the Fleetenkieker",
+      "description": "Four times awarded at the Irish Hospitality Global Awards, including Best Sports Experience Global 2019. Plus articles in the press and on blogs.",
+      "h1": "Awards & press",
+      "lead": "Four times awarded at the Irish Hospitality Global Awards.",
+      "awardsTitle": "Irish Hospitality Global Awards",
+      "source": "Source: list of winners",
+      "pressTitle": "Written about us",
+      "readOn": "Read the article at"
+    },
+    "galerie": {
+      "title": "Gallery | Irish Pub in the Fleetenkieker",
+      "description": "Photos from the Irish pub on Börsenbrücke: St Patrick's Day, Halloween, the new bar and more.",
+      "h1": "Gallery",
+      "lead": "A few nights at the pub.",
+      "open": "Enlarge image",
+      "captions": {
+        "67137273": "European and Global winners: Best Sports Experience 2019",
+        "67137274": "St Patrick's Day party",
+        "67137275": "Team Fleet at the HSH Nordbank Run",
+        "67137277": "New bar with 16 beers on tap",
+        "67137281": "Halloween party"
+      },
+      "altDefault": "Photo from the Irish Pub in the Fleetenkieker"
+    },
+    "kontakt-anfahrt": {
+      "title": "Contact & directions | Irish Pub in the Fleetenkieker",
+      "description": "Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg. Phone +49 40 36093599. Opening hours, reservations and directions.",
+      "h1": "Contact & directions",
+      "lead": "Book a table by phone or email.",
+      "reserveTitle": "Reservations",
+      "reserveText": "Call us or send an email with date, time and number of guests.",
+      "mapTitle": "Map",
+      "mapNote": "The map only loads from Google Maps after you click. Data is then sent to Google.",
+      "mapButton": "Load map",
+      "mapExternal": "Open in Google Maps",
+      "mapIframeTitle": "Google map: Börsenbrücke 10, Hamburg",
+      "transitTitle": "By bus and train",
+      "transit": "[Nearest stops and lines]",
+      "parkingTitle": "Parking",
+      "parking": "[Parking nearby]"
+    },
+    "impressum": {
+      "title": "Legal notice | Irish Pub in the Fleetenkieker",
+      "description": "Legal notice (Impressum) of the Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg.",
+      "h1": "Legal notice",
+      "providerTitle": "Information according to § 5 DDG",
+      "ceoLabel": "Represented by the managing director",
+      "contactTitle": "Contact",
+      "registerTitle": "Commercial register",
+      "court": "Register court: [Register court]",
+      "vatTitle": "VAT",
+      "vat": "VAT ID: [VAT ID]",
+      "authorityTitle": "Supervisory authority",
+      "respTitle": "Responsible for content",
+      "resp": "[Name and address of the person responsible]"
+    },
+    "datenschutz": {
+      "title": "Privacy | Irish Pub in the Fleetenkieker",
+      "description": "Privacy policy of the Irish Pub in the Fleetenkieker (draft).",
+      "h1": "Privacy",
+      "warning": "[Draft: this text must be legally reviewed before going live.]",
+      "sections": [
+        { "title": "Controller", "text": "[Fleetenkieker Irish Pub UG, Börsenbrücke 10, 20457 Hamburg, info@irishpub-fleetenkieker.de. Check details.]" },
+        { "title": "Hosting and server logs", "text": "[Add host, type of log data and retention period.]" },
+        { "title": "Fonts", "text": "[All fonts are served locally from our server. There is no connection to Google Fonts or other font providers.]" },
+        { "title": "Map", "text": "[The Google map on the contact page only loads after you click “Load map”. Only then is data such as your IP address sent to Google. Add legal basis and provider details.]" },
+        { "title": "Facebook and Instagram", "text": "[We link to our pages on Facebook and Instagram. No plugins are embedded. Data is only transferred once you follow a link.]" },
+        { "title": "Images", "text": "[Check image sources and embedding. In this draft, images are loaded from the server of the current website.]" },
+        { "title": "Contact by email and phone", "text": "[Add processing of enquiries and reservations, legal basis and retention period.]" },
+        { "title": "Your rights", "text": "[Access, rectification, erasure, restriction, objection, data portability, right to lodge a complaint with the supervisory authority.]" }
+      ]
+    }
+  }
+}
