@@ -11,6 +11,10 @@ import '../styles/schrift.css';
 import '../styles/akzente-irisch.css';
 import '../styles/feinschliff.css';
 // FEINSCHLIFF-ENDE
+// MODERN-START
+import '../styles/modern.css';
+// MODERN-END
+import ActionBar from '../components/ActionBar.astro';
 import site from '../content/site.json';
 import { t, href, mainNav, legalNav, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 
@@ -121,20 +125,22 @@ const year = new Date().getFullYear();
         <p class="foot__toast" lang="ga">{site.irish.toast}</p>
         <p class="foot__copy muted">© {year} {site.company.name}<br />{d.ui.draftCredit}</p>
       </footer>
+      <ActionBar lang={lang} />
     </div>
   </div>
   <script>
     const btn = document.querySelector<HTMLButtonElement>('.rail__toggle');
     const rail = document.querySelector<HTMLElement>('.rail');
-    btn?.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') !== 'true';
-      btn.setAttribute('aria-expanded', String(open));
+    const setOpen = (open: boolean) => {
+      btn?.setAttribute('aria-expanded', String(open));
       rail?.classList.toggle('is-open', open);
-    });
+      document.documentElement.classList.toggle('menu-open', open);
+      if (open) rail?.querySelector<HTMLAnchorElement>('.signs a')?.focus();
+    };
+    btn?.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && rail?.classList.contains('is-open')) {
-        btn?.setAttribute('aria-expanded', 'false');
-        rail.classList.remove('is-open');
+        setOpen(false);
         btn?.focus();
       }
     });

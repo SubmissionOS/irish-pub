@@ -14,7 +14,13 @@
     "followTitle": "Follow",
     "legal": "Legal",
     "oclock": "",
-    "draftCredit": "Design draft by GuddiWeb"
+    "draftCredit": "Design draft by GuddiWeb",
+    "barOpen": "Today: open until {time}",
+    "barToday": "Opens today at {time}",
+    "barTomorrow": "Opens tomorrow at {time}",
+    "barStatic": "Opening hours",
+    "route": "Directions",
+    "actions": "Quick actions"
   },
   "nav": {
     "start": "Home",

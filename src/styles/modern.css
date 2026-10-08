@@ -1,0 +1,76 @@
+/* MODERN-START: modern.css (Modernisierung). Import im Layout entfernen = alles hier weg. */
+
+/* ===== Teil 1: Handy zuerst ===== */
+
+/* Mindestgröße 16 px für jeden Text */
+.board__row dt, .board__week caption, .board__note, .today-tag, .draft, .plaque__small,
+.band li span, .screen__no, .press__outlet, .photo figcaption, .masonry figcaption,
+.chalk__note, .chalk thead th, .chalk__desc, .foot .muted, .foot__copy, .ga, .map__inner p,
+.board__week, .foot__hours { font-size: max(1rem, 1em); }
+.ga { font-size: 1rem; }
+
+/* Tap-Ziele mindestens 48 px */
+.lang a { min-width: 48px; min-height: 48px; line-height: 48px; }
+.rail__toggle { min-height: 48px; }
+.foot ul.plain a, .foot address a { display: inline-block; padding-block: .6rem; }
+.rail__phone { display: inline-block; padding-block: .7rem; }
+.btn { min-height: 48px; }
+
+/* Mobile Navigation: Vollbild-Panel mit großer Liste */
+@media (max-width: 63.99rem) {
+  html.menu-open { overflow: hidden; }
+  .rail.is-open .rail__body {
+    position: fixed; inset: 3.9rem 0 0 0; z-index: 60;
+    max-height: none; overflow-y: auto;
+    background: var(--eiche) var(--woodgrain);
+    padding: 1.25rem 1.25rem 2.5rem;
+    display: flex; flex-direction: column;
+  }
+  .rail.is-open .signs { gap: .15rem; }
+  .rail.is-open .signs a {
+    font-size: 1.25rem; letter-spacing: .07em;
+    min-height: 52px; display: flex; align-items: center;
+    border-bottom: 1px solid rgba(200, 160, 90, .22);
+  }
+  .rail.is-open .rail__foot { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(200, 160, 90, .45); }
+  .rail.is-open .lang a { min-width: 56px; font-size: 1.1rem; }
+  .rail.is-open .rail__phone { font-size: 1.35rem; }
+}
+
+/* Kurstafel mobil: groß und ohne Zoomen lesbar */
+@media (max-width: 47.99rem) {
+  .board { margin-inline: -.25rem; }
+  .board__row { grid-template-columns: 6.4rem minmax(0, 1fr); }
+  .board__row dd { font-size: 1.3rem; }
+  .board__day { font-size: 1.35rem; }
+  .hero { gap: 2rem; }
+  .actions .btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* Mobile Aktionsleiste */
+.actionbar { display: none; }
+@media (max-width: 61.99rem) {
+  .actionbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    display: grid; grid-template-columns: minmax(0, 2.3fr) 1fr 1fr;
+    background: var(--schiefer);
+    border-top: 2px solid var(--messing);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .actionbar a {
+    display: flex; align-items: center; justify-content: center; gap: .45rem;
+    min-height: 56px; padding: .4rem .5rem;
+    font: 600 1rem/1.15 var(--f-board); letter-spacing: .02em; text-align: center;
+    color: var(--kreide); text-decoration: none;
+  }
+  .actionbar a + a { border-left: 1px solid rgba(200, 160, 90, .4); }
+  .actionbar a:last-child { background: var(--messing); color: var(--mahagoni); }
+  .actionbar .lamp { flex: none; margin: 0; }
+  .actionbar__status { justify-content: flex-start !important; padding-left: .9rem !important; }
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .actionbar a { transition: background-color .25s ease; }
+}
+
+/* MODERN-ENDE */

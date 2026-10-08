@@ -1,0 +1,31 @@
+---
+// Mobile Aktionsleiste: Status, Anrufen, Route. Nur unter 62rem sichtbar.
+import site from '../content/site.json';
+import { t, href, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const u = t(lang).ui;
+const cfg = { hours: site.hours, open: u.barOpen, today: u.barToday, tomorrow: u.barTomorrow };
+---
+<nav class="actionbar" aria-label={u.actions} data-actionbar={JSON.stringify(cfg)}>
+  <a class="actionbar__status" href={href(lang, 'kontakt-anfahrt')}>
+    <span class="lamp" data-ab-lamp aria-hidden="true"></span><span data-ab-text>{u.barStatic}</span>
+  </a>
+  <a href={site.phoneHref}>{u.call}</a>
+  <a href={site.routeLink} rel="noopener">{u.route}</a>
+</nav>
+
+<script>
+  import { pubState, type Hours } from '../lib/pubstate';
+  const el = document.querySelector<HTMLElement>('[data-actionbar]');
+  if (el) {
+    const cfg: { hours: Hours[]; open: string; today: string; tomorrow: string } = JSON.parse(el.dataset.actionbar!);
+    const render = () => {
+      const s = pubState(cfg.hours);
+      el.querySelector('[data-ab-text]')!.textContent = cfg[s.kind].replace('{time}', s.time);
+      el.querySelector('[data-ab-lamp]')!.classList.toggle('is-on', s.open);
+    };
+    render();
+    setInterval(render, 30_000);
+  }
+</script>

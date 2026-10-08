@@ -272,5 +272,6 @@
     "music": "Ceol",
     "toast": "Sláinte",
     "source": "https://www.teanglann.ie"
-  }
+  },
+  "routeLink": "https://www.google.com/maps/dir/?api=1&destination=B%C3%B6rsenbr%C3%BCcke+10,+20457+Hamburg"
 }

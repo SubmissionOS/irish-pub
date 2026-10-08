@@ -60,48 +60,20 @@ const config = {
 </section>
 
 <script>
-  type Hours = { day: number; open: number; close: number };
+  import { pubState, type Hours } from "../lib/pubstate";
   type Cfg = {
     hours: Hours[]; musicDays: number[]; days: string[];
     open: string; closedToday: string; closedTomorrow: string; musicValue: string; musicTonight: string;
     gaOpen: string; gaClosed: string;
   };
-  const wd: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-  const fmt = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Berlin', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
-  });
-  const hhmm = (min: number) => {
-    const m = ((min % 1440) + 1440) % 1440;
-    return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
-  };
-
-  // Berechnet den Pub-Tag: nach Mitternacht zählt die Zeit bis zur Schließung noch zum Vortag.
-  function pubState(cfg: Cfg, date: Date) {
-    const parts = Object.fromEntries(fmt.formatToParts(date).map((p) => [p.type, p.value]));
-    const today = wd[parts.weekday];
-    const mins = Number(parts.hour) * 60 + Number(parts.minute);
-    const of = (day: number) => cfg.hours.find((h) => h.day === day)!;
-    const prevDay = (today + 6) % 7;
-    const prev = of(prevDay);
-    if (prev.close > 1440 && mins < prev.close - 1440) {
-      return { day: prevDay, open: true, text: cfg.open.replace('{time}', hhmm(prev.close)) };
-    }
-    const cur = of(today);
-    if (mins >= cur.open && mins < cur.close) {
-      return { day: today, open: true, text: cfg.open.replace('{time}', hhmm(cur.close)) };
-    }
-    if (mins < cur.open) {
-      return { day: today, open: false, text: cfg.closedToday.replace('{time}', hhmm(cur.open)) };
-    }
-    const next = of((today + 1) % 7);
-    return { day: today, open: false, text: cfg.closedTomorrow.replace('{time}', hhmm(next.open)) };
-  }
+  const textOf = (cfg: Cfg, s: ReturnType<typeof pubState>) =>
+    (s.kind === "open" ? cfg.open : s.kind === "today" ? cfg.closedToday : cfg.closedTomorrow).replace("{time}", s.time);
 
   function render(el: HTMLElement) {
     const cfg: Cfg = JSON.parse(el.dataset.board!);
-    const s = pubState(cfg, new Date());
+    const s = pubState(cfg.hours);
     el.querySelector('[data-day]')!.textContent = cfg.days[s.day];
-    el.querySelector('[data-status]')!.textContent = s.text;
+    el.querySelector('[data-status]')!.textContent = textOf(cfg, s);
     el.querySelector('[data-lamp]')!.classList.toggle('is-on', s.open);
     el.querySelector('[data-ga-status]')!.textContent = s.open ? cfg.gaOpen : cfg.gaClosed;
     el.querySelector('[data-music]')!.textContent = cfg.musicDays.includes(s.day) ? cfg.musicTonight : cfg.musicValue;
