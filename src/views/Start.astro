@@ -1,0 +1,63 @@
+---
+import Board from '../components/Board.astro';
+import site from '../content/site.json';
+import { t, href, type Lang, type PageKey } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages.start;
+---
+<section class="hero">
+  <div class="hero__text">
+    <h1>{p.h1}</h1>
+    <p class="lead">{p.lead}</p>
+    <div class="actions">
+      <a class="btn" href={site.phoneHref}>{p.ctaCall}</a>
+      <a class="btn btn--line" href={href(lang, 'kontakt-anfahrt')}>{p.ctaWay}</a>
+    </div>
+  </div>
+  <Board lang={lang} />
+</section>
+
+<section class="section welcome" aria-labelledby="welcome-title">
+  <div>
+    <h2 id="welcome-title" class="welcome__title" lang="ga">{p.welcomeTitle}</h2>
+    <p class="welcome__sub">{p.welcomeSub}</p>
+  </div>
+  <div>
+    {p.welcome.map((para) => <p>{para}</p>)}
+    <p class="signature">{p.signature}</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="hl-title">
+  <h2 id="hl-title">{p.highlightsTitle}</h2>
+  <ul class="planks">
+    {p.highlights.map((h) => (
+      <li class="plank">
+        <h3><a href={href(lang, h.key as PageKey)}>{h.title}</a></h3>
+        <p>{h.text}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="section band" aria-labelledby="awards-title">
+  <h2 id="awards-title">{p.awardsTitle}</h2>
+  <ul>
+    {site.awards.map((a) => (
+      <li lang="en">{a.title} {a.region}<span>{a.year}</span></li>
+    ))}
+  </ul>
+  <a href={href(lang, 'auszeichnungen-presse')}>{p.awardsLink}</a>
+</section>
+
+<section class="section teaser" aria-labelledby="way-title">
+  <div>
+    <h2 id="way-title">{p.wayTitle}</h2>
+    <address>{site.street}<br />{site.zip} {site.city}</address>
+  </div>
+  <div>
+    <p>{p.wayText}</p>
+    <a class="btn btn--line" href={href(lang, 'kontakt-anfahrt')}>{p.wayLink}</a>
+  </div>
+</section>

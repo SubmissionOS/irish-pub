@@ -1,0 +1,117 @@
+---
+// Kurstafel "Heute im Pub". Ohne JavaScript steht die Wochenübersicht, mit JavaScript der aktuelle Stand in Berlin.
+import site from '../content/site.json';
+import { t, fmtTime, href, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const b = d.board;
+const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
+const config = {
+  hours: site.hours,
+  musicDays: site.musicDays,
+  days: d.days,
+  open: b.open,
+  closedToday: b.closedToday,
+  closedTomorrow: b.closedTomorrow,
+  musicValue: b.musicValue,
+  musicTonight: b.musicTonight,
+};
+---
+<section class="board" aria-labelledby="board-title" data-board={JSON.stringify(config)}>
+  <div class="board__frame">
+    <header class="board__head">
+      <h2 id="board-title" class="board__title">{b.title}</h2>
+      <p class="board__day flap" style="--i:0" data-day>{b.staticDay}</p>
+    </header>
+    <dl class="board__rows">
+      <div class="board__row flap" style="--i:1">
+        <dt>{b.statusLabel}</dt>
+        <dd><span class="lamp" data-lamp aria-hidden="true"></span><span data-status>{b.staticStatus}</span></dd>
+      </div>
+      <div class="board__row flap" style="--i:2">
+        <dt>{b.sportLabel}</dt>
+        <dd><a href={site.social.facebook} rel="noopener">{b.sportValue}</a></dd>
+      </div>
+      <div class="board__row flap" style="--i:3">
+        <dt>{b.musicLabel}</dt>
+        <dd><a href={href(lang, 'live-musik')} data-music>{b.musicValue}</a></dd>
+      </div>
+      <div class="board__row flap" style="--i:4">
+        <dt>{b.quizLabel}</dt>
+        <dd><a href={href(lang, 'pub-quiz')}>{b.quizValue}</a></dd>
+      </div>
+    </dl>
+    <table class="board__week flap" style="--i:5">
+      <caption>{b.weekLabel}</caption>
+      <tbody>
+        {week.map((h) => (
+          <tr data-weekday={h.day}>
+            <th scope="row">{d.days[h.day]}<span class="today-tag" hidden>{b.todayMark}</span></th>
+            <td>{fmtTime(h.open)}–{fmtTime(h.close)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="board__note">{b.note}</p>
+  </div>
+</section>
+
+<script>
+  type Hours = { day: number; open: number; close: number };
+  type Cfg = {
+    hours: Hours[]; musicDays: number[]; days: string[];
+    open: string; closedToday: string; closedTomorrow: string; musicValue: string; musicTonight: string;
+  };
+  const wd: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Berlin', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+  });
+  const hhmm = (min: number) => {
+    const m = ((min % 1440) + 1440) % 1440;
+    return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+  };
+
+  // Berechnet den Pub-Tag: nach Mitternacht zählt die Zeit bis zur Schließung noch zum Vortag.
+  function pubState(cfg: Cfg, date: Date) {
+    const parts = Object.fromEntries(fmt.formatToParts(date).map((p) => [p.type, p.value]));
+    const today = wd[parts.weekday];
+    const mins = Number(parts.hour) * 60 + Number(parts.minute);
+    const of = (day: number) => cfg.hours.find((h) => h.day === day)!;
+    const prevDay = (today + 6) % 7;
+    const prev = of(prevDay);
+    if (prev.close > 1440 && mins < prev.close - 1440) {
+      return { day: prevDay, open: true, text: cfg.open.replace('{time}', hhmm(prev.close)) };
+    }
+    const cur = of(today);
+    if (mins >= cur.open && mins < cur.close) {
+      return { day: today, open: true, text: cfg.open.replace('{time}', hhmm(cur.close)) };
+    }
+    if (mins < cur.open) {
+      return { day: today, open: false, text: cfg.closedToday.replace('{time}', hhmm(cur.open)) };
+    }
+    const next = of((today + 1) % 7);
+    return { day: today, open: false, text: cfg.closedTomorrow.replace('{time}', hhmm(next.open)) };
+  }
+
+  function render(el: HTMLElement) {
+    const cfg: Cfg = JSON.parse(el.dataset.board!);
+    const s = pubState(cfg, new Date());
+    el.querySelector('[data-day]')!.textContent = cfg.days[s.day];
+    el.querySelector('[data-status]')!.textContent = s.text;
+    el.querySelector('[data-lamp]')!.classList.toggle('is-on', s.open);
+    el.querySelector('[data-music]')!.textContent = cfg.musicDays.includes(s.day) ? cfg.musicTonight : cfg.musicValue;
+    el.querySelectorAll<HTMLTableRowElement>('[data-weekday]').forEach((tr) => {
+      const isToday = Number(tr.dataset.weekday) === s.day;
+      tr.classList.toggle('is-today', isToday);
+      if (isToday) tr.setAttribute('aria-current', 'date');
+      else tr.removeAttribute('aria-current');
+      tr.querySelector<HTMLElement>('.today-tag')!.hidden = !isToday;
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-board]').forEach((el) => {
+    render(el);
+    setInterval(() => render(el), 30_000);
+  });
+</script>

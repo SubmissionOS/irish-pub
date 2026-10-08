@@ -1,0 +1,135 @@
+---
+import '@fontsource/bevan/400.css';
+import '@fontsource-variable/source-serif-4/index.css';
+import '@fontsource/barlow-condensed/500.css';
+import '@fontsource/barlow-condensed/600.css';
+import '../styles/global.css';
+import site from '../content/site.json';
+import { t, href, mainNav, legalNav, fmtTime, type Lang, type PageKey } from '../lib/i18n';
+
+interface Props { lang: Lang; page: PageKey; jsonLd?: object }
+const { lang, page, jsonLd } = Astro.props;
+const d = t(lang);
+const meta = d.pages[page] as { title: string; description: string };
+const other: Lang = lang === 'de' ? 'en' : 'de';
+const abs = (p: string) => new URL(p, site.url).href;
+const canonical = abs(href(lang, page));
+const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang={lang === 'de' ? 'de' : 'en-GB'}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{meta.title}</title>
+  <meta name="description" content={meta.description} />
+  {site.draft && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="de" href={abs(href('de', page))} />
+  <link rel="alternate" hreflang="en" href={abs(href('en', page))} />
+  <link rel="alternate" hreflang="x-default" href={abs(href('de', page))} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:description" content={meta.description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
+  <meta property="og:image" content={site.imgBase + site.barPhoto} />
+  <meta name="theme-color" content="#2a1611" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  <script is:inline>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">{d.ui.skip}</a>
+  <div class="shell">
+    <aside class="rail">
+      <div class="rail__top">
+        <a class="plaque" href={href(lang, 'start')} aria-label={`${site.name}, ${d.nav.start}`}>
+          <span class="plaque__small">Irish Pub in the</span>
+          <span class="plaque__name">Fleetenkieker</span>
+          <span class="plaque__addr">Börsenbrücke 10</span>
+        </a>
+        <button class="rail__toggle" type="button" aria-expanded="false" aria-controls="hauptnav">
+          <span class="rail__toggle-open">{d.ui.menu}</span>
+          <span class="rail__toggle-close">{d.ui.close}</span>
+        </button>
+      </div>
+      <div class="rail__body" id="hauptnav">
+        <nav aria-label={d.ui.menu}>
+          <ul class="signs">
+            {mainNav.map((k) => (
+              <li><a href={href(lang, k)} aria-current={k === page ? 'page' : undefined}>{d.nav[k]}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <div class="rail__foot">
+          <ul class="lang" aria-label={d.ui.switchLabel}>
+            <li><a href={href('de', page)} hreflang="de" lang="de" aria-current={lang === 'de' ? 'true' : undefined}>DE</a></li>
+            <li><a href={href('en', page)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a></li>
+          </ul>
+          <a class="rail__phone" href={site.phoneHref}>{site.phone}</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="stage">
+      {site.draft && <p class="draft" role="note">{d.ui.banner}</p>}
+      <main id="inhalt" tabindex="-1">
+        <slot />
+      </main>
+      <footer class="foot">
+        <div class="foot__col">
+          <h2>{d.ui.addressTitle}</h2>
+          <address>
+            {site.name}<br />{site.street}<br />{site.zip} {site.city}<br />
+            <a href={site.phoneHref}>{site.phone}</a><br />
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </address>
+        </div>
+        <div class="foot__col">
+          <h2>{d.ui.hoursTitle}</h2>
+          <table class="foot__hours">
+            <tbody>
+              {week.map((h) => (
+                <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="muted">{d.ui.footerNote}</p>
+        </div>
+        <div class="foot__col">
+          <h2>{d.ui.followTitle}</h2>
+          <ul class="plain">
+            <li><a href={site.social.facebook} rel="noopener">Facebook</a></li>
+            <li><a href={site.social.instagram} rel="noopener">Instagram</a></li>
+          </ul>
+          <h2>{d.ui.legal}</h2>
+          <ul class="plain">
+            {legalNav.map((k) => <li><a href={href(lang, k)} aria-current={k === page ? 'page' : undefined}>{d.nav[k]}</a></li>)}
+          </ul>
+        </div>
+        <p class="foot__copy muted">© {year} {site.company.name}</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+    const btn = document.querySelector<HTMLButtonElement>('.rail__toggle');
+    const rail = document.querySelector<HTMLElement>('.rail');
+    btn?.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      rail?.classList.toggle('is-open', open);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && rail?.classList.contains('is-open')) {
+        btn?.setAttribute('aria-expanded', 'false');
+        rail.classList.remove('is-open');
+        btn?.focus();
+      }
+    });
+  </script>
+</body>
+</html>

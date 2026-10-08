@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { views } from '../views/index';
+import { langs, pageKeys, pathParam, href, t, type Lang, type PageKey } from '../lib/i18n';
+import { barSchema } from '../lib/schema';
+import site from '../content/site.json';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) =>
+    pageKeys.filter((key) => views[key]).map((key) => ({ params: { path: pathParam(lang, key) }, props: { lang, key } })),
+  );
+}
+
+const { lang, key } = Astro.props as { lang: Lang; key: PageKey };
+const View = views[key];
+const withSchema = key === 'start' || key === 'kontakt-anfahrt';
+const jsonLd = withSchema
+  ? barSchema(lang, new URL(href(lang, key), site.url).href, t(lang).pages.start.description)
+  : undefined;
+---
+<Layout lang={lang} page={key} jsonLd={jsonLd}>
+  <View lang={lang} />
+</Layout>
