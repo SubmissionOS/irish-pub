@@ -1,10 +1,4 @@
 ---
-import '@fontsource-variable/source-serif-4/index.css';
-import '@fontsource/barlow-condensed/500.css';
-import '@fontsource/barlow-condensed/600.css';
-import '@fontsource/big-shoulders-display/700';
-import '@fontsource/big-shoulders-display/800';
-import '@fontsource/uncial-antiqua/400';
 import '../styles/global.css';
 // FEINSCHLIFF-START
 import '../styles/schrift.css';
@@ -15,6 +9,10 @@ import '../styles/feinschliff.css';
 import '../styles/modern.css';
 // MODERN-END
 import ActionBar from '../components/ActionBar.astro';
+// MODERN-START Teil 4: Schriften vorladen
+import fontDisplay from '@fontsource/im-fell-english-sc/files/im-fell-english-sc-latin-400-normal.woff2?url';
+import fontText from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+// MODERN-ENDE
 import site from '../content/site.json';
 import { t, href, mainNav, legalNav, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 
@@ -48,6 +46,8 @@ const year = new Date().getFullYear();
   <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
   <meta property="og:image" content={site.imgBase + site.barPhoto} />
   <meta name="theme-color" content="#2a1611" />
+  <link rel="preload" href={fontDisplay} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={fontText} as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

@@ -26,3 +26,55 @@ h3 { font-size: clamp(1.4rem, .8vw + 1.1rem, 1.75rem); font-weight: 700; line-he
 .akzent, .welcome__title { font-family: var(--f-akzent); font-weight: 400; letter-spacing: 0; }
 .welcome__title { line-height: 1.15; font-size: clamp(2rem, 3vw + .8rem, 3.2rem); }
 /* FEINSCHLIFF-ENDE */
+
+/* MODERN-START: Teil 4 Schrift. Irische Fassadenschrift: IM Fell English SC (Überschriften, Navigation),
+   Source Serif 4 (Fließtext, Zeiten, Tafel), Uncial Antiqua (nur Gruß und irische Zweitwörter).
+   Genau drei Dateien, nur Latin, font-display: swap. */
+@font-face {
+  font-family: 'IM Fell English SC'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../../node_modules/@fontsource/im-fell-english-sc/files/im-fell-english-sc-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4 Variable'; font-style: normal; font-weight: 200 900; font-display: swap;
+  src: url('../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Uncial Antiqua'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../../node_modules/@fontsource/uncial-antiqua/files/uncial-antiqua-latin-400-normal.woff2') format('woff2');
+}
+/* Fallback-Metriken gegen Layoutsprünge beim Schriftwechsel */
+@font-face { font-family: 'Fell Fallback'; src: local('Georgia'); size-adjust: 96%; ascent-override: 88%; descent-override: 24%; }
+@font-face { font-family: 'Serif Fallback'; src: local('Georgia'); size-adjust: 104%; ascent-override: 92%; descent-override: 30%; }
+
+:root {
+  --f-display: 'IM Fell English SC', 'Fell Fallback', Georgia, serif;
+  --f-text: 'Source Serif 4 Variable', 'Serif Fallback', Georgia, serif;
+  --f-board: 'Source Serif 4 Variable', 'Serif Fallback', Georgia, serif;
+  --f-akzent: 'Uncial Antiqua', Georgia, serif;
+  --f-sign: var(--f-display);
+}
+html { font-synthesis: style; }
+h1, h2, h3, .plaque__name, .musician__name, .board__title, .foot h2 {
+  font-family: var(--f-display); font-weight: 400; letter-spacing: .01em; line-height: 1.08;
+}
+h1 { font-size: clamp(2.5rem, 4vw + 1.2rem, 5.2rem); }
+.hero h1 { font-size: clamp(2.5rem, 3.4vw + 1.3rem, 4.8rem); max-width: 15ch; }
+.headband h1 { font-size: clamp(2.5rem, 3.6vw + 1.2rem, 5rem); }
+h2 { font-size: clamp(1.75rem, 1.6vw + 1.2rem, 2.7rem); }
+h3 { font-size: clamp(1.3rem, .6vw + 1.1rem, 1.6rem); }
+.chalk h3 { font-size: 1.25rem; letter-spacing: .04em; }
+.plaque__name { font-size: 1.45rem; }
+@media (min-width: 64rem) { .plaque__name { font-size: 1.75rem; } }
+.signs a { font-family: var(--f-display); font-weight: 400; letter-spacing: .08em; font-size: .95rem; }
+@media (max-width: 63.99rem) { .rail.is-open .signs a { font-size: 1.3rem; } }
+.stats__value { font-family: var(--f-board); font-weight: 700; }
+/* Zeiten und Tafelzahlen: Source Serif 4 mit Tabellen- und Versalziffern */
+.board__frame, .chalk, .weekstrip, .sub-aside, .actionbar, .facts, .hours-table, .foot__hours, .stats { font-variant-numeric: tabular-nums lining-nums; }
+.board__row dd { font-size: 1.2rem; font-weight: 600; }
+.board__row dt { font-size: 1rem; }
+.board__day { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; }
+.btn, .facts li, .actionbar a, .lang a, .rail__phone { font-family: var(--f-text); font-weight: 600; letter-spacing: .01em; }
+h1, h2, h3 { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; }
+.hero h1 { max-width: 17ch; }
+.stats .stats__value { font-family: var(--f-board); font-weight: 700; }
+/* MODERN-ENDE Teil 4 */

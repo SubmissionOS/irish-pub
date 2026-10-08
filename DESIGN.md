@@ -11,10 +11,15 @@ Die Seite ist die Kurstafel eines Pubs im alten Hamburger Börsenviertel: Was he
 - Zapfrot `#a63a2b` / `#e0604d` nur Status-Lampe
 - Fleetgrau `#8da39b` gedämpfter Text
 
-## Schriften (lokal via @fontsource)
-- Bevan: Überschriften, Schildschrift
-- Source Serif 4: Fließtext, Zeilenabstand 1.7, max. 65 Zeichen
-- Barlow Condensed: Zeiten, Tafelzahlen, Plaketten
+## Schriften (lokal, nur Latin, drei Dateien)
+- IM Fell English SC: Überschriften und Navigation, wirkt wie alter Druck und gemaltes Pubschild
+- Source Serif 4: Fließtext, Zeiten und Tafelzahlen (Tabellen- und Versalziffern)
+- Uncial Antiqua: nur Céad míle fáilte, irische Zweitwörter in der Kurstafel, Sláinte
+
+## Referenzen irische Pubfassaden (Recherche Modernisierung)
+- Dublin: handgemalte Fassaden, Kevin Freeney hat über 700 Pubs und Läden mit dreidimensionaler Relief-Schrift und Ornament beschriftet (Gentlemen of Letters, stockholmstypografiskagille.se).
+- Goldene Old-Style-Antiqua an Ladenfronten wie dem Pen Corner, Dame Street (thejournal.ie, schönste Fassaden Dublins).
+- Viktorianische Pubs prägen Dublin innen wie außen (irishpubcompany.com, Victorian Style). Daraus folgt: Antiqua-Kapitälchen statt Grotesk.
 
 ## Layout-Prinzip
 Desktop: feste Plakettenleiste links, Inhalt rechts linksbündig und asymmetrisch. Mobil: schmale Kopfzeile mit Menü. Ein Wow-Moment: die Kurstafel „Heute im Pub“ mit Klappanzeige beim Laden (nur ohne reduzierte Bewegung).
