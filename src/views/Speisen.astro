@@ -1,29 +1,27 @@
 ---
 import PageHead from '../components/PageHead.astro';
-import Rich from '../components/Rich.astro';
-import { t, type Lang } from '../lib/i18n';
+import vorschlag from '../content/vorschlag.json';
+import { t, eur, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.speisen;
-const groups = [
-  { id: 'small', title: p.smallTitle, items: p.small },
-  { id: 'big', title: p.bigTitle, items: p.big },
-];
 ---
 <PageHead title={p.h1} lead={p.lead} />
 
-{groups.map((g) => (
-  <section class="chalk" aria-labelledby={`${g.id}-title`}>
-    <h2 id={`${g.id}-title`}>{g.title}</h2>
-    <ul class="chalk__list">
-      {g.items.map((it) => (
-        <li>
-          <Rich class="chalk__name" text={it.name} />
-          <Rich class="chalk__price" text={it.price} />
-          <Rich class="chalk__desc" text={it.desc} />
-        </li>
-      ))}
-    </ul>
-  </section>
-))}
-<p class="section chalk__note">{p.kitchenLabel}: <Rich text={p.kitchen} /></p>
+<section class="chalk" aria-label={p.h1}>
+  {vorschlag.speisen.map((g) => (
+    <>
+      <h3>{g.title[lang]}</h3>
+      <ul class="chalk__list">
+        {g.items.map((it) => (
+          <li>
+            <span class="chalk__name">{it.name[lang]}</span>
+            <span class="chalk__price">{eur(it.price, lang)}</span>
+            <span class="chalk__desc">{it.desc[lang]}</span>
+          </li>
+        ))}
+      </ul>
+    </>
+  ))}
+  <p class="chalk__note">{p.allergens} {p.priceNote}</p>
+</section>

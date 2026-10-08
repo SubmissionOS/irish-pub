@@ -1,6 +1,5 @@
 ---
 import PageHead from '../components/PageHead.astro';
-import Rich from '../components/Rich.astro';
 import site from '../content/site.json';
 import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -28,8 +27,11 @@ const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(p.wishTitle)
 
 <section class="section" aria-labelledby="prog-title">
   <h2 id="prog-title">{p.programTitle}</h2>
-  <Rich as="p" text={p.program} />
-  <a class="btn" href={site.social.facebook} rel="noopener">{p.programLink}</a>
+  <p>{p.program}</p>
+  <div class="actions">
+    <a class="btn" href={site.social.facebook} rel="noopener">Facebook</a>
+    <a class="btn btn--line" href={site.social.instagram} rel="noopener">Instagram</a>
+  </div>
 </section>
 
 <section class="section" aria-labelledby="wish-title">

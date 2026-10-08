@@ -1,6 +1,5 @@
 ---
 import PageHead from '../components/PageHead.astro';
-import Rich from '../components/Rich.astro';
 import Img from '../components/Img.astro';
 import site from '../content/site.json';
 import { t, type Lang } from '../lib/i18n';
@@ -22,7 +21,8 @@ const p = d.pages['pub-quiz'];
   </section>
   <section aria-labelledby="next-title">
     <h2 id="next-title">{p.nextTitle}</h2>
-    <Rich as="p" class="next" text={p.next} />
+    <p class="next">{p.next}</p>
+    <p><a class="btn btn--line" href={site.social.facebook} rel="noopener">Facebook</a></p>
   </section>
 </div>
 

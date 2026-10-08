@@ -25,6 +25,19 @@ function walk(a, b, path) {
   }
 }
 walk(de, en, '$');
+
+// vorschlag.json: jedes Sprachpaar braucht DE und EN
+const vorschlag = load('vorschlag.json');
+(function pairs(o, path) {
+  if (Array.isArray(o)) return o.forEach((v, i) => pairs(v, `${path}[${i}]`));
+  if (o && typeof o === 'object') {
+    if ('de' in o || 'en' in o) {
+      if (!o.de || !o.en) errors.push(`vorschlag${path}: DE oder EN fehlt`);
+      return;
+    }
+    for (const k of Object.keys(o)) pairs(o[k], `${path}.${k}`);
+  }
+})(vorschlag, '');
 if (errors.length) {
   console.error('Paritätsfehler DE/EN:\n' + errors.join('\n'));
   process.exit(1);

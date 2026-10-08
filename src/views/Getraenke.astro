@@ -1,13 +1,12 @@
 ---
 import PageHead from '../components/PageHead.astro';
-import Rich from '../components/Rich.astro';
 import Img from '../components/Img.astro';
 import site from '../content/site.json';
-import { t, type Lang } from '../lib/i18n';
+import vorschlag from '../content/vorschlag.json';
+import { t, eur, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const d = t(lang);
-const p = d.pages.getraenke;
+const p = t(lang).pages.getraenke;
 ---
 <PageHead title={p.h1} lead={p.lead} />
 
@@ -16,10 +15,10 @@ const p = d.pages.getraenke;
     <h2 id="tap-title">{p.tapTitle}</h2>
     <p class="chalk__note">{p.tapNote}</p>
     <table>
-      <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.style}</th><th scope="col">{p.tapHead.price}</th></tr></thead>
+      <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.p03}</th><th scope="col">{p.tapHead.p05}</th></tr></thead>
       <tbody>
-        {p.tapItems.map((b) => (
-          <tr><th scope="row"><Rich text={b.name} /></th><td><Rich text={b.style} /></td><td><Rich text={b.price} /></td></tr>
+        {vorschlag.fass.map((b) => (
+          <tr><th scope="row">{b.name[lang]}</th><td>{eur(b.p03, lang)}</td><td>{eur(b.p05, lang)}</td></tr>
         ))}
       </tbody>
     </table>
@@ -33,11 +32,17 @@ const p = d.pages.getraenke;
 <section class="section chalk" aria-labelledby="board-title">
   <h2 id="board-title">{p.boardTitle}</h2>
   <div class="groups">
-    {p.groups.map((g) => (
+    {vorschlag.karte.map((g) => (
       <div>
-        <h3>{g.name}</h3>
-        <Rich as="p" class="chalk__note" text={g.items} />
+        <h3>{g.title[lang]}</h3>
+        {g.note && <p class="chalk__note">{g.note[lang]}</p>}
+        <ul class="chalk__list">
+          {g.items.map((it) => (
+            <li><span class="chalk__name">{it.name[lang]}</span><span class="chalk__price">{eur(it.price, lang)}</span></li>
+          ))}
+        </ul>
       </div>
     ))}
   </div>
+  <p class="chalk__note">{p.priceNote}</p>
 </section>

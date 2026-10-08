@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "check:parity": "node scripts/check-parity.mjs",
     "build": "node scripts/check-parity.mjs && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "postbuild": "node scripts/pruefe-platzhalter.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

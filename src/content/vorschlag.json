@@ -1,0 +1,122 @@
+{
+  "_hinweis": "Alles in dieser Datei ist ein Vorschlag von GuddiWeb und nicht vom Pub belegt: Gerichte, Biersorten, Preise, Beschreibungen. Vor Livegang mit dem Inhaber abgleichen. Liste: INHALTE-ZU-PRUEFEN.md",
+  "speisen": [
+    {
+      "title": { "de": "Zum Start", "en": "To start" },
+      "items": [
+        { "name": { "de": "Soda Bread mit gesalzener Butter", "en": "Soda bread with salted butter" }, "desc": { "de": "Irisches Brot, warm aus dem Ofen", "en": "Irish bread, warm from the oven" }, "price": "6,50" },
+        { "name": { "de": "Tomatensuppe", "en": "Tomato soup" }, "desc": { "de": "Mit Soda Bread. Vegetarisch", "en": "With soda bread. Vegetarian" }, "price": "7,90" },
+        { "name": { "de": "Gartensalat mit Ziegenkäse", "en": "Garden salad with goat's cheese" }, "desc": { "de": "Blattsalate, Walnüsse, Honig-Senf-Dressing. Vegetarisch", "en": "Leaves, walnuts, honey mustard dressing. Vegetarian" }, "price": "12,90" }
+      ]
+    },
+    {
+      "title": { "de": "Pub-Klassiker", "en": "Pub classics" },
+      "items": [
+        { "name": { "de": "Irish Stew", "en": "Irish stew" }, "desc": { "de": "Lamm, Kartoffeln, Möhren, lange geschmort", "en": "Lamb, potatoes, carrots, slow cooked" }, "price": "16,90" },
+        { "name": { "de": "Fish and Chips", "en": "Fish and chips" }, "desc": { "de": "Kabeljau im Bierteig, Pommes, Erbsenpüree, Remoulade", "en": "Beer-battered cod, chips, mushy peas, tartare sauce" }, "price": "17,90" },
+        { "name": { "de": "Shepherd's Pie", "en": "Shepherd's pie" }, "desc": { "de": "Lammhack mit Kartoffelpüree überbacken", "en": "Minced lamb topped with mashed potato" }, "price": "15,90" },
+        { "name": { "de": "Bangers and Mash", "en": "Bangers and mash" }, "desc": { "de": "Bratwürste, Kartoffelpüree, Zwiebelsoße", "en": "Sausages, mashed potato, onion gravy" }, "price": "14,90" },
+        { "name": { "de": "Pub Burger", "en": "Pub burger" }, "desc": { "de": "Rindfleisch, Cheddar, Bacon, Pommes", "en": "Beef, cheddar, bacon, chips" }, "price": "16,50" },
+        { "name": { "de": "Cheddar-Toastie", "en": "Cheddar toastie" }, "desc": { "de": "Mit Zwiebeln und Chutney. Vegetarisch", "en": "With onions and chutney. Vegetarian" }, "price": "9,50" }
+      ]
+    },
+    {
+      "title": { "de": "Süßes", "en": "Something sweet" },
+      "items": [
+        { "name": { "de": "Sticky Toffee Pudding", "en": "Sticky toffee pudding" }, "desc": { "de": "Dattelkuchen mit Karamellsoße und Vanilleeis", "en": "Date sponge with toffee sauce and vanilla ice cream" }, "price": "7,50" },
+        { "name": { "de": "Apple Crumble", "en": "Apple crumble" }, "desc": { "de": "Warm, mit Vanillesoße", "en": "Warm, with custard" }, "price": "7,50" }
+      ]
+    }
+  ],
+  "fass": [
+    { "name": { "de": "Dry Stout", "en": "Dry stout" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "Irish Red Ale", "en": "Irish red ale" }, "p03": "4,80", "p05": "6,90" },
+    { "name": { "de": "Irish Lager", "en": "Irish lager" }, "p03": "4,50", "p05": "6,50" },
+    { "name": { "de": "Pilsener", "en": "Pilsner" }, "p03": "4,20", "p05": "5,90" },
+    { "name": { "de": "Helles", "en": "Helles lager" }, "p03": "4,30", "p05": "6,10" },
+    { "name": { "de": "Pale Ale", "en": "Pale ale" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "India Pale Ale", "en": "India pale ale" }, "p03": "5,20", "p05": "7,60" },
+    { "name": { "de": "Session IPA", "en": "Session IPA" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "Porter", "en": "Porter" }, "p03": "5,00", "p05": "7,40" },
+    { "name": { "de": "Amber Ale", "en": "Amber ale" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "Brown Ale", "en": "Brown ale" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "Blonde Ale", "en": "Blonde ale" }, "p03": "4,70", "p05": "6,90" },
+    { "name": { "de": "Cream Ale", "en": "Cream ale" }, "p03": "4,90", "p05": "7,20" },
+    { "name": { "de": "Weizenbier", "en": "Wheat beer" }, "p03": "4,60", "p05": "6,70" },
+    { "name": { "de": "Wechselndes Craft Beer", "en": "Rotating craft beer" }, "p03": "5,40", "p05": "7,90" },
+    { "name": { "de": "Lager alkoholfrei", "en": "Alcohol-free lager" }, "p03": "4,20", "p05": "5,90" }
+  ],
+  "karte": [
+    {
+      "title": { "de": "Craft Beer in Flaschen", "en": "Craft beer in bottles" },
+      "note": { "de": "Wechselnde Auswahl, fragen Sie unser Team.", "en": "Rotating selection, ask our team." },
+      "items": [
+        { "name": { "de": "Craft Beer 0,33 l", "en": "Craft beer 0.33 l" }, "price": "ab 5,90" }
+      ]
+    },
+    {
+      "title": { "de": "Whiskey, 4 cl", "en": "Whiskey, 4 cl" },
+      "items": [
+        { "name": { "de": "Irish Blended", "en": "Irish blended" }, "price": "ab 6,50" },
+        { "name": { "de": "Irish Single Malt", "en": "Irish single malt" }, "price": "ab 8,50" },
+        { "name": { "de": "Irish Single Pot Still", "en": "Irish single pot still" }, "price": "ab 9,50" },
+        { "name": { "de": "Scotch Single Malt", "en": "Scotch single malt" }, "price": "ab 8,50" }
+      ]
+    },
+    {
+      "title": { "de": "Cocktails", "en": "Cocktails" },
+      "items": [
+        { "name": { "de": "Irish Coffee", "en": "Irish coffee" }, "price": "8,90" },
+        { "name": { "de": "Whiskey Sour", "en": "Whiskey sour" }, "price": "10,50" },
+        { "name": { "de": "Old Fashioned", "en": "Old fashioned" }, "price": "11,00" },
+        { "name": { "de": "Moscow Mule", "en": "Moscow mule" }, "price": "9,90" },
+        { "name": { "de": "Espresso Martini", "en": "Espresso martini" }, "price": "10,50" }
+      ]
+    },
+    {
+      "title": { "de": "Wein, Glas 0,2 l / Flasche 0,75 l", "en": "Wine, glass 0.2 l / bottle 0.75 l" },
+      "items": [
+        { "name": { "de": "Grauburgunder, weiß", "en": "Pinot gris, white" }, "price": "6,90 / 24,00" },
+        { "name": { "de": "Merlot, rot", "en": "Merlot, red" }, "price": "6,90 / 24,00" },
+        { "name": { "de": "Rosé", "en": "Rosé" }, "price": "6,50 / 22,00" }
+      ]
+    },
+    {
+      "title": { "de": "Brandy und Liköre, 2 cl", "en": "Brandy and liqueurs, 2 cl" },
+      "items": [
+        { "name": { "de": "Brandy", "en": "Brandy" }, "price": "5,50" },
+        { "name": { "de": "Irish Cream Likör", "en": "Irish cream liqueur" }, "price": "4,50" }
+      ]
+    },
+    {
+      "title": { "de": "Longdrinks, 4 cl", "en": "Long drinks, 4 cl" },
+      "items": [
+        { "name": { "de": "Gin Tonic", "en": "Gin and tonic" }, "price": "9,50" },
+        { "name": { "de": "Whiskey Ginger", "en": "Whiskey ginger" }, "price": "9,50" },
+        { "name": { "de": "Rum Cola", "en": "Rum and cola" }, "price": "8,90" },
+        { "name": { "de": "Wodka Lemon", "en": "Vodka lemon" }, "price": "8,90" }
+      ]
+    },
+    {
+      "title": { "de": "Shortdrinks und Shots", "en": "Short drinks and shots" },
+      "items": [
+        { "name": { "de": "Black Russian, 4 cl", "en": "Black Russian, 4 cl" }, "price": "9,00" },
+        { "name": { "de": "Rusty Nail, 4 cl", "en": "Rusty nail, 4 cl" }, "price": "9,50" },
+        { "name": { "de": "Tequila, 2 cl", "en": "Tequila, 2 cl" }, "price": "3,80" },
+        { "name": { "de": "Sambuca, 2 cl", "en": "Sambuca, 2 cl" }, "price": "3,50" },
+        { "name": { "de": "Kräuterlikör, 2 cl", "en": "Herbal liqueur, 2 cl" }, "price": "3,50" }
+      ]
+    },
+    {
+      "title": { "de": "Alkoholfrei, Säfte und Limonaden", "en": "Soft drinks, juices and lemonades" },
+      "items": [
+        { "name": { "de": "Cola, Ginger Ale, Tonic Water, 0,33 l", "en": "Cola, ginger ale, tonic water, 0.33 l" }, "price": "3,90" },
+        { "name": { "de": "Zitronenlimonade, 0,33 l", "en": "Lemonade, 0.33 l" }, "price": "3,90" },
+        { "name": { "de": "Mineralwasser, 0,4 l", "en": "Mineral water, 0.4 l" }, "price": "3,90" },
+        { "name": { "de": "Apfelsaft oder Orangensaft, 0,3 l", "en": "Apple or orange juice, 0.3 l" }, "price": "4,20" },
+        { "name": { "de": "Apfelschorle, 0,4 l", "en": "Apple spritzer, 0.4 l" }, "price": "4,20" },
+        { "name": { "de": "Kaffee oder Tee", "en": "Coffee or tea" }, "price": "2,90" }
+      ]
+    }
+  ]
+}

@@ -13,8 +13,8 @@
     "addressTitle": "Address",
     "followTitle": "Follow",
     "legal": "Legal",
-    "imgMissing": "Image not available",
-    "oclock": ""
+    "oclock": "",
+    "draftCredit": "Design draft by GuddiWeb"
   },
   "nav": {
     "start": "Home",
@@ -30,7 +30,15 @@
     "impressum": "Legal notice",
     "datenschutz": "Privacy"
   },
-  "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  "days": [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
   "board": {
     "title": "Today at the pub",
     "staticDay": "This week",
@@ -67,10 +75,26 @@
       "signature": "The Fleetenkieker team",
       "highlightsTitle": "What goes on here",
       "highlights": [
-        { "key": "live-sport", "title": "Live sport on six screens", "text": "Bundesliga, Premier League, rugby, GAA, NFL, Formula 1 and more in HD." },
-        { "key": "live-musik", "title": "Live music at the weekend", "text": "Every Friday and Saturday from 21:30, musicians from Germany, Ireland and beyond." },
-        { "key": "getraenke", "title": "16 beers on tap", "text": "Ale, lager, IPA and stout, plus craft beer, whiskey and cocktails." },
-        { "key": "pub-quiz", "title": "Pub quiz once a month", "text": "Up to seven people per team, lots of prizes. Usually booked out the day it is announced." }
+        {
+          "key": "live-sport",
+          "title": "Live sport on six screens",
+          "text": "Bundesliga, Premier League, rugby, GAA, NFL, Formula 1 and more in HD."
+        },
+        {
+          "key": "live-musik",
+          "title": "Live music at the weekend",
+          "text": "Every Friday and Saturday from 21:30, musicians from Germany, Ireland and beyond."
+        },
+        {
+          "key": "getraenke",
+          "title": "16 beers on tap",
+          "text": "Ale, lager, IPA and stout, plus craft beer, whiskey and cocktails."
+        },
+        {
+          "key": "pub-quiz",
+          "title": "Pub quiz once a month",
+          "text": "Up to seven people per team, lots of prizes. Usually booked out the day it is announced."
+        }
       ],
       "awardsTitle": "Awarded by the Irish Hospitality Global Awards",
       "awardsLink": "All awards and press",
@@ -84,10 +108,24 @@
       "h1": "Live sport",
       "lead": "Six HD flat screens and our own TV and satellite system for football, rugby, GAA and much more.",
       "screensTitle": "What's on the screens",
-      "sports": ["Bundesliga", "English Premier League", "English Championship", "Scottish Premier League", "La Liga", "Other European football leagues", "Rugby, international and club", "GAA", "NFL", "Golf", "Formula 1 and motorsport", "Handball", "Darts", "Tennis"],
+      "sports": [
+        "Bundesliga",
+        "English Premier League",
+        "English Championship",
+        "Scottish Premier League",
+        "La Liga",
+        "Other European football leagues",
+        "Rugby, international and club",
+        "GAA",
+        "NFL",
+        "Golf",
+        "Formula 1 and motorsport",
+        "Handball",
+        "Darts",
+        "Tennis"
+      ],
       "programTitle": "This week",
-      "program": "[Current weekly schedule with dates and kick-off times]",
-      "programLink": "Weekly schedule on Facebook",
+      "program": "We publish the weekly schedule on Facebook and Instagram.",
       "wishTitle": "Your match missing?",
       "wishText": "Send us an email with the sport you would like to watch. We'll see what we can do."
     },
@@ -97,10 +135,14 @@
       "h1": "Live music",
       "lead": "Every Friday and Saturday from 21:30. Some of the best pub musicians in Germany play here, along with musicians from Ireland and beyond.",
       "genresTitle": "What gets played",
-      "genres": ["Traditional Irish folk", "Rock classics", "Current hits"],
+      "genres": [
+        "Traditional Irish folk",
+        "Rock classics",
+        "Current hits"
+      ],
       "musiciansTitle": "Who has played here",
       "lineupTitle": "Who's playing this weekend",
-      "lineup": "[Line-up for the coming weekends with names and dates]"
+      "lineup": "We announce who is playing on Facebook and Instagram."
     },
     "pub-quiz": {
       "title": "Pub quiz | Irish Pub in the Fleetenkieker",
@@ -108,7 +150,7 @@
       "h1": "Pub quiz",
       "lead": "Once a month, with lots of prizes. The quiz is usually booked out on the day we announce it on Facebook.",
       "nextTitle": "Next date",
-      "next": "[Date and time of the next quiz]",
+      "next": "The next date is announced on Facebook. Be quick.",
       "howTitle": "How to sign up your team",
       "steps": [
         "Call the pub or send us a message.",
@@ -127,45 +169,21 @@
       "barCaption": "The new bar with 16 beers on tap",
       "tapTitle": "On tap",
       "tapNote": "16 beers: ale, lager, IPA and stout",
-      "tapHead": { "name": "Beer", "style": "Style", "price": "Price" },
-      "tapItems": [
-        { "name": "[Draught beer 1]", "style": "[Style]", "price": "[Price]" },
-        { "name": "[Draught beer 2]", "style": "[Style]", "price": "[Price]" },
-        { "name": "[Draught beer 3]", "style": "[Style]", "price": "[Price]" },
-        { "name": "[Draught beer 4]", "style": "[Style]", "price": "[Price]" },
-        { "name": "[Draught beers 5 to 16]", "style": "[Style]", "price": "[Price]" }
-      ],
+      "tapHead": {
+        "name": "Style",
+        "p03": "0.3 l",
+        "p05": "0.5 l"
+      },
       "boardTitle": "Behind the bar",
-      "groups": [
-        { "name": "Craft beer", "items": "[Varieties and prices]" },
-        { "name": "Whiskey", "items": "[Varieties and prices]" },
-        { "name": "Cocktails", "items": "[Varieties and prices]" },
-        { "name": "White and red wine", "items": "[Varieties and prices]" },
-        { "name": "Brandy and liqueurs", "items": "[Varieties and prices]" },
-        { "name": "Long drinks", "items": "[Varieties and prices]" },
-        { "name": "Short drinks and shots", "items": "[Varieties and prices]" },
-        { "name": "Soft drinks, juices and lemonades", "items": "[Varieties and prices]" }
-      ]
+      "priceNote": "All prices in euros including VAT."
     },
     "speisen": {
       "title": "Food | Irish Pub in the Fleetenkieker",
       "description": "A short menu of fresh food for small and big appetites at the Irish pub on Börsenbrücke, Hamburg.",
       "h1": "Food",
       "lead": "A short menu, freshly made. For small and big appetites.",
-      "smallTitle": "Small appetite",
-      "bigTitle": "Big appetite",
-      "small": [
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" }
-      ],
-      "big": [
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" },
-        { "name": "[Dish]", "desc": "[Description]", "price": "[Price]" }
-      ],
-      "kitchenLabel": "Kitchen",
-      "kitchen": "[Kitchen hours]"
+      "allergens": "Our team can give you information on allergens and additives.",
+      "priceNote": "All prices in euros including VAT."
     },
     "ueber-uns": {
       "title": "About us | Irish Pub in the Fleetenkieker",
@@ -176,13 +194,13 @@
         "The Irish Pub in the Fleetenkieker sits in the heart of Hamburg, on Börsenbrücke. We bring Irish pub culture to the city.",
         "In Ireland, friends and neighbours meet at the pub and are greeted by name. That is how we want it here too: ceol agus craic, music and good company."
       ],
-      "historyTitle": "History",
-      "history": "[Founding year and history of the pub]",
       "nameTitle": "The name",
-      "name": "[Where the name Fleetenkieker comes from]",
+      "name": "In Hamburg, a Fleetenkieker was one of the men who patrolled the Fleete, the city's canals, by boat. Fleet is the northern German word for a navigable canal.",
       "teamTitle": "Who runs the pub",
       "team": "Fleetenkieker Irish Pub UG, managing director Glenn Stockdale.",
-      "signature": "The Fleetenkieker team"
+      "signature": "The Fleetenkieker team",
+      "houseTitle": "The house",
+      "house": "The pub is on Börsenbrücke in the old town, a few steps from the town hall. Neighbours drop in after work, fans come for the match and guests arrive from all over the world. At the bar you sit side by side, and it rarely takes long before you get talking."
     },
     "auszeichnungen-presse": {
       "title": "Awards & press | Irish Pub in the Fleetenkieker",
@@ -211,7 +229,7 @@
     },
     "kontakt-anfahrt": {
       "title": "Contact & directions | Irish Pub in the Fleetenkieker",
-      "description": "Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg. Phone +49 40 36093599. Opening hours, reservations and directions.",
+      "description": "Irish Pub in the Fleetenkieker, Börsenbrücke 10, 20457 Hamburg. Phone +49 40 36093599. Opening hours, reservations and directions.",
       "h1": "Contact & directions",
       "lead": "Book a table by phone or email.",
       "reserveTitle": "Reservations",
@@ -222,9 +240,7 @@
       "mapExternal": "Open in Google Maps",
       "mapIframeTitle": "Google map: Börsenbrücke 10, Hamburg",
       "transitTitle": "By bus and train",
-      "transit": "[Nearest stops and lines]",
-      "parkingTitle": "Parking",
-      "parking": "[Parking nearby]"
+      "transit": "The U3 underground stations Rathaus and Rödingsmarkt are close by."
     },
     "impressum": {
       "title": "Legal notice | Irish Pub in the Fleetenkieker",
@@ -234,27 +250,47 @@
       "ceoLabel": "Represented by the managing director",
       "contactTitle": "Contact",
       "registerTitle": "Commercial register",
-      "court": "Register court: [Register court]",
-      "vatTitle": "VAT",
-      "vat": "VAT ID: [VAT ID]",
       "authorityTitle": "Supervisory authority",
-      "respTitle": "Responsible for content",
-      "resp": "[Name and address of the person responsible]"
+      "respTitle": "Responsible for content according to § 18 (2) MStV",
+      "resp": "Glenn Stockdale, Börsenbrücke 10, 20457 Hamburg"
     },
     "datenschutz": {
       "title": "Privacy | Irish Pub in the Fleetenkieker",
       "description": "Privacy policy of the Irish Pub in the Fleetenkieker (draft).",
       "h1": "Privacy",
-      "warning": "[Draft: this text must be legally reviewed before going live.]",
       "sections": [
-        { "title": "Controller", "text": "[Fleetenkieker Irish Pub UG, Börsenbrücke 10, 20457 Hamburg, info@irishpub-fleetenkieker.de. Check details.]" },
-        { "title": "Hosting and server logs", "text": "[Add host, type of log data and retention period.]" },
-        { "title": "Fonts", "text": "[All fonts are served locally from our server. There is no connection to Google Fonts or other font providers.]" },
-        { "title": "Map", "text": "[The Google map on the contact page only loads after you click “Load map”. Only then is data such as your IP address sent to Google. Add legal basis and provider details.]" },
-        { "title": "Facebook and Instagram", "text": "[We link to our pages on Facebook and Instagram. No plugins are embedded. Data is only transferred once you follow a link.]" },
-        { "title": "Images", "text": "[Check image sources and embedding. In this draft, images are loaded from the server of the current website.]" },
-        { "title": "Contact by email and phone", "text": "[Add processing of enquiries and reservations, legal basis and retention period.]" },
-        { "title": "Your rights", "text": "[Access, rectification, erasure, restriction, objection, data portability, right to lodge a complaint with the supervisory authority.]" }
+        {
+          "title": "Controller",
+          "text": "The controller for data processing on this website is Fleetenkieker Irish Pub UG, Börsenbrücke 10, 20457 Hamburg, represented by its managing director Glenn Stockdale. Phone +49 40 36093599, email info@irishpub-fleetenkieker.de."
+        },
+        {
+          "title": "Server log files",
+          "text": "When you visit this website, our hosting provider automatically stores technical data sent by your browser: IP address, date and time, page requested, referrer, browser type and operating system. We need this data to run the website securely and reliably. The legal basis is Art. 6 (1) (f) GDPR. The data is deleted after a short time and not combined with other data."
+        },
+        {
+          "title": "Fonts",
+          "text": "All fonts on this website are stored on our own server. No connection to Google Fonts or other font providers is made when you visit a page."
+        },
+        {
+          "title": "Google Maps",
+          "text": "On the contact page we embed a map from Google Maps, a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. The map only loads after you click “Load map”. Only then is data such as your IP address sent to Google, possibly also to the USA. The legal basis is your consent under Art. 6 (1) (a) GDPR, given by the click. Without a click, no data goes to Google."
+        },
+        {
+          "title": "Contact by email and phone",
+          "text": "If you call or write to us, for example to book a table or sign up for the pub quiz, we only process your details to handle your request. The legal basis is Art. 6 (1) (b) GDPR. We delete the data once it is no longer needed and no statutory retention obligations apply."
+        },
+        {
+          "title": "Facebook and Instagram",
+          "text": "We link to our pages on Facebook and Instagram. No plugins from these services are embedded on this website. Data is only transferred once you follow a link. The privacy policy of Meta Platforms Ireland Limited then applies."
+        },
+        {
+          "title": "Your rights",
+          "text": "You have the right to access, rectification, erasure and restriction of processing of your data, to data portability and to object to processing. You can withdraw any consent at any time with effect for the future. Just send us an email."
+        },
+        {
+          "title": "Right to lodge a complaint",
+          "text": "You can lodge a complaint with a data protection supervisory authority. The authority responsible for us is the Hamburg Commissioner for Data Protection and Freedom of Information, Ludwig-Erhard-Straße 22, 20459 Hamburg."
+        }
       ]
     }
   }

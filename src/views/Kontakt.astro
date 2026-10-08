@@ -1,6 +1,5 @@
 ---
 import PageHead from '../components/PageHead.astro';
-import Rich from '../components/Rich.astro';
 import site from '../content/site.json';
 import { t, fmtTime, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -43,9 +42,7 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
     </section>
     <section class="section" aria-labelledby="transit-title">
       <h2 id="transit-title">{p.transitTitle}</h2>
-      <Rich as="p" text={p.transit} />
-      <h2>{p.parkingTitle}</h2>
-      <Rich as="p" text={p.parking} />
+      <p>{p.transit}</p>
     </section>
   </div>
 </div>

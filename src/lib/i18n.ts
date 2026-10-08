@@ -31,3 +31,11 @@ export const fmtTime = (min: number) => {
   const m = min % 1440;
   return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
 };
+
+// Preis aus "6,50", "ab 5,90" oder "6,90 / 24,00" mit geschütztem Leerzeichen formatieren.
+export function eur(price: string, lang: Lang): string {
+  if (lang === 'de') return `${price} €`;
+  return price
+    .replace(/^ab /, 'from ')
+    .replace(/(\d+),(\d{2})/g, '€$1.$2');
+}
