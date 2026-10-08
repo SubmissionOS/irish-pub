@@ -20,7 +20,11 @@
     "barTomorrow": "Öffnet morgen um {time} Uhr",
     "barStatic": "Öffnungszeiten",
     "route": "Route",
-    "actions": "Schnellzugriff"
+    "actions": "Schnellzugriff",
+    "related": "Das könnte Sie auch interessieren",
+    "reserveTitle": "Tisch reservieren",
+    "reserveText": "Rufen Sie uns an oder schreiben Sie eine E-Mail mit Datum, Uhrzeit und Personenzahl.",
+    "asideTitle": "Heute und diese Woche"
   },
   "nav": {
     "start": "Start",
@@ -70,8 +74,6 @@
       "description": "Irischer Pub an der Börsenbrücke in Hamburg: 16 Biere vom Fass, Live-Sport auf sechs Bildschirmen, Live-Musik am Freitag und Samstag, monatliches Pub Quiz.",
       "h1": "Ein irischer Pub an der Börsenbrücke",
       "lead": "Fassbier, Fußball, Rugby und Livemusik mitten in der Hamburger Altstadt. Kommen Sie rein, wir kennen Sie bald beim Namen.",
-      "ctaCall": "Tisch telefonisch reservieren",
-      "ctaWay": "So finden Sie uns",
       "welcomeTitle": "Céad míle fáilte",
       "welcomeSub": "Hunderttausend Willkommen.",
       "welcome": [
@@ -106,7 +108,37 @@
       "awardsLink": "Alle Auszeichnungen und Presse",
       "wayTitle": "Anfahrt",
       "wayText": "Sie finden uns an der Börsenbrücke 10 in der Hamburger Altstadt.",
-      "wayLink": "Karte und Kontakt"
+      "wayLink": "Karte und Kontakt",
+      "ctaReserve": "Tisch reservieren",
+      "ctaPhone": "Anrufen",
+      "stats": [
+        {
+          "value": "16",
+          "label": "Biere vom Fass"
+        },
+        {
+          "value": "6",
+          "label": "HD-Bildschirme"
+        },
+        {
+          "value": "Fr + Sa",
+          "label": "Live-Musik ab 21:30 Uhr"
+        },
+        {
+          "value": "4",
+          "label": "Auszeichnungen"
+        }
+      ],
+      "wallAlt": {
+        "67137274": "St. Patrick's Day im Pub",
+        "67137275": "Team Fleet beim HSH Nordbank Run",
+        "67137277": "Die Bar mit 16 Zapfhähnen",
+        "67137281": "Halloween-Party im Pub"
+      },
+      "weekTitle": "Die Woche im Pub",
+      "weekSport": "Live-Sport laut Programm",
+      "weekMusic": "Live-Musik ab 21:30 Uhr",
+      "weekQuiz": "Einmal im Monat: Pub Quiz. Den Termin kündigen wir auf Facebook an."
     },
     "live-sport": {
       "title": "Live-Sport | Irish Pub in the Fleetenkieker",
@@ -133,7 +165,12 @@
       "programTitle": "Diese Woche",
       "program": "Das Wochenprogramm veröffentlichen wir auf Facebook und Instagram.",
       "wishTitle": "Ihr Spiel fehlt?",
-      "wishText": "Schreiben Sie uns, welche Sportart Sie sehen möchten. Wir schauen, was sich machen lässt."
+      "wishText": "Schreiben Sie uns, welche Sportart Sie sehen möchten. Wir schauen, was sich machen lässt.",
+      "facts": [
+        "6 HD-Bildschirme",
+        "TV- und Satellitensystem",
+        "14 Sportarten"
+      ]
     },
     "live-musik": {
       "title": "Live-Musik | Irish Pub in the Fleetenkieker",
@@ -148,7 +185,12 @@
       ],
       "musiciansTitle": "Wer hier schon gespielt hat",
       "lineupTitle": "Wer an diesem Wochenende spielt",
-      "lineup": "Wer an welchem Abend spielt, kündigen wir auf Facebook und Instagram an."
+      "lineup": "Wer an welchem Abend spielt, kündigen wir auf Facebook und Instagram an.",
+      "facts": [
+        "Freitag und Samstag",
+        "ab 21:30 Uhr",
+        "Folk, Rock, aktuelle Hits"
+      ]
     },
     "pub-quiz": {
       "title": "Pub Quiz | Irish Pub in the Fleetenkieker",
@@ -164,7 +206,12 @@
         "Damit reservieren wir Ihnen einen Tisch."
       ],
       "photosTitle": "Frühere Quizabende",
-      "photoAlt": "Gäste beim Pub Quiz im Fleetenkieker"
+      "photoAlt": "Gäste beim Pub Quiz im Fleetenkieker",
+      "facts": [
+        "Einmal im Monat",
+        "Bis 7 pro Team",
+        "Anmeldung per Telefon oder E-Mail"
+      ]
     },
     "getraenke": {
       "title": "Getränke | Irish Pub in the Fleetenkieker",
@@ -181,7 +228,12 @@
         "p05": "0,5 l"
       },
       "boardTitle": "Hinter dem Tresen",
-      "priceNote": "Alle Preise in Euro inklusive Mehrwertsteuer."
+      "priceNote": "Alle Preise in Euro inklusive Mehrwertsteuer.",
+      "facts": [
+        "16 Biere vom Fass",
+        "Whiskey und Cocktails",
+        "Alkoholfreie Auswahl"
+      ]
     },
     "speisen": {
       "title": "Speisen | Irish Pub in the Fleetenkieker",
@@ -189,7 +241,12 @@
       "h1": "Speisen",
       "lead": "Wenige, dafür frische Speisen. Für kleinen und großen Hunger.",
       "allergens": "Informationen zu Allergenen und Zusatzstoffen erhalten Sie bei unserem Team.",
-      "priceNote": "Alle Preise in Euro inklusive Mehrwertsteuer."
+      "priceNote": "Alle Preise in Euro inklusive Mehrwertsteuer.",
+      "facts": [
+        "Wenige, frische Gerichte",
+        "Kleiner und großer Hunger",
+        "Allergene auf Nachfrage"
+      ]
     },
     "ueber-uns": {
       "title": "Über uns | Irish Pub in the Fleetenkieker",
@@ -206,7 +263,12 @@
       "team": "Fleetenkieker Irish Pub UG, Geschäftsführer Glenn Stockdale.",
       "signature": "Das Fleetenkieker-Team",
       "houseTitle": "Das Haus",
-      "house": "Der Pub liegt an der Börsenbrücke in der Altstadt, ein paar Schritte vom Rathaus. Hier kommen Nachbarn nach Feierabend, Fans zum Spiel und Gäste aus aller Welt. Am Tresen sitzt man nebeneinander, und meist dauert es nicht lange, bis man ins Gespräch kommt."
+      "house": "Der Pub liegt an der Börsenbrücke in der Altstadt, ein paar Schritte vom Rathaus. Hier kommen Nachbarn nach Feierabend, Fans zum Spiel und Gäste aus aller Welt. Am Tresen sitzt man nebeneinander, und meist dauert es nicht lange, bis man ins Gespräch kommt.",
+      "facts": [
+        "Börsenbrücke 10",
+        "Hamburger Altstadt",
+        "Ceol agus craic"
+      ]
     },
     "auszeichnungen-presse": {
       "title": "Auszeichnungen & Presse | Irish Pub in the Fleetenkieker",
@@ -216,7 +278,12 @@
       "awardsTitle": "Irish Hospitality Global Awards",
       "source": "Quelle: Liste der Gewinner",
       "pressTitle": "Über uns geschrieben",
-      "readOn": "Artikel lesen bei"
+      "readOn": "Artikel lesen bei",
+      "facts": [
+        "4 Auszeichnungen",
+        "2017 bis 2019",
+        "5 Presseberichte"
+      ]
     },
     "galerie": {
       "title": "Galerie | Irish Pub in the Fleetenkieker",
@@ -231,7 +298,12 @@
         "67137277": "Die neue Bar mit 16 Bieren vom Fass",
         "67137281": "Halloween-Party"
       },
-      "altDefault": "Foto aus dem Irish Pub in the Fleetenkieker"
+      "altDefault": "Foto aus dem Irish Pub in the Fleetenkieker",
+      "facts": [
+        "10 Fotos",
+        "St. Patrick's Day",
+        "Halloween"
+      ]
     },
     "kontakt-anfahrt": {
       "title": "Kontakt & Anfahrt | Irish Pub in the Fleetenkieker",
@@ -246,7 +318,12 @@
       "mapExternal": "In Google Maps öffnen",
       "mapIframeTitle": "Google-Maps-Karte: Börsenbrücke 10, Hamburg",
       "transitTitle": "Mit Bus und Bahn",
-      "transit": "Die U-Bahn-Haltestellen Rathaus und Rödingsmarkt der Linie U3 liegen in der Nähe."
+      "transit": "Die U-Bahn-Haltestellen Rathaus und Rödingsmarkt der Linie U3 liegen in der Nähe.",
+      "facts": [
+        "Börsenbrücke 10",
+        "U3 Rathaus und Rödingsmarkt",
+        "Reservierung per Telefon oder E-Mail"
+      ]
     },
     "impressum": {
       "title": "Impressum | Irish Pub in the Fleetenkieker",

@@ -1,0 +1,17 @@
+---
+// 16 schlichte, geometrische Zapfhahn-Silhouetten. Reine Zeichnung, aria-hidden.
+---
+<div class="taprow" aria-hidden="true">
+  <svg viewBox="0 0 640 72" focusable="false" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <g id="zapfhahn">
+        <rect x="-5" y="2" width="10" height="26" rx="2" />
+        <rect x="-2" y="28" width="4" height="8" />
+        <rect x="-9" y="36" width="18" height="10" rx="2" />
+        <path d="M3 46 h6 v14 h-6 z" />
+        <rect x="-14" y="66" width="28" height="3" />
+      </g>
+    </defs>
+    {Array.from({ length: 16 }, (_, i) => <use href="#zapfhahn" x={20 + i * 40} y="0" />)}
+  </svg>
+</div>

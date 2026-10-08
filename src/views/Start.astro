@@ -1,30 +1,47 @@
 ---
 import Board from '../components/Board.astro';
 import Ogham from '../components/Ogham.astro';
+import Img from '../components/Img.astro';
 import site from '../content/site.json';
-import { t, href, type Lang, type PageKey } from '../lib/i18n';
+import { t, href, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const p = t(lang).pages.start;
+const d = t(lang);
+const p = d.pages.start;
+const wallIds = ['67137274', '67137277', '67137281', '67137275'];
+const wall = wallIds.map((id) => site.gallery.find((g) => g.id === id)!);
+const alts = p.wallAlt as Record<string, string>;
+const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
 ---
 <section class="hero">
   <div class="hero__text">
     <h1>{p.h1}</h1>
     <p class="lead">{p.lead}</p>
     <div class="actions">
-      <a class="btn" href={site.phoneHref}>{p.ctaCall}</a>
-      <a class="btn btn--line" href={href(lang, 'kontakt-anfahrt')}>{p.ctaWay}</a>
+      <a class="btn" href={href(lang, 'kontakt-anfahrt')}>{p.ctaReserve}</a>
+      <a class="btn btn--line" href={site.phoneHref}>{p.ctaPhone}</a>
     </div>
   </div>
   <Board lang={lang} />
 </section>
 
-<section class="section welcome" aria-labelledby="welcome-title">
-  <div>
+<ul class="stats" aria-label={p.highlightsTitle}>
+  {p.stats.map((s) => (
+    <li><span class="stats__value">{s.value}</span><span class="stats__label">{s.label}</span></li>
+  ))}
+</ul>
+
+<section class="section welcome-wall" aria-labelledby="welcome-title">
+  <div class="wall">
+    {wall.map((g, i) => (
+      <figure class={`wall__item wall__item--${i + 1}`}>
+        <Img file={`cache_${g.id}.${g.ext}`} alt={alts[g.id]} width={g.w} height={g.h} />
+      </figure>
+    ))}
+  </div>
+  <div class="welcome-wall__text">
     <h2 id="welcome-title" class="welcome__title" lang="ga">{p.welcomeTitle}</h2>
     <p class="welcome__sub">{p.welcomeSub}</p>
-  </div>
-  <div>
     {p.welcome.map((para) => <p>{para}</p>)}
     <p class="signature">{p.signature}</p>
   </div>
@@ -43,6 +60,21 @@ const p = t(lang).pages.start;
   </ul>
 </section>
 
+<section class="section weekstrip" aria-labelledby="week-title">
+  <h2 id="week-title">{p.weekTitle}</h2>
+  <ol class="weekstrip__days">
+    {week.map((h) => (
+      <li class={site.musicDays.includes(h.day) ? 'is-music' : undefined}>
+        <span class="weekstrip__day">{d.days[h.day]}</span>
+        <span class="weekstrip__time">{fmtTime(h.open)}–{fmtTime(h.close)}</span>
+        <span class="weekstrip__what">{p.weekSport}</span>
+        {site.musicDays.includes(h.day) && <span class="weekstrip__what weekstrip__what--music">{p.weekMusic}</span>}
+      </li>
+    ))}
+  </ol>
+  <p class="weekstrip__quiz"><a href={href(lang, 'pub-quiz')}>{p.weekQuiz}</a></p>
+</section>
+
 <section class="section band" aria-labelledby="awards-title">
   <h2 id="awards-title">{p.awardsTitle}</h2>
   <ul>
@@ -58,9 +90,14 @@ const p = t(lang).pages.start;
   <div>
     <h2 id="way-title">{p.wayTitle}</h2>
     <address>{site.street}<br />{site.zip} {site.city}</address>
-  </div>
-  <div>
     <p>{p.wayText}</p>
     <a class="btn btn--line" href={href(lang, 'kontakt-anfahrt')}>{p.wayLink}</a>
+  </div>
+  <div>
+    <h3>{d.ui.hoursTitle}</h3>
+    <table class="hours-table">
+      <tbody>{week.map((h) => <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>)}</tbody>
+    </table>
+    <p class="muted">{d.ui.footerNote}</p>
   </div>
 </section>

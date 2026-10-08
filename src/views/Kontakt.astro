@@ -1,5 +1,4 @@
 ---
-import PageHead from '../components/PageHead.astro';
 import site from '../content/site.json';
 import { t, fmtTime, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -8,7 +7,6 @@ const d = t(lang);
 const p = d.pages['kontakt-anfahrt'];
 const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
 ---
-<PageHead title={p.h1} lead={p.lead} />
 
 <div class="contact-grid">
   <div>

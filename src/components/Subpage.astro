@@ -1,0 +1,66 @@
+---
+// Rahmen jeder Unterseite: Kopfband mit Faktenleiste, Inhalt mit klebender Seitenspalte, Verweise, Reservierungsband.
+import site from '../content/site.json';
+import { t, href, fmtTime, related, type Lang, type PageKey } from '../lib/i18n';
+interface Props { lang: Lang; page: PageKey }
+const { lang, page } = Astro.props;
+const d = t(lang);
+const p = d.pages[page] as { h1: string; lead?: string; facts?: string[]; description: string };
+const legal = page === 'impressum' || page === 'datenschutz';
+const rel = related[page];
+const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
+const reserveHref = page === 'kontakt-anfahrt' ? `mailto:${site.email}` : href(lang, 'kontakt-anfahrt');
+---
+<header class="headband">
+  <h1>{p.h1}</h1>
+  {p.lead && <p class="lead">{p.lead}</p>}
+  {p.facts && (
+    <ul class="facts">{p.facts.map((f) => <li>{f}</li>)}</ul>
+  )}
+</header>
+
+{legal ? (
+  <div class="sub-main"><slot /></div>
+) : (
+  <div class="sub-grid">
+    <div class="sub-main"><slot /></div>
+    <aside class="sub-aside" aria-label={d.ui.asideTitle}>
+      <h2>{d.ui.hoursTitle}</h2>
+      <table>
+        <tbody>
+          {week.map((h) => <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>)}
+        </tbody>
+      </table>
+      <p><a class="sub-aside__phone" href={site.phoneHref}>{site.phone}</a></p>
+      <a class="btn" href={reserveHref}>{d.ui.reserveTitle}</a>
+    </aside>
+  </div>
+)}
+
+{rel && (
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">{d.ui.related}</h2>
+    <ul>
+      {rel.map((k) => {
+        const rp = d.pages[k] as { lead?: string };
+        return (
+          <li>
+            <h3><a href={href(lang, k)}>{d.nav[k]}</a></h3>
+            {rp.lead && <p>{rp.lead}</p>}
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+{!legal && (
+  <section class="reserve" aria-labelledby="reserve-title">
+    <h2 id="reserve-title">{d.ui.reserveTitle}</h2>
+    <p>{d.ui.reserveText}</p>
+    <div class="actions">
+      <a class="btn" href={site.phoneHref}>{site.phone}</a>
+      <a class="btn btn--line" href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </section>
+)}

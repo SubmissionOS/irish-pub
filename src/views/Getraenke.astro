@@ -1,6 +1,6 @@
 ---
-import PageHead from '../components/PageHead.astro';
 import Img from '../components/Img.astro';
+import TapRow from '../components/TapRow.astro';
 import site from '../content/site.json';
 import vorschlag from '../content/vorschlag.json';
 import { t, eur, type Lang } from '../lib/i18n';
@@ -8,12 +8,12 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.getraenke;
 ---
-<PageHead title={p.h1} lead={p.lead} />
 
 <div class="split">
   <section class="chalk" aria-labelledby="tap-title">
     <h2 id="tap-title">{p.tapTitle}</h2>
     <p class="chalk__note">{p.tapNote}</p>
+    <TapRow />
     <table>
       <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.p03}</th><th scope="col">{p.tapHead.p05}</th></tr></thead>
       <tbody>

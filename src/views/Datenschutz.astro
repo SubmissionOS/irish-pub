@@ -1,11 +1,9 @@
 ---
-import PageHead from '../components/PageHead.astro';
 import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.datenschutz;
 ---
-<PageHead title={p.h1} />
 <div class="legal">
   {p.sections.map((s) => (
     <section>

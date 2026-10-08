@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Subpage from '../components/Subpage.astro';
 import { views } from '../views/index';
 import { langs, pageKeys, pathParam, href, t, type Lang, type PageKey } from '../lib/i18n';
 import { barSchema } from '../lib/schema';
@@ -19,5 +20,5 @@ const jsonLd = withSchema
   : undefined;
 ---
 <Layout lang={lang} page={key} jsonLd={jsonLd}>
-  <View lang={lang} />
+  {key === 'start' ? <View lang={lang} /> : <Subpage lang={lang} page={key}><View lang={lang} /></Subpage>}
 </Layout>

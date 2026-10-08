@@ -39,3 +39,16 @@ export function eur(price: string, lang: Lang): string {
     .replace(/^ab /, 'from ')
     .replace(/(\d+),(\d{2})/g, '€$1.$2');
 }
+
+// Je Unterseite zwei Verweise für das Band "Das könnte Sie auch interessieren".
+export const related: Partial<Record<PageKey, [PageKey, PageKey]>> = {
+  'live-sport': ['getraenke', 'pub-quiz'],
+  'live-musik': ['getraenke', 'galerie'],
+  'pub-quiz': ['live-sport', 'speisen'],
+  getraenke: ['speisen', 'live-sport'],
+  speisen: ['getraenke', 'live-musik'],
+  'ueber-uns': ['auszeichnungen-presse', 'galerie'],
+  'auszeichnungen-presse': ['live-sport', 'ueber-uns'],
+  galerie: ['live-musik', 'pub-quiz'],
+  'kontakt-anfahrt': ['getraenke', 'live-musik'],
+};

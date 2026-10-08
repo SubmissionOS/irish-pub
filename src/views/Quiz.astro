@@ -1,5 +1,4 @@
 ---
-import PageHead from '../components/PageHead.astro';
 import Img from '../components/Img.astro';
 import site from '../content/site.json';
 import { t, type Lang } from '../lib/i18n';
@@ -8,7 +7,6 @@ const { lang } = Astro.props;
 const d = t(lang);
 const p = d.pages['pub-quiz'];
 ---
-<PageHead title={p.h1} lead={p.lead} />
 
 <div class="split">
   <section aria-labelledby="how-title">

@@ -20,7 +20,11 @@
     "barTomorrow": "Opens tomorrow at {time}",
     "barStatic": "Opening hours",
     "route": "Directions",
-    "actions": "Quick actions"
+    "actions": "Quick actions",
+    "related": "You might also like",
+    "reserveTitle": "Book a table",
+    "reserveText": "Call us or send an email with date, time and number of guests.",
+    "asideTitle": "Today and this week"
   },
   "nav": {
     "start": "Home",
@@ -70,8 +74,6 @@
       "description": "Irish pub on Börsenbrücke in Hamburg: 16 beers on tap, live sport on six screens, live music on Friday and Saturday, monthly pub quiz.",
       "h1": "An Irish pub on Börsenbrücke",
       "lead": "Draught beer, football, rugby and live music in the middle of Hamburg's old town. Come in, we'll soon know you by name.",
-      "ctaCall": "Book a table by phone",
-      "ctaWay": "How to find us",
       "welcomeTitle": "Céad míle fáilte",
       "welcomeSub": "A hundred thousand welcomes.",
       "welcome": [
@@ -106,7 +108,37 @@
       "awardsLink": "All awards and press",
       "wayTitle": "Getting here",
       "wayText": "You will find us at Börsenbrücke 10 in Hamburg's old town.",
-      "wayLink": "Map and contact"
+      "wayLink": "Map and contact",
+      "ctaReserve": "Book a table",
+      "ctaPhone": "Call",
+      "stats": [
+        {
+          "value": "16",
+          "label": "Beers on tap"
+        },
+        {
+          "value": "6",
+          "label": "HD screens"
+        },
+        {
+          "value": "Fri + Sat",
+          "label": "Live music from 21:30"
+        },
+        {
+          "value": "4",
+          "label": "Awards"
+        }
+      ],
+      "wallAlt": {
+        "67137274": "St Patrick's Day at the pub",
+        "67137275": "Team Fleet at the HSH Nordbank Run",
+        "67137277": "The bar with 16 taps",
+        "67137281": "Halloween party at the pub"
+      },
+      "weekTitle": "The week at the pub",
+      "weekSport": "Live sport as scheduled",
+      "weekMusic": "Live music from 21:30",
+      "weekQuiz": "Once a month: pub quiz. We announce the date on Facebook."
     },
     "live-sport": {
       "title": "Live sport | Irish Pub in the Fleetenkieker",
@@ -133,7 +165,12 @@
       "programTitle": "This week",
       "program": "We publish the weekly schedule on Facebook and Instagram.",
       "wishTitle": "Your match missing?",
-      "wishText": "Send us an email with the sport you would like to watch. We'll see what we can do."
+      "wishText": "Send us an email with the sport you would like to watch. We'll see what we can do.",
+      "facts": [
+        "6 HD screens",
+        "TV and satellite system",
+        "14 sports"
+      ]
     },
     "live-musik": {
       "title": "Live music | Irish Pub in the Fleetenkieker",
@@ -148,7 +185,12 @@
       ],
       "musiciansTitle": "Who has played here",
       "lineupTitle": "Who's playing this weekend",
-      "lineup": "We announce who is playing on Facebook and Instagram."
+      "lineup": "We announce who is playing on Facebook and Instagram.",
+      "facts": [
+        "Friday and Saturday",
+        "from 21:30",
+        "Folk, rock, current hits"
+      ]
     },
     "pub-quiz": {
       "title": "Pub quiz | Irish Pub in the Fleetenkieker",
@@ -164,7 +206,12 @@
         "We'll reserve a table for you."
       ],
       "photosTitle": "Past quiz nights",
-      "photoAlt": "Guests at the pub quiz in the Fleetenkieker"
+      "photoAlt": "Guests at the pub quiz in the Fleetenkieker",
+      "facts": [
+        "Once a month",
+        "Up to 7 per team",
+        "Sign up by phone or email"
+      ]
     },
     "getraenke": {
       "title": "Drinks | Irish Pub in the Fleetenkieker",
@@ -181,7 +228,12 @@
         "p05": "0.5 l"
       },
       "boardTitle": "Behind the bar",
-      "priceNote": "All prices in euros including VAT."
+      "priceNote": "All prices in euros including VAT.",
+      "facts": [
+        "16 beers on tap",
+        "Whiskey and cocktails",
+        "Alcohol-free choice"
+      ]
     },
     "speisen": {
       "title": "Food | Irish Pub in the Fleetenkieker",
@@ -189,7 +241,12 @@
       "h1": "Food",
       "lead": "A short menu, freshly made. For small and big appetites.",
       "allergens": "Our team can give you information on allergens and additives.",
-      "priceNote": "All prices in euros including VAT."
+      "priceNote": "All prices in euros including VAT.",
+      "facts": [
+        "A short, fresh menu",
+        "Small and big appetites",
+        "Allergens on request"
+      ]
     },
     "ueber-uns": {
       "title": "About us | Irish Pub in the Fleetenkieker",
@@ -206,7 +263,12 @@
       "team": "Fleetenkieker Irish Pub UG, managing director Glenn Stockdale.",
       "signature": "The Fleetenkieker team",
       "houseTitle": "The house",
-      "house": "The pub is on Börsenbrücke in the old town, a few steps from the town hall. Neighbours drop in after work, fans come for the match and guests arrive from all over the world. At the bar you sit side by side, and it rarely takes long before you get talking."
+      "house": "The pub is on Börsenbrücke in the old town, a few steps from the town hall. Neighbours drop in after work, fans come for the match and guests arrive from all over the world. At the bar you sit side by side, and it rarely takes long before you get talking.",
+      "facts": [
+        "Börsenbrücke 10",
+        "Hamburg's old town",
+        "Ceol agus craic"
+      ]
     },
     "auszeichnungen-presse": {
       "title": "Awards & press | Irish Pub in the Fleetenkieker",
@@ -216,7 +278,12 @@
       "awardsTitle": "Irish Hospitality Global Awards",
       "source": "Source: list of winners",
       "pressTitle": "Written about us",
-      "readOn": "Read the article at"
+      "readOn": "Read the article at",
+      "facts": [
+        "4 awards",
+        "2017 to 2019",
+        "5 press articles"
+      ]
     },
     "galerie": {
       "title": "Gallery | Irish Pub in the Fleetenkieker",
@@ -231,7 +298,12 @@
         "67137277": "New bar with 16 beers on tap",
         "67137281": "Halloween party"
       },
-      "altDefault": "Photo from the Irish Pub in the Fleetenkieker"
+      "altDefault": "Photo from the Irish Pub in the Fleetenkieker",
+      "facts": [
+        "10 photos",
+        "St Patrick's Day",
+        "Halloween"
+      ]
     },
     "kontakt-anfahrt": {
       "title": "Contact & directions | Irish Pub in the Fleetenkieker",
@@ -246,7 +318,12 @@
       "mapExternal": "Open in Google Maps",
       "mapIframeTitle": "Google map: Börsenbrücke 10, Hamburg",
       "transitTitle": "By bus and train",
-      "transit": "The U3 underground stations Rathaus and Rödingsmarkt are close by."
+      "transit": "The U3 underground stations Rathaus and Rödingsmarkt are close by.",
+      "facts": [
+        "Börsenbrücke 10",
+        "U3 Rathaus and Rödingsmarkt",
+        "Book by phone or email"
+      ]
     },
     "impressum": {
       "title": "Legal notice | Irish Pub in the Fleetenkieker",

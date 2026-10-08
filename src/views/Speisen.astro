@@ -1,12 +1,10 @@
 ---
-import PageHead from '../components/PageHead.astro';
 import vorschlag from '../content/vorschlag.json';
 import { t, eur, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.speisen;
 ---
-<PageHead title={p.h1} lead={p.lead} />
 
 <section class="chalk" aria-label={p.h1}>
   {vorschlag.speisen.map((g) => (
