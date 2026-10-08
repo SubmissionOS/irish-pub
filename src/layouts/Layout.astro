@@ -19,6 +19,8 @@ import { t, href, mainNav, legalNav, fmtTime, type Lang, type PageKey } from '..
 interface Props { lang: Lang; page: PageKey; jsonLd?: object }
 const { lang, page, jsonLd } = Astro.props;
 const d = t(lang);
+// Entwurfs-Flag aus site.json, für Messungen per PUBLIC_DRAFT=false abschaltbar
+const draft = import.meta.env.PUBLIC_DRAFT === 'false' ? false : site.draft;
 const meta = d.pages[page] as { title: string; description: string };
 const other: Lang = lang === 'de' ? 'en' : 'de';
 const abs = (p: string) => new URL(p, site.url).href;
@@ -33,7 +35,7 @@ const year = new Date().getFullYear();
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{meta.title}</title>
   <meta name="description" content={meta.description} />
-  {site.draft && <meta name="robots" content="noindex, nofollow" />}
+  {draft && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
   <link rel="alternate" hreflang="de" href={abs(href('de', page))} />
   <link rel="alternate" hreflang="en" href={abs(href('en', page))} />
@@ -44,7 +46,7 @@ const year = new Date().getFullYear();
   <meta property="og:description" content={meta.description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
-  <meta property="og:image" content={site.imgBase + site.barPhoto} />
+  <meta property="og:image" content={abs("/og-bar.jpg")} />
   <meta name="theme-color" content="#2a1611" />
   <link rel="preload" href={fontDisplay} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={fontText} as="font" type="font/woff2" crossorigin />
@@ -58,7 +60,7 @@ const year = new Date().getFullYear();
   <div class="shell">
     <aside class="rail">
       <div class="rail__top">
-        <a class="plaque" href={href(lang, 'start')} aria-label={`${site.name}, ${d.nav.start}`}>
+        <a class="plaque" href={href(lang, "start")}>
           <span class="plaque__small">Irish Pub in the</span>
           <span class="plaque__name">Fleetenkieker</span>
           <span class="plaque__addr">Börsenbrücke 10</span>
@@ -87,7 +89,7 @@ const year = new Date().getFullYear();
     </aside>
 
     <div class="stage">
-      {site.draft && <p class="draft" role="note">{d.ui.banner}</p>}
+      {draft && <p class="draft" role="note">{d.ui.banner}</p>}
       <main id="inhalt" tabindex="-1">
         <slot />
       </main>

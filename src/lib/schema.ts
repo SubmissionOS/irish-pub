@@ -16,7 +16,7 @@ export function barSchema(lang: 'de' | 'en', url: string, description: string) {
     inLanguage: lang === 'de' ? 'de-DE' : 'en-GB',
     telephone: site.phone,
     email: site.email,
-    image: site.imgBase + site.barPhoto,
+    image: site.url + '/og-bar.jpg',
     servesCuisine: 'Irish',
     address: {
       '@type': 'PostalAddress',

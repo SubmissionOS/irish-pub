@@ -1,7 +1,7 @@
 ---
 import Board from '../components/Board.astro';
 import Ogham from '../components/Ogham.astro';
-import Img from '../components/Img.astro';
+import Photo from '../components/Photo.astro';
 import site from '../content/site.json';
 import { t, href, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -35,7 +35,7 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
   <div class="wall">
     {wall.map((g, i) => (
       <figure class={`wall__item wall__item--${i + 1}`}>
-        <Img file={`cache_${g.id}.${g.ext}`} alt={alts[g.id]} width={g.w} height={g.h} />
+        <Photo file={`${g.id}.${g.ext}`} alt={alts[g.id]} sizes="(min-width: 75rem) 30vw, 70vw" />
       </figure>
     ))}
   </div>

@@ -1,5 +1,7 @@
 ---
-import Img from '../components/Img.astro';
+import Photo from '../components/Photo.astro';
+import { getImage } from 'astro:assets';
+import { photo } from '../lib/photos';
 import site from '../content/site.json';
 import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -7,16 +9,22 @@ const { lang } = Astro.props;
 const d = t(lang);
 const p = d.pages.galerie;
 const caps = p.captions as Record<string, string>;
+const fulls = await Promise.all(
+  site.gallery.map((g) => {
+    const src = photo(`${g.id}.${g.ext}`);
+    return getImage({ src, format: 'webp', width: src.width });
+  }),
+);
 ---
 
 <div class="masonry">
-  {site.gallery.map((g) => {
+  {site.gallery.map((g, i) => {
     const cap = g.captioned ? caps[g.id] : undefined;
-    const full = `${site.imgBase}cache_${g.id}.${g.ext}`;
+    const full = fulls[i].src;
     return (
       <figure>
         <button type="button" data-full={full} data-caption={cap ?? ''} aria-label={`${p.open}: ${cap ?? p.altDefault}`}>
-          <Img file={`cache_${g.id}.${g.ext}`} alt={cap ?? p.altDefault} width={g.w} height={g.h} />
+          <Photo file={`${g.id}.${g.ext}`} alt={cap ?? p.altDefault} sizes="(min-width: 100rem) 30vw, (min-width: 40rem) 45vw, 100vw" eager={i === 0} />
         </button>
         {cap && <figcaption>{cap}</figcaption>}
       </figure>

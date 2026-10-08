@@ -50,4 +50,12 @@ Alles hier ist entweder von GuddiWeb vorgeschlagen oder aus einer externen Quell
 
 - **Datenschutzerklärung**: vollständig von GuddiWeb formuliert. Sie muss vor dem Livegang juristisch geprüft werden (Hoster, Speicherdauer der Logfiles, Formulierungen zu Google Maps und Drittlandübermittlung).
 - **Impressum**: „§ 5 DDG“ und „§ 18 Abs. 2 MStV“ prüfen. Registergericht nachtragen.
-- Im Entwurf werden die Bilder per Hotlink von irishpub-fleetenkieker.de geladen. Vor dem Livegang lokal einbinden und die Bildrechte klären (Presse-Vorschaubilder).
+- Bilder: Die eigenen Pub-Fotos (Galerie, Quiz, Musiker, Bar) liegen jetzt lokal in `src/assets/pub`, heruntergeladen von der Altseite. Bildrechte und Einverständnis der abgebildeten Personen und Musiker bitte mit dem Inhaber klären. Presse-Vorschaubilder werden nicht mehr verwendet.
+
+## Modernisierung (Oktober 2026)
+
+| Seite | Stelle | Inhalt |
+|---|---|---|
+| Start | Kennzahlen | 16 Biere, 6 Bildschirme, Fr + Sa ab 21:30, 4 Auszeichnungen: alles belegt |
+| Start | Die Woche im Pub | „Live-Sport laut Programm“ an jedem Tag: belegt ist nur, dass es ein Wochenprogramm gibt, nicht dass jeden Tag Sport läuft. Bitte bestätigen |
+| Unterseiten | Faktenleisten | Aus belegten Angaben zusammengesetzt. Ausnahme Speisen: „Allergene auf Nachfrage“ entspricht dem vorgegebenen Allergen-Satz |

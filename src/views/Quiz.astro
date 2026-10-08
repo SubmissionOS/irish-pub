@@ -1,5 +1,5 @@
 ---
-import Img from '../components/Img.astro';
+import Photo from '../components/Photo.astro';
 import site from '../content/site.json';
 import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -28,7 +28,7 @@ const p = d.pages['pub-quiz'];
   <h2 id="photos-title">{p.photosTitle}</h2>
   <div class="masonry">
     {site.quizPhotos.map((f) => (
-      <figure><Img file={f} alt={p.photoAlt} width={site.quizPhotoSize[0]} height={site.quizPhotoSize[1]} /></figure>
+      <figure><Photo file={f} alt={p.photoAlt} sizes="(min-width: 100rem) 30vw, (min-width: 40rem) 45vw, 100vw" /></figure>
     ))}
   </div>
 </section>

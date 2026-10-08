@@ -235,7 +235,7 @@
 /* Galerie: volle Breite, größere Bilder */
 .masonry { columns: 1; }
 @media (min-width: 40rem) { .masonry { columns: 2; } }
-@media (min-width: 100rem) { .masonry { columns: 3; } }
+@media (min-width: 75rem) { .masonry { columns: 3; } }
 
 /* Korrekturen nach Screenshot */
 @media (min-width: 62rem) { .weekstrip__days { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
@@ -279,5 +279,25 @@ a:not(.btn):hover { text-decoration-thickness: 2px; }
 }
 
 @media (min-width: 48rem) and (max-width: 89.99rem) { .sub-main .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ===== Teil 5: Performance ===== */
+
+/* Statische Texturen statt SVG-Rauschfilter. Mobil ohne Rauschen, Holz als kleines PNG. */
+:root { --grain: none; --woodgrain: url('/tex/wood.png'); }
+@media (min-width: 64rem) { :root { --grain: url('/tex/grain.png'); } }
+
+/* Mobil: leichtere Schatten, keine großen Weichzeichner-Schatten */
+@media (max-width: 63.99rem) {
+  .board { box-shadow: inset 0 0 0 1px #8a6a33, 0 0 0 3px var(--eiche-dunkel), 0 6px 14px rgba(0, 0, 0, .35); }
+  .board__frame { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .6); }
+  .chalk { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .7), 0 0 0 2px var(--eiche-dunkel); }
+  .masonry button::after { display: none; }
+}
+
+/* Platz für die Kurstafel reservieren, damit beim Rechnen nichts springt */
+.board__row dd { min-height: 1.5em; }
+
+/* Bilder: Seitenverhältnis aus width/height, kein Springen */
+picture img { height: auto; }
 
 /* MODERN-ENDE */

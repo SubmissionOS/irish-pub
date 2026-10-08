@@ -19,7 +19,6 @@
     "facebook": "https://www.facebook.com/fleetenkiekeririshpub/",
     "instagram": "https://www.instagram.com/FleetenkiekerIrishBar/"
   },
-  "imgBase": "https://www.irishpub-fleetenkieker.de/s/cc_images/",
   "hours": [
     {
       "day": 1,
@@ -137,46 +136,31 @@
       "outlet": "FFT.ie",
       "title": "The Full Irish Experience in this Hamburg Bar",
       "url": "https://www.fft.ie/the-full-irish-experience-in-this-hamburg-bar/21311",
-      "img": "cache_58210348.jpg",
-      "lang": "en",
-      "w": 800,
-      "h": 548
+      "lang": "en"
     },
     {
       "outlet": "Hamburger Abendblatt",
       "title": "Und am achten Tag schuf Gott ...",
       "url": "https://www.abendblatt.de/hamburg/article227087797/Fuer-Fans-des-irischen-Whiskeys-der-Pub-in-the-Fleetenkieker.html",
-      "img": "cache_58210349.jpg",
-      "lang": "de",
-      "w": 800,
-      "h": 548
+      "lang": "de"
     },
     {
       "outlet": "Radisson Blu Blog",
       "title": "Hamburg's emerging craft beer scene",
       "url": "https://blog.radissonblu.com/hamburgs-emerging-craft-beer-scene/",
-      "img": "cache_58210350.jpg",
-      "lang": "en",
-      "w": 800,
-      "h": 548
+      "lang": "en"
     },
     {
       "outlet": "kiekmo.hamburg",
       "title": "Kommt mal runter: In den Irish Pub",
       "url": "https://kiekmo.hamburg/komm-mal-runter-ins-irish-pub-in-the-fleetenkieker-81187",
-      "img": "cache_58210464.jpg",
-      "lang": "de",
-      "w": 800,
-      "h": 548
+      "lang": "de"
     },
     {
       "outlet": "Metro",
       "title": "Guy goes on holiday to Hamburg with strangers",
       "url": "https://metro.co.uk/2018/03/31/guy-goes-lads-holiday-hamburg-complete-strangers-mate-dropped-7430074/",
-      "img": "cache_58211772.jpeg",
-      "lang": "en",
-      "w": 800,
-      "h": 548
+      "lang": "en"
     }
   ],
   "gallery": [
@@ -257,14 +241,6 @@
     "hrb": "HRB 190049",
     "authority": "Ordnungsamt Hamburg-Mitte"
   },
-  "barPhotoSize": [
-    800,
-    533
-  ],
-  "quizPhotoSize": [
-    900,
-    900
-  ],
   "irish": {
     "open": "Oscailte",
     "closed": "Dúnta",

@@ -7,6 +7,7 @@ const { lang, page } = Astro.props;
 const d = t(lang);
 const p = d.pages[page] as { h1: string; lead?: string; facts?: string[]; description: string };
 const legal = page === 'impressum' || page === 'datenschutz';
+const noAside = legal || page === 'galerie';
 const rel = related[page];
 const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
 const reserveHref = page === 'kontakt-anfahrt' ? `mailto:${site.email}` : href(lang, 'kontakt-anfahrt');
@@ -19,7 +20,7 @@ const reserveHref = page === 'kontakt-anfahrt' ? `mailto:${site.email}` : href(l
   )}
 </header>
 
-{legal ? (
+{noAside ? (
   <div class="sub-main"><slot /></div>
 ) : (
   <div class="sub-grid">

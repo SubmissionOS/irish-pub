@@ -77,4 +77,6 @@ h3 { font-size: clamp(1.3rem, .6vw + 1.1rem, 1.6rem); }
 h1, h2, h3 { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; }
 .hero h1 { max-width: 17ch; }
 .stats .stats__value { font-family: var(--f-board); font-weight: 700; }
+.hero h1 { overflow-wrap: normal; hyphens: manual; font-size: clamp(2.3rem, 2.6vw + 1.3rem, 4.4rem); max-width: 18ch; }
+.stats .stats__value { font-size: clamp(2rem, 2.2vw + 1rem, 3.4rem); white-space: nowrap; }
 /* MODERN-ENDE Teil 4 */

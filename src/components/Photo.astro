@@ -1,0 +1,26 @@
+---
+// Lokales Pub-Foto als AVIF/WebP mit srcset. Nie breiter ausgegeben als die Quelle (Schärfe).
+// file: Dateiname wie in site.json (cache_123.jpg, thumb_123.jpg oder 123.jpg).
+import { Picture } from 'astro:assets';
+import { photo } from '../lib/photos';
+
+interface Props { file: string; alt: string; class?: string; sizes?: string; eager?: boolean }
+const { file, alt, class: cls, sizes = '(min-width: 64rem) 50vw, 100vw', eager = false } = Astro.props;
+
+const src = photo(file);
+const widths = [320, 480, 640, 800, 960].filter((w) => w < src.width).concat(src.width);
+---
+<Picture
+  src={src}
+  alt={alt}
+  class={cls}
+  formats={['avif', 'webp']}
+  widths={widths}
+  sizes={sizes}
+  width={src.width}
+  height={src.height}
+  loading={eager ? 'eager' : 'lazy'}
+  decoding={eager ? 'sync' : 'async'}
+  fetchpriority={eager ? 'high' : undefined}
+  style={`max-width:min(100%,${src.width}px)`}
+/>

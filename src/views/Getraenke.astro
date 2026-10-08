@@ -1,5 +1,5 @@
 ---
-import Img from '../components/Img.astro';
+import Photo from '../components/Photo.astro';
 import TapRow from '../components/TapRow.astro';
 import site from '../content/site.json';
 import vorschlag from '../content/vorschlag.json';
@@ -24,7 +24,7 @@ const p = t(lang).pages.getraenke;
     </table>
   </section>
   <figure class="photo">
-    <Img file={site.barPhoto} alt={p.barAlt} width={site.barPhotoSize[0]} height={site.barPhotoSize[1]} />
+    <Photo file={site.barPhoto} alt={p.barAlt} sizes="(min-width: 40rem) 640px, 100vw" />
     <figcaption>{p.barCaption}</figcaption>
   </figure>
 </div>
