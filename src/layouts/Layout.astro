@@ -8,6 +8,7 @@ import '@fontsource/uncial-antiqua/400';
 import '../styles/global.css';
 // FEINSCHLIFF-START
 import '../styles/schrift.css';
+import '../styles/akzente-irisch.css';
 import '../styles/feinschliff.css';
 // FEINSCHLIFF-ENDE
 import site from '../content/site.json';
@@ -117,6 +118,7 @@ const year = new Date().getFullYear();
             {legalNav.map((k) => <li><a href={href(lang, k)} aria-current={k === page ? 'page' : undefined}>{d.nav[k]}</a></li>)}
           </ul>
         </div>
+        <p class="foot__toast" lang="ga">{site.irish.toast}</p>
         <p class="foot__copy muted">© {year} {site.company.name}</p>
       </footer>
     </div>

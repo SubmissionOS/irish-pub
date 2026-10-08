@@ -264,5 +264,13 @@
   "quizPhotoSize": [
     900,
     900
-  ]
+  ],
+  "irish": {
+    "open": "Oscailte",
+    "closed": "Dúnta",
+    "sport": "Spórt",
+    "music": "Ceol",
+    "toast": "Sláinte",
+    "source": "https://www.teanglann.ie"
+  }
 }

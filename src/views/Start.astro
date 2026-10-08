@@ -1,5 +1,6 @@
 ---
 import Board from '../components/Board.astro';
+import Ogham from '../components/Ogham.astro';
 import site from '../content/site.json';
 import { t, href, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -29,6 +30,7 @@ const p = t(lang).pages.start;
   </div>
 </section>
 
+<Ogham />
 <section class="section" aria-labelledby="hl-title">
   <h2 id="hl-title">{p.highlightsTitle}</h2>
   <ul class="planks">
@@ -51,6 +53,7 @@ const p = t(lang).pages.start;
   <a href={href(lang, 'auszeichnungen-presse')}>{p.awardsLink}</a>
 </section>
 
+<Ogham />
 <section class="section teaser" aria-labelledby="way-title">
   <div>
     <h2 id="way-title">{p.wayTitle}</h2>

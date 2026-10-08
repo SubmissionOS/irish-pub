@@ -16,6 +16,8 @@ const config = {
   closedTomorrow: b.closedTomorrow,
   musicValue: b.musicValue,
   musicTonight: b.musicTonight,
+  gaOpen: site.irish.open,
+  gaClosed: site.irish.closed,
 };
 ---
 <section class="board" aria-labelledby="board-title" data-board={JSON.stringify(config)}>
@@ -26,15 +28,15 @@ const config = {
     </header>
     <dl class="board__rows">
       <div class="board__row flap" style="--i:1">
-        <dt>{b.statusLabel}</dt>
+        <dt>{b.statusLabel}<span class="ga" lang="ga" data-ga-status></span></dt>
         <dd><span class="lamp" data-lamp aria-hidden="true"></span><span data-status>{b.staticStatus}</span></dd>
       </div>
       <div class="board__row flap" style="--i:2">
-        <dt>{b.sportLabel}</dt>
+        <dt>{b.sportLabel}<span class="ga" lang="ga">{site.irish.sport}</span></dt>
         <dd><a href={site.social.facebook} rel="noopener">{b.sportValue}</a></dd>
       </div>
       <div class="board__row flap" style="--i:3">
-        <dt>{b.musicLabel}</dt>
+        <dt>{b.musicLabel}<span class="ga" lang="ga">{site.irish.music}</span></dt>
         <dd><a href={href(lang, 'live-musik')} data-music>{b.musicValue}</a></dd>
       </div>
       <div class="board__row flap" style="--i:4">
@@ -62,6 +64,7 @@ const config = {
   type Cfg = {
     hours: Hours[]; musicDays: number[]; days: string[];
     open: string; closedToday: string; closedTomorrow: string; musicValue: string; musicTonight: string;
+    gaOpen: string; gaClosed: string;
   };
   const wd: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
   const fmt = new Intl.DateTimeFormat('en-GB', {
@@ -100,6 +103,7 @@ const config = {
     el.querySelector('[data-day]')!.textContent = cfg.days[s.day];
     el.querySelector('[data-status]')!.textContent = s.text;
     el.querySelector('[data-lamp]')!.classList.toggle('is-on', s.open);
+    el.querySelector('[data-ga-status]')!.textContent = s.open ? cfg.gaOpen : cfg.gaClosed;
     el.querySelector('[data-music]')!.textContent = cfg.musicDays.includes(s.day) ? cfg.musicTonight : cfg.musicValue;
     el.querySelectorAll<HTMLTableRowElement>('[data-weekday]').forEach((tr) => {
       const isToday = Number(tr.dataset.weekday) === s.day;
