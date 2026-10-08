@@ -6,4 +6,73 @@ img { image-rendering: auto; }
 .musician img { object-position: 50% 25%; }
 .img-fallback { min-height: 8rem; background: var(--eiche) var(--woodgrain); border: 0; }
 
+/* Teil 4: Luxe-Feinschliff. Nur Details, Kurstafel und Klappmoment bleiben unverändert. */
+
+/* Weißraum und Zeilenlänge */
+:root { --measure: 60ch; }
+.section { margin-top: clamp(3.6rem, 8.4vw, 7.2rem); }
+.page-head { margin-bottom: clamp(2.4rem, 4.8vw, 4.2rem); }
+main { padding-bottom: clamp(3.6rem, 7.2vw, 7.2rem); }
+p, li, dd { text-wrap: pretty; }
+p { hyphens: auto; -webkit-hyphens: auto; }
+.lead { max-width: 46ch; }
+
+/* Messing matter: flache Fläche, feine helle Innenlinie, weicher Schatten, kleinere Ecken */
+.btn {
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgba(255, 244, 214, .35), 0 1px 3px rgba(0, 0, 0, .25);
+  transition: background-color .35s ease, color .35s ease, box-shadow .35s ease;
+}
+.btn--line { box-shadow: inset 0 0 0 1px var(--messing); }
+.plaque, .signs a[aria-current='page'], .lang a, .awards-list li, .musician { border-radius: 1px; }
+.musician { box-shadow: inset 0 0 0 1px rgba(255, 244, 214, .35), 0 1px 3px rgba(0, 0, 0, .3); }
+.awards-list li { box-shadow: inset 0 0 0 1px rgba(255, 244, 214, .35); }
+
+/* Navigation: einzige Stelle mit Versalien */
+.signs a {
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .82rem;
+  font-weight: 600;
+  padding-block: .55rem;
+  transition: border-color .35s cubic-bezier(.25, .1, .25, 1), color .35s cubic-bezier(.25, .1, .25, 1), background-color .35s cubic-bezier(.25, .1, .25, 1);
+}
+.signs a[aria-current='page'] { box-shadow: inset 0 0 0 1px rgba(255, 244, 214, .35); }
+
+/* Karten wie im gehobenen Restaurant: Name, Punktlinie, Preis */
+.chalk h3 { font-size: 1.15rem; letter-spacing: .06em; font-weight: 700; color: var(--messing-hell); margin: 1.6rem 0 .4rem; }
+.chalk__list li {
+  grid-template-columns: auto minmax(1.5rem, 1fr) auto;
+  column-gap: .5rem;
+  padding: .55rem 0;
+  border-bottom: 0;
+}
+.chalk__list li::before {
+  content: '';
+  grid-column: 2; grid-row: 1;
+  align-self: end;
+  margin-bottom: .45em;
+  border-bottom: 2px dotted rgba(233, 228, 216, .35);
+}
+.chalk__name { grid-column: 1; grid-row: 1; font-size: 1.25rem; }
+.chalk__price { grid-column: 3; grid-row: 1; font-variant-numeric: tabular-nums lining-nums; font-size: 1.2rem; white-space: nowrap; }
+.chalk__desc { grid-column: 1 / -1; grid-row: 2; font-style: italic; font-size: .95rem; color: rgba(233, 228, 216, .72); max-width: 52ch; }
+.chalk td, .chalk th { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Bilder: dünner Holzrahmen, Passepartout, leichte Wärme, dezente Vignette. Kein Blur. */
+.photo img, .masonry button img, .musician img {
+  filter: saturate(.92) sepia(.06);
+}
+.photo img { border: 2px solid var(--eiche); padding: 6px; background: var(--mahagoni); box-shadow: none; }
+.masonry button { position: relative; border: 2px solid var(--eiche); padding: 5px; background: var(--mahagoni); }
+.masonry button::after {
+  content: ''; position: absolute; inset: 5px; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 62%, rgba(20, 10, 8, .22) 100%);
+}
+.masonry button:focus-visible { outline-offset: 2px; }
+
+/* Fußzeile ruhiger */
+.foot { gap: 2.5rem 4.5rem; padding: 3.5rem var(--gutter) 2.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.foot .muted { font-size: .95rem; }
+
 /* FEINSCHLIFF-ENDE */
