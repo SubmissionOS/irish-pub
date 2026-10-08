@@ -1,0 +1,39 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages['live-sport'];
+// 14 Sportarten auf sechs Bildschirme verteilen
+const sizes = [3, 3, 2, 2, 2, 2];
+let i = 0;
+const screens = sizes.map((n) => p.sports.slice(i, (i += n)));
+const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(p.wishTitle)}`;
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<section class="scoreboard" aria-labelledby="screens-title">
+  <h2 id="screens-title" class="visually-hidden">{p.screensTitle}</h2>
+  <ul class="screens">
+    {screens.map((list, n) => (
+      <li class="screen">
+        <p class="screen__no">TV {n + 1}</p>
+        <ul>{list.map((s) => <li>{s}</li>)}</ul>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="prog-title">
+  <h2 id="prog-title">{p.programTitle}</h2>
+  <Rich as="p" text={p.program} />
+  <a class="btn" href={site.social.facebook} rel="noopener">{p.programLink}</a>
+</section>
+
+<section class="section" aria-labelledby="wish-title">
+  <h2 id="wish-title">{p.wishTitle}</h2>
+  <p>{p.wishText}</p>
+  <a class="btn btn--line" href={mailHref}>{site.email}</a>
+</section>

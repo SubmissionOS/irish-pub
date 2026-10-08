@@ -1,0 +1,21 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages['ueber-uns'];
+---
+<PageHead title={p.h1} />
+<p class="lead">{p.lead}</p>
+{p.text.map((para) => <p>{para}</p>)}
+<p class="signature">{p.signature}</p>
+
+<div class="section welcome">
+  <h2>{p.historyTitle}</h2>
+  <Rich as="p" text={p.history} />
+  <h2>{p.nameTitle}</h2>
+  <Rich as="p" text={p.name} />
+  <h2>{p.teamTitle}</h2>
+  <p>{p.team}</p>
+</div>

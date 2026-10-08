@@ -1,0 +1,68 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import site from '../content/site.json';
+import { t, fmtTime, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages['kontakt-anfahrt'];
+const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<div class="contact-grid">
+  <div>
+    <section aria-labelledby="res-title">
+      <h2 id="res-title">{p.reserveTitle}</h2>
+      <p>{p.reserveText}</p>
+      <p class="big-line"><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </section>
+    <section class="section" aria-labelledby="addr-title">
+      <h2 id="addr-title">{d.ui.addressTitle}</h2>
+      <address class="big-line">{site.name}<br />{site.street}<br />{site.zip} {site.city}</address>
+    </section>
+    <section class="section" aria-labelledby="hours-title">
+      <h2 id="hours-title">{d.ui.hoursTitle}</h2>
+      <table class="hours-table">
+        <tbody>{week.map((h) => <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>)}</tbody>
+      </table>
+      <p class="muted">{d.ui.footerNote}</p>
+    </section>
+  </div>
+  <div>
+    <section aria-labelledby="map-title">
+      <h2 id="map-title">{p.mapTitle}</h2>
+      <div class="map" data-map={site.mapEmbed} data-title={p.mapIframeTitle}>
+        <div class="map__inner">
+          <p>{p.mapNote}</p>
+          <button class="btn" type="button" data-load hidden>{p.mapButton}</button>
+          <p><a href={site.mapLink} rel="noopener">{p.mapExternal}</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="transit-title">
+      <h2 id="transit-title">{p.transitTitle}</h2>
+      <Rich as="p" text={p.transit} />
+      <h2>{p.parkingTitle}</h2>
+      <Rich as="p" text={p.parking} />
+    </section>
+  </div>
+</div>
+
+<script>
+  const map = document.querySelector<HTMLElement>('[data-map]');
+  const btn = map?.querySelector<HTMLButtonElement>('[data-load]');
+  if (map && btn) {
+    btn.hidden = false;
+    btn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = map.dataset.map!;
+      f.title = map.dataset.title!;
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      f.tabIndex = 0;
+      map.replaceChildren(f);
+      f.focus();
+    });
+  }
+</script>

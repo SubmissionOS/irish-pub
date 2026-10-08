@@ -1,0 +1,36 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import Img from '../components/Img.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages['pub-quiz'];
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<div class="split">
+  <section aria-labelledby="how-title">
+    <h2 id="how-title">{p.howTitle}</h2>
+    <ol class="steps">{p.steps.map((s) => <li>{s}</li>)}</ol>
+    <div class="actions">
+      <a class="btn" href={site.phoneHref}>{site.phone}</a>
+      <a class="btn btn--line" href={`mailto:${site.email}?subject=Pub%20Quiz`}>{site.email}</a>
+    </div>
+  </section>
+  <section aria-labelledby="next-title">
+    <h2 id="next-title">{p.nextTitle}</h2>
+    <Rich as="p" class="next" text={p.next} />
+  </section>
+</div>
+
+<section class="section" aria-labelledby="photos-title">
+  <h2 id="photos-title">{p.photosTitle}</h2>
+  <div class="masonry">
+    {site.quizPhotos.map((f) => (
+      <figure><Img file={f} alt={p.photoAlt} fallback={d.ui.imgMissing} /></figure>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages.speisen;
+const groups = [
+  { id: 'small', title: p.smallTitle, items: p.small },
+  { id: 'big', title: p.bigTitle, items: p.big },
+];
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+{groups.map((g) => (
+  <section class="chalk" aria-labelledby={`${g.id}-title`}>
+    <h2 id={`${g.id}-title`}>{g.title}</h2>
+    <ul class="chalk__list">
+      {g.items.map((it) => (
+        <li>
+          <Rich class="chalk__name" text={it.name} />
+          <Rich class="chalk__price" text={it.price} />
+          <Rich class="chalk__desc" text={it.desc} />
+        </li>
+      ))}
+    </ul>
+  </section>
+))}
+<p class="section chalk__note">{p.kitchenLabel}: <Rich text={p.kitchen} /></p>

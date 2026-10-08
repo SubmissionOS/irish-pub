@@ -1,0 +1,34 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import Img from '../components/Img.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages['live-musik'];
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<section aria-labelledby="genres-title">
+  <h2 id="genres-title">{p.genresTitle}</h2>
+  <ul class="genres">{p.genres.map((g) => <li>{g}</li>)}</ul>
+</section>
+
+<section class="section" aria-labelledby="lineup-title">
+  <h2 id="lineup-title">{p.lineupTitle}</h2>
+  <Rich as="p" text={p.lineup} />
+</section>
+
+<section class="section" aria-labelledby="mus-title">
+  <h2 id="mus-title">{p.musiciansTitle}</h2>
+  <ul class="plaques">
+    {site.musicians.map((m) => (
+      <li class="musician">
+        <Img file={m.img} alt={m.name} fallback={d.ui.imgMissing} width={300} height={375} />
+        <p class="musician__name">{m.name}</p>
+      </li>
+    ))}
+  </ul>
+</section>

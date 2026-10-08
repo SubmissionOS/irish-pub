@@ -1,0 +1,61 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Img from '../components/Img.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages.galerie;
+const caps = p.captions as Record<string, string>;
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<div class="masonry">
+  {site.gallery.map((g) => {
+    const cap = g.captioned ? caps[g.id] : undefined;
+    const full = `${site.imgBase}cache_${g.id}.${g.ext}`;
+    return (
+      <figure>
+        <button type="button" data-full={full} data-caption={cap ?? ''} aria-label={`${p.open}: ${cap ?? p.altDefault}`}>
+          <Img file={`thumb_${g.id}.${g.ext}`} alt={cap ?? p.altDefault} fallback={d.ui.imgMissing} />
+        </button>
+        {cap && <figcaption>{cap}</figcaption>}
+      </figure>
+    );
+  })}
+</div>
+
+<dialog class="lightbox" aria-label={p.h1}>
+  <img src="data:," alt="" />
+  <div class="lightbox__bar">
+    <p data-cap></p>
+    <button class="btn btn--line" type="button" data-close>{d.ui.close}</button>
+  </div>
+</dialog>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('.lightbox')!;
+  const img = dlg.querySelector('img')!;
+  const cap = dlg.querySelector<HTMLElement>('[data-cap]')!;
+  let opener: HTMLElement | null = null;
+  document.querySelectorAll<HTMLButtonElement>('.masonry button').forEach((b) => {
+    b.addEventListener('click', () => {
+      opener = b;
+      const thumb = b.querySelector('img');
+      img.onerror = () => {
+        img.onerror = null;
+        if (thumb) img.src = thumb.src;
+      };
+      img.src = b.dataset.full!;
+      img.alt = thumb?.alt ?? '';
+      cap.textContent = b.dataset.caption ?? '';
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('[data-close]')!.addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => {
+    if (e.target === dlg) dlg.close();
+  });
+  dlg.addEventListener('close', () => opener?.focus());
+</script>

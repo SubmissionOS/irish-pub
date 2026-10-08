@@ -1,0 +1,18 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages.datenschutz;
+---
+<PageHead title={p.h1} />
+<div class="legal">
+  <Rich as="p" class="warning" text={p.warning} />
+  {p.sections.map((s) => (
+    <section>
+      <h2>{s.title}</h2>
+      <Rich as="p" text={s.text} />
+    </section>
+  ))}
+</div>

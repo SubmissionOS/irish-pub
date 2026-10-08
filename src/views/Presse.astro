@@ -1,0 +1,35 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Img from '../components/Img.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages['auszeichnungen-presse'];
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<section aria-labelledby="aw-title">
+  <h2 id="aw-title">{p.awardsTitle}</h2>
+  <ul class="awards-list">
+    {site.awards.map((a) => <li lang="en"><span>{a.title} {a.region}</span><span>{a.year}</span></li>)}
+  </ul>
+  <p><a href={site.awardsSource} rel="noopener">{p.source}</a></p>
+</section>
+
+<section class="section" aria-labelledby="press-title">
+  <h2 id="press-title">{p.pressTitle}</h2>
+  <ul class="press">
+    {site.press.map((a) => (
+      <li>
+        <Img file={a.img} alt="" fallback={a.outlet} width={144} height={104} />
+        <div>
+          <p class="press__outlet">{a.outlet}</p>
+          <h3 lang={a.lang}>{a.title}</h3>
+          <a href={a.url} rel="noopener">{p.readOn} {a.outlet}</a>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

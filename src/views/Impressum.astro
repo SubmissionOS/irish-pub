@@ -1,0 +1,26 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = t(lang).pages.impressum;
+const c = site.company;
+---
+<PageHead title={p.h1} />
+<div class="legal">
+  <h2>{p.providerTitle}</h2>
+  <address>{c.name}<br />{site.street}<br />{site.zip} {site.city}</address>
+  <p>{p.ceoLabel}: {c.ceo}</p>
+  <h2>{p.contactTitle}</h2>
+  <p><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+  <h2>{p.registerTitle}</h2>
+  <p>{c.hrb}<br /><Rich text={p.court} /></p>
+  <h2>{p.vatTitle}</h2>
+  <Rich as="p" text={p.vat} />
+  <h2>{p.authorityTitle}</h2>
+  <p>{c.authority}</p>
+  <h2>{p.respTitle}</h2>
+  <Rich as="p" text={p.resp} />
+</div>

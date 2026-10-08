@@ -1,0 +1,43 @@
+---
+import PageHead from '../components/PageHead.astro';
+import Rich from '../components/Rich.astro';
+import Img from '../components/Img.astro';
+import site from '../content/site.json';
+import { t, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const p = d.pages.getraenke;
+---
+<PageHead title={p.h1} lead={p.lead} />
+
+<div class="split">
+  <section class="chalk" aria-labelledby="tap-title">
+    <h2 id="tap-title">{p.tapTitle}</h2>
+    <p class="chalk__note">{p.tapNote}</p>
+    <table>
+      <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.style}</th><th scope="col">{p.tapHead.price}</th></tr></thead>
+      <tbody>
+        {p.tapItems.map((b) => (
+          <tr><th scope="row"><Rich text={b.name} /></th><td><Rich text={b.style} /></td><td><Rich text={b.price} /></td></tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+  <figure class="photo">
+    <Img file={site.barPhoto} alt={p.barAlt} fallback={d.ui.imgMissing} />
+    <figcaption>{p.barCaption}</figcaption>
+  </figure>
+</div>
+
+<section class="section chalk" aria-labelledby="board-title">
+  <h2 id="board-title">{p.boardTitle}</h2>
+  <div class="groups">
+    {p.groups.map((g) => (
+      <div>
+        <h3>{g.name}</h3>
+        <Rich as="p" class="chalk__note" text={g.items} />
+      </div>
+    ))}
+  </div>
+</section>
