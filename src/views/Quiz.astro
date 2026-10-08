@@ -30,7 +30,7 @@ const p = d.pages['pub-quiz'];
   <h2 id="photos-title">{p.photosTitle}</h2>
   <div class="masonry">
     {site.quizPhotos.map((f) => (
-      <figure><Img file={f} alt={p.photoAlt} fallback={d.ui.imgMissing} /></figure>
+      <figure><Img file={f} alt={p.photoAlt} width={site.quizPhotoSize[0]} height={site.quizPhotoSize[1]} /></figure>
     ))}
   </div>
 </section>

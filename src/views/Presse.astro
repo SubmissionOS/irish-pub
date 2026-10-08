@@ -23,7 +23,7 @@ const p = d.pages['auszeichnungen-presse'];
   <ul class="press">
     {site.press.map((a) => (
       <li>
-        <Img file={a.img} alt="" fallback={a.outlet} width={144} height={104} />
+        <Img file={a.img} alt="" width={a.w} height={a.h} />
         <div>
           <p class="press__outlet">{a.outlet}</p>
           <h3 lang={a.lang}>{a.title}</h3>

@@ -1,21 +1,23 @@
 ---
-// Bild von der Altseite (Hotlink im Entwurf). Fällt es aus, erscheint eine ruhige Platzhalterfläche.
+// Bild von der Altseite (Hotlink im Entwurf). Fällt es aus, erscheint eine ruhige Holzfläche ohne Beschriftung.
+// width/height sind die natürlichen Maße: das Bild wird nie breiter angezeigt als seine Quelle.
 import site from '../content/site.json';
-interface Props { file: string; alt: string; fallback: string; class?: string; eager?: boolean; width?: number; height?: number }
-const { file, alt, fallback, class: cls, eager = false, width, height } = Astro.props;
+interface Props { file: string; alt: string; class?: string; eager?: boolean; width?: number; height?: number }
+const { file, alt, class: cls, eager = false, width, height } = Astro.props;
 const src = file.startsWith('http') ? file : site.imgBase + file;
+const style = width ? `max-width:min(100%,${width}px)` : undefined;
 const onerror =
-  "var s=document.createElement('span');s.className='img-fallback '+(this.dataset.cls||'');s.setAttribute('role','img');s.setAttribute('aria-label',this.alt);s.textContent=this.dataset.fallback;this.replaceWith(s)";
+  "var s=document.createElement('span');s.className='img-fallback '+(this.dataset.cls||'');if(this.alt){s.setAttribute('role','img');s.setAttribute('aria-label',this.alt)}this.replaceWith(s)";
 ---
 <img
   src={src}
   alt={alt}
   class={cls}
+  style={style}
   loading={eager ? 'eager' : 'lazy'}
   decoding="async"
   width={width}
   height={height}
-  data-fallback={fallback}
   data-cls={cls ?? ''}
   onerror={onerror}
 />

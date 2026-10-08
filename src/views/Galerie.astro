@@ -18,7 +18,7 @@ const caps = p.captions as Record<string, string>;
     return (
       <figure>
         <button type="button" data-full={full} data-caption={cap ?? ''} aria-label={`${p.open}: ${cap ?? p.altDefault}`}>
-          <Img file={`thumb_${g.id}.${g.ext}`} alt={cap ?? p.altDefault} fallback={d.ui.imgMissing} />
+          <Img file={`cache_${g.id}.${g.ext}`} alt={cap ?? p.altDefault} width={g.w} height={g.h} />
         </button>
         {cap && <figcaption>{cap}</figcaption>}
       </figure>

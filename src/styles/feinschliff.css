@@ -1,0 +1,9 @@
+/* FEINSCHLIFF-START: feinschliff.css (Teile 1 und 4). Import im Layout entfernen = alles hier weg. */
+
+/* Teil 1: Bilder scharf. Keine Filter, kein Hochskalieren, kleine Quellen mittig statt gestreckt. */
+img { image-rendering: auto; }
+.masonry button img, .photo img { margin-inline: auto; }
+.musician img { object-position: 50% 25%; }
+.img-fallback { min-height: 8rem; background: var(--eiche) var(--woodgrain); border: 0; }
+
+/* FEINSCHLIFF-ENDE */

@@ -25,7 +25,7 @@ const p = d.pages.getraenke;
     </table>
   </section>
   <figure class="photo">
-    <Img file={site.barPhoto} alt={p.barAlt} fallback={d.ui.imgMissing} />
+    <Img file={site.barPhoto} alt={p.barAlt} width={site.barPhotoSize[0]} height={site.barPhotoSize[1]} />
     <figcaption>{p.barCaption}</figcaption>
   </figure>
 </div>
