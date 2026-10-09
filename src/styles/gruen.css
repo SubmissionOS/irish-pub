@@ -1,0 +1,92 @@
+/* GRUEN-START: gruen.css (Umbau Western zu Irish Pub). Import im Layout entfernen = alles hier weg. */
+
+/* ===== Teil 1: Farbe und Material ===== */
+:root {
+  --flaschen: #123a2c;      /* Hintergrund */
+  --tiefgruen: #0c241b;     /* Flächen, Tafeln, Fußzeile */
+  --koboldgruen: #2f8f5b;   /* Linien, Flächenakzente (nicht für Text: 3,1:1) */
+  --koboldgruen-hell: #5fbf86; /* Links und Hover als Text (5,6:1) */
+  --gold: #d4a94a;
+  --gold-hell: #e6c578;
+  --koboldrot: #d9622b;
+  --holz: #5b3a26;          /* nur noch schmale Einfassung */
+
+  /* Alte Namen auf die neue Palette umlenken */
+  --mahagoni: var(--flaschen);
+  --eiche: var(--tiefgruen);
+  --eiche-dunkel: #081a13;
+  --schiefer: var(--tiefgruen);
+  --messing: var(--gold);
+  --messing-hell: var(--gold-hell);
+  --kreide: #efe9dc;
+  --fleetgrau: #a9c2b6;
+  --flaschengruen: var(--koboldgruen);
+  --grain: none;
+  --woodgrain: none;
+}
+
+/* Hintergrund: ruhiges Grün mit ganz feinem Punktraster, keine Planken, kein Rauschen */
+body {
+  background-color: var(--flaschen);
+  background-image: radial-gradient(rgba(239, 233, 220, .045) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+a { color: var(--gold-hell); }
+a:hover { color: var(--koboldgruen-hell); }
+::selection { background: var(--koboldgruen); color: #fff; }
+
+/* Entwurfsbanner ohne gestrichelte Linie */
+.draft { background: var(--tiefgruen); border-bottom: 0; }
+
+/* Leiste: Tiefgrün mit Goldkante statt Holz */
+.rail { background: var(--tiefgruen); border-bottom: 1px solid var(--gold); }
+@media (min-width: 64rem) {
+  .rail { border-right: 0; box-shadow: inset -1px 0 0 var(--gold), inset -4px 0 0 var(--holz); border-bottom: 0; }
+}
+.js .rail.is-open .rail__body, .rail.is-open .rail__body { background: var(--tiefgruen); }
+
+/* Marke: schlankes goldenes Schild, kleiner */
+.plaque { padding: .3rem .75rem .35rem; border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(12, 36, 27, .55); }
+.plaque::before, .plaque::after { display: none; }
+@media (min-width: 64rem) {
+  .rail__top { padding: 1.75rem 1.5rem 1.25rem; }
+  .plaque { padding: .7rem .9rem .75rem; }
+  .plaque__name { font-size: 1.45rem; }
+  .plaque__addr { display: none; }
+}
+
+/* Plaketten und Buttons: Gold, flach */
+.btn, .signs a[aria-current='page'], .lang a[aria-current='true'], .awards-list li, .musician {
+  background: var(--gold); color: var(--tiefgruen); box-shadow: none;
+}
+.btn:hover { background: var(--gold-hell); color: var(--tiefgruen); }
+.btn--line { background: transparent; color: var(--kreide); box-shadow: inset 0 0 0 1px var(--gold); }
+.btn--line:hover { background: rgba(212, 169, 74, .12); color: var(--kreide); }
+.signs a:hover { border-left-color: var(--koboldgruen); }
+
+/* Kurstafel: Tiefgrün mit dünnem Goldrahmen */
+.board { background: var(--tiefgruen); padding: 0; border: 1px solid var(--gold); border-radius: 3px; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); }
+.board__frame { background: var(--tiefgruen); box-shadow: none; }
+.board__week tr.is-today { background: rgba(47, 143, 91, .25); box-shadow: inset 3px 0 0 var(--koboldgruen); }
+.today-tag { background: var(--koboldgruen); color: #fff; }
+
+/* Flächen ohne Holz */
+.headband, .weekstrip, .plank, .scoreboard, .stats, .reserve, .sub-aside {
+  background: var(--tiefgruen); background-image: none;
+}
+.headband { border-bottom: 1px solid rgba(212, 169, 74, .45); }
+.plank, .weekstrip { border-color: rgba(212, 169, 74, .3); }
+.chalk { border: 1px solid rgba(212, 169, 74, .45); box-shadow: none; }
+.screen { border-color: #06130d; }
+.related li, .press li { background: var(--tiefgruen); border-left-color: var(--koboldgruen); }
+.band { background: var(--gold); color: var(--tiefgruen); box-shadow: none; }
+.foot { background: var(--tiefgruen); border-top: 1px solid var(--gold); }
+
+/* Holz nur noch als schmale Einfassung der Bilder */
+.photo img, .masonry button, .wall__item { border: 2px solid var(--holz); background: var(--tiefgruen); }
+.musician { background: var(--gold); }
+
+/* Haarlinien und Ogham in Gold, ruhiger */
+.stage::before { opacity: .6; }
+
+/* GRUEN-ENDE */

@@ -8,6 +8,9 @@ import '../styles/feinschliff.css';
 // MODERN-START
 import '../styles/modern.css';
 // MODERN-END
+// GRUEN-START
+import '../styles/gruen.css';
+// GRUEN-ENDE
 import ActionBar from '../components/ActionBar.astro';
 // MODERN-START Teil 4: Schriften vorladen
 import fontDisplay from '@fontsource/im-fell-english-sc/files/im-fell-english-sc-latin-400-normal.woff2?url';
@@ -47,7 +50,7 @@ const year = new Date().getFullYear();
   <meta property="og:url" content={canonical} />
   <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
   <meta property="og:image" content={abs("/og-bar.jpg")} />
-  <meta name="theme-color" content="#2a1611" />
+  <meta name="theme-color" content="#123a2c" />
   <link rel="preload" href={fontDisplay} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={fontText} as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
