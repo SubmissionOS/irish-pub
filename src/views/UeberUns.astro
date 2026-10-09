@@ -4,14 +4,16 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages['ueber-uns'];
 ---
-{p.text.map((para) => <p>{para}</p>)}
-<p class="signature">{p.signature}</p>
-
-<div class="section welcome">
-  <h2>{p.houseTitle}</h2>
-  <p>{p.house}</p>
-  <h2>{p.nameTitle}</h2>
-  <p>{p.name}</p>
-  <h2>{p.teamTitle}</h2>
-  <p>{p.team}</p>
+<div class="about">
+  {p.text.map((para) => <p class="about__lead">{para}</p>)}
+  <section class="g-section" aria-labelledby="house-title">
+    <h2 id="house-title">{p.houseTitle}</h2>
+    <p>{p.house}</p>
+  </section>
+  <section class="g-section" aria-labelledby="name-title">
+    <h2 id="name-title">{p.nameTitle}</h2>
+    <p>{p.name}</p>
+  </section>
+  <p class="g-section about__team">{p.team}</p>
+  <p class="signature">{p.signature}</p>
 </div>

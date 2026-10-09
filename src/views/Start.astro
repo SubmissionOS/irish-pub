@@ -1,18 +1,28 @@
 ---
 import Board from '../components/Board.astro';
 import Kobold from '../components/Kobold.astro';
-import Ogham from '../components/Ogham.astro';
 import Photo from '../components/Photo.astro';
+import Coins from '../components/Coins.astro';
 import site from '../content/site.json';
 import { t, href, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
 const p = d.pages.start;
-const wallIds = ['67137274', '67137277', '67137281', '67137275'];
-const wall = wallIds.map((id) => site.gallery.find((g) => g.id === id)!);
-const alts = p.wallAlt as Record<string, string>;
-const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
+// Öffnungszeiten kompakt: gleiche Zeiten zusammenfassen
+const short = d.days.map((n) => n.slice(0, 2));
+const groups = [
+  { days: [1, 4], h: site.hours.find((h) => h.day === 1)! },
+  { days: [5, 5], h: site.hours.find((h) => h.day === 5)! },
+  { days: [6, 6], h: site.hours.find((h) => h.day === 6)! },
+  { days: [0, 0], h: site.hours.find((h) => h.day === 0)! },
+];
+const icons: Record<string, string> = {
+  tv: '<rect x="4" y="7" width="32" height="21" rx="2"/><path d="M14 33h12M20 28v5"/>',
+  note: '<path d="M15 29V9l17-4v20"/><circle cx="11" cy="29" r="4"/><circle cx="28" cy="25" r="4"/>',
+  tap: '<path d="M16 5h8v9h-8zM20 14v4M12 18h16v6H12zM22 24h4v7h-4z"/><path d="M10 35h20"/>',
+  quiz: '<circle cx="20" cy="20" r="15"/><path d="M15 15a5 5 0 1 1 6 5c-1 .5-1 1.5-1 3M20 28v.5"/>',
+};
 ---
 <section class="hero hero--sign">
   <h1 class="wordmark">
@@ -23,79 +33,46 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
   <Board lang={lang}><Kobold pose="luegt" slot="kobold" /></Board>
 </section>
 
-<ul class="stats" aria-label={p.highlightsTitle}>
-  {p.stats.map((s) => (
-    <li><span class="stats__value">{s.value}</span><span class="stats__label">{s.label}</span></li>
-  ))}
-</ul>
-
-<section class="section welcome-wall" aria-labelledby="welcome-title">
-  <div class="wall">
-    {wall.map((g, i) => (
-      <figure class={`wall__item wall__item--${i + 1}`}>
-        <Photo file={`${g.id}.${g.ext}`} alt={alts[g.id]} sizes="(min-width: 75rem) 30vw, 70vw" />
-      </figure>
-    ))}
-  </div>
-  <div class="welcome-wall__text">
-    <h2 id="welcome-title" class="welcome__title" lang="ga">{p.welcomeTitle}</h2>
-    <p class="welcome__sub">{p.welcomeSub}</p>
-    {p.welcome.map((para) => <p>{para}</p>)}
-    <p class="signature">{p.signature}</p>
-  </div>
-</section>
-
-<Ogham />
-<section class="section" aria-labelledby="hl-title">
-  <h2 id="hl-title">{p.highlightsTitle}</h2>
-  <ul class="planks">
-    {p.highlights.map((h) => (
-      <li class="plank">
-        <h3><a href={href(lang, h.key as PageKey)}>{h.title}</a></h3>
-        <p>{h.text}</p>
+<nav class="g-section entries" aria-label={p.entriesTitle}>
+  <ul class="swipe">
+    {p.entries.map((e) => (
+      <li>
+        <a class="entry" href={href(lang, e.key as PageKey)}>
+          <svg viewBox="0 0 40 40" aria-hidden="true" set:html={icons[e.icon]} />
+          <span>{e.label}</span>
+        </a>
       </li>
     ))}
   </ul>
+</nav>
+
+<section class="g-section welcome-photo" aria-labelledby="welcome-title">
+  <Photo file="67137274.jpg" alt={p.photoAlt} sizes="(min-width: 64rem) 60vw, 100vw" />
+  <h2 id="welcome-title">
+    <span class="welcome__title" lang="ga">{p.welcomeTitle}</span>
+    <span class="welcome__sub">{p.welcomeSub}</span>
+  </h2>
 </section>
 
-<section class="section weekstrip" aria-labelledby="week-title">
-  <h2 id="week-title">{p.weekTitle}</h2>
-  <ol class="weekstrip__days">
-    {week.map((h) => (
-      <li class={site.musicDays.includes(h.day) ? 'is-music' : undefined}>
-        <span class="weekstrip__day">{d.days[h.day]}</span>
-        <span class="weekstrip__time">{fmtTime(h.open)}–{fmtTime(h.close)}</span>
-        <span class="weekstrip__what">{p.weekSport}</span>
-        {site.musicDays.includes(h.day) && <span class="weekstrip__what weekstrip__what--music">{p.weekMusic}</span>}
-      </li>
-    ))}
-  </ol>
-  <p class="weekstrip__quiz"><a href={href(lang, 'pub-quiz')}>{p.weekQuiz}</a></p>
-</section>
-
-<section class="section band" aria-labelledby="awards-title">
+<section class="g-section" aria-labelledby="awards-title">
   <h2 id="awards-title">{p.awardsTitle}</h2>
-  <ul>
-    {site.awards.map((a) => (
-      <li lang="en">{a.title} {a.region}<span>{a.year}</span></li>
-    ))}
-  </ul>
-  <a href={href(lang, 'auszeichnungen-presse')}>{p.awardsLink}</a>
+  <div class="swipe swipe--coins"><Coins label={p.awardsTitle} /></div>
+  <a class="more" href={href(lang, 'auszeichnungen-presse')}>{p.awardsLink}</a>
 </section>
 
-<Ogham />
-<section class="section teaser" aria-labelledby="way-title">
-  <div>
-    <h2 id="way-title">{p.wayTitle}</h2>
-    <address>{site.street}<br />{site.zip} {site.city}</address>
-    <p>{p.wayText}</p>
-    <a class="btn btn--line" href={href(lang, 'kontakt-anfahrt')}>{p.wayLink}</a>
-  </div>
-  <div>
-    <h3>{d.ui.hoursTitle}</h3>
-    <table class="hours-table">
-      <tbody>{week.map((h) => <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>)}</tbody>
-    </table>
-    <p class="muted">{d.ui.footerNote}</p>
-  </div>
+<section class="g-section contact-block" aria-labelledby="contact-title">
+  <h2 id="contact-title">{p.contactTitle}</h2>
+  <address>{site.street}, {site.zip} {site.city}</address>
+  <ul class="hours-mini">
+    {groups.map((g) => (
+      <li>
+        <span>{g.days[0] === g.days[1] ? d.days[g.days[0]] : `${short[g.days[0]]}–${short[g.days[1]]}`}</span>
+        <span>{fmtTime(g.h.open)}–{fmtTime(g.h.close)}</span>
+      </li>
+    ))}
+  </ul>
+  <p class="contact-block__links">
+    <a href={site.routeLink} rel="noopener">{d.ui.route}</a>
+    <a href={site.phoneHref}>{site.phone}</a>
+  </p>
 </section>

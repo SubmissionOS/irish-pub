@@ -4,36 +4,23 @@ import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages['live-sport'];
-// 14 Sportarten auf sechs Bildschirme verteilen
-const sizes = [3, 3, 2, 2, 2, 2];
-let i = 0;
-const screens = sizes.map((n) => p.sports.slice(i, (i += n)));
 const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(p.wishTitle)}`;
 ---
-
-<section class="scoreboard" aria-labelledby="screens-title">
-  <h2 id="screens-title" class="visually-hidden">{p.screensTitle}</h2>
-  <ul class="screens">
-    {screens.map((list, n) => (
-      <li class="screen">
-        <p class="screen__no">TV {n + 1}</p>
-        <ul>{list.map((s) => <li>{s}</li>)}</ul>
-      </li>
-    ))}
-  </ul>
+<section aria-labelledby="screens-title">
+  <h2 id="screens-title">{p.screensTitle}</h2>
+  <ul class="chips">{p.sports.map((s) => <li>{s}</li>)}</ul>
 </section>
 
-<section class="section" aria-labelledby="prog-title">
+<section class="g-section" aria-labelledby="prog-title">
   <h2 id="prog-title">{p.programTitle}</h2>
   <p>{p.program}</p>
-  <div class="actions">
-    <a class="btn" href={site.social.facebook} rel="noopener">Facebook</a>
-    <a class="btn btn--line" href={site.social.instagram} rel="noopener">Instagram</a>
-  </div>
+  <p class="textlinks">
+    <a href={site.social.facebook} rel="noopener">Facebook</a>
+    <a href={site.social.instagram} rel="noopener">Instagram</a>
+  </p>
 </section>
 
-<section class="section" aria-labelledby="wish-title">
+<section class="g-section" aria-labelledby="wish-title">
   <h2 id="wish-title">{p.wishTitle}</h2>
-  <p>{p.wishText}</p>
-  <a class="btn btn--line" href={mailHref}>{site.email}</a>
+  <p>{p.wishText} <a href={mailHref}>{site.email}</a></p>
 </section>

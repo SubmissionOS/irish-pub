@@ -7,25 +7,28 @@ const { lang } = Astro.props;
 const d = t(lang);
 const p = d.pages['live-musik'];
 ---
-
 <section aria-labelledby="genres-title">
   <h2 id="genres-title">{p.genresTitle}</h2>
-  <ul class="genres">{p.genres.map((g) => <li>{g}</li>)}</ul>
+  <ul class="chips">{p.genres.map((g) => <li>{g}</li>)}</ul>
 </section>
 
-<section class="section" aria-labelledby="lineup-title">
-  <h2 id="lineup-title">{p.lineupTitle}</h2>
-  <p>{p.lineup}</p>
-</section>
-
-<section class="section" aria-labelledby="mus-title">
+<section class="g-section" aria-labelledby="mus-title">
   <h2 id="mus-title">{p.musiciansTitle}</h2>
-  <ul class="plaques">
+  <ul class="swipe swipe--plaques">
     {site.musicians.map((m) => (
       <li class="musician">
-        <Photo file={m.img} alt={m.name} sizes="(min-width: 48rem) 320px, 100vw" />
+        <Photo file={m.img} alt={m.name} sizes="(min-width: 48rem) 260px, 70vw" />
         <p class="musician__name">{m.name}</p>
       </li>
     ))}
   </ul>
+</section>
+
+<section class="g-section" aria-labelledby="lineup-title">
+  <h2 id="lineup-title">{p.lineupTitle}</h2>
+  <p>{p.lineup}</p>
+  <p class="textlinks">
+    <a href={site.social.facebook} rel="noopener">Facebook</a>
+    <a href={site.social.instagram} rel="noopener">Instagram</a>
+  </p>
 </section>

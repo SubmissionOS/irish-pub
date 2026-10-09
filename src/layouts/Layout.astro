@@ -98,41 +98,21 @@ const year = new Date().getFullYear();
         <slot />
       </main>
       <footer class="foot">
-        <div class="foot__col">
-          <h2>{d.ui.addressTitle}</h2>
-          <address>
-            {site.name}<br />{site.street}<br />{site.zip} {site.city}<br />
-            <a href={site.phoneHref}>{site.phone}</a><br />
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-          </address>
-        </div>
-        <div class="foot__col">
-          <h2>{d.ui.hoursTitle}</h2>
-          <table class="foot__hours">
-            <tbody>
-              {week.map((h) => (
-                <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>
-              ))}
-            </tbody>
-          </table>
-          <p class="muted">{d.ui.footerNote}</p>
-        </div>
-        <div class="foot__col">
-          <h2>{d.ui.followTitle}</h2>
-          <ul class="plain">
-            <li><a href={site.social.facebook} rel="noopener">Facebook</a></li>
-            <li><a href={site.social.instagram} rel="noopener">Instagram</a></li>
-          </ul>
-          <h2>{d.ui.legal}</h2>
-          <ul class="plain">
-            {legalNav.map((k) => <li><a href={href(lang, k)} aria-current={k === page ? 'page' : undefined}>{d.nav[k]}</a></li>)}
-          </ul>
-        </div>
         <div class="foot__kobold">
           <Kobold pose="sitzt" />
           <p><span class="foot__toast" lang="ga">{site.irish.toast}</span><br />{d.ui.rainbow}</p>
         </div>
-        <p class="foot__copy muted">© {year} {site.company.name}<br />{d.ui.draftCredit}</p>
+        <address class="foot__addr">
+          {site.name}<br />{site.street}, {site.zip} {site.city}<br />
+          <a href={site.phoneHref}>{site.phone}</a><br />
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </address>
+        <ul class="foot__links">
+          <li><a href={site.social.facebook} rel="noopener">Facebook</a></li>
+          <li><a href={site.social.instagram} rel="noopener">Instagram</a></li>
+          {legalNav.map((k) => <li><a href={href(lang, k)} aria-current={k === page ? "page" : undefined}>{d.nav[k]}</a></li>)}
+        </ul>
+        <p class="foot__copy muted">© {year} {site.company.name}. {d.ui.draftCredit}</p>
       </footer>
       <ActionBar lang={lang} />
     </div>

@@ -15,9 +15,9 @@
     "legal": "Legal",
     "oclock": "",
     "draftCredit": "Design draft by GuddiWeb",
-    "barOpen": "Open until {time}",
-    "barToday": "Opens today {time}",
-    "barTomorrow": "Opens tomorrow {time}",
+    "barOpen": "Today: open until {time}",
+    "barToday": "Opens today at {time}",
+    "barTomorrow": "Opens tomorrow at {time}",
     "barStatic": "Opening hours",
     "route": "Directions",
     "actions": "Quick actions",
@@ -78,35 +78,72 @@
       "title": "Irish Pub in the Fleetenkieker, Hamburg",
       "description": "Irish pub on Börsenbrücke in Hamburg: 16 beers on tap, live sport on six screens, live music on Friday and Saturday, monthly pub quiz.",
       "h1": "An Irish pub on Börsenbrücke",
+      "lead": "Draught beer, football, rugby and live music in the middle of Hamburg's old town. Come in, we'll soon know you by name.",
       "welcomeTitle": "Céad míle fáilte",
       "welcomeSub": "A hundred thousand welcomes.",
-      "awardsTitle": "Awarded by the Irish Hospitality Global Awards",
-      "awardsLink": "All awards and press",
-      "entriesTitle": "What goes on here",
-      "entries": [
+      "welcome": [
+        "The Irish Pub in the Fleetenkieker brings Irish pub culture to the heart of Hamburg. In Ireland the pub is where friends and neighbours meet and are greeted by name. That is how we do it here too.",
+        "Expect ceol agus craic: music and good company. At the bar, before the match or at the quiz."
+      ],
+      "signature": "The Fleetenkieker team",
+      "highlightsTitle": "What goes on here",
+      "highlights": [
         {
           "key": "live-sport",
-          "label": "Live sport",
-          "icon": "tv"
+          "title": "Live sport on six screens",
+          "text": "Bundesliga, Premier League, rugby, GAA, NFL, Formula 1 and more in HD."
         },
         {
           "key": "live-musik",
-          "label": "Live music",
-          "icon": "note"
+          "title": "Live music at the weekend",
+          "text": "Every Friday and Saturday from 21:30, musicians from Germany, Ireland and beyond."
         },
         {
           "key": "getraenke",
-          "label": "16 beers on tap",
-          "icon": "tap"
+          "title": "16 beers on tap",
+          "text": "Ale, lager, IPA and stout, plus craft beer, whiskey and cocktails."
         },
         {
           "key": "pub-quiz",
-          "label": "Pub quiz",
-          "icon": "quiz"
+          "title": "Pub quiz once a month",
+          "text": "Up to seven people per team, lots of prizes. Usually booked out the day it is announced."
         }
       ],
-      "photoAlt": "St Patrick's Day at the Irish Pub in the Fleetenkieker",
-      "contactTitle": "Come on in"
+      "awardsTitle": "Awarded by the Irish Hospitality Global Awards",
+      "awardsLink": "All awards and press",
+      "wayTitle": "Getting here",
+      "wayText": "You will find us at Börsenbrücke 10 in Hamburg's old town.",
+      "wayLink": "Map and contact",
+      "ctaReserve": "Book a table",
+      "ctaPhone": "Call",
+      "stats": [
+        {
+          "value": "16",
+          "label": "Beers on tap"
+        },
+        {
+          "value": "6",
+          "label": "HD screens"
+        },
+        {
+          "value": "Fri + Sat",
+          "label": "Live music from 21:30"
+        },
+        {
+          "value": "4",
+          "label": "Awards"
+        }
+      ],
+      "wallAlt": {
+        "67137274": "St Patrick's Day at the pub",
+        "67137275": "Team Fleet at the HSH Nordbank Run",
+        "67137277": "The bar with 16 taps",
+        "67137281": "Halloween party at the pub"
+      },
+      "weekTitle": "The week at the pub",
+      "weekSport": "Live sport as scheduled",
+      "weekMusic": "Live music from 21:30",
+      "weekQuiz": "Once a month: pub quiz. We announce the date on Facebook."
     },
     "live-sport": {
       "title": "Live sport | Irish Pub in the Fleetenkieker",
@@ -131,9 +168,9 @@
         "Tennis"
       ],
       "programTitle": "This week",
-      "program": "The weekly schedule is on Facebook and Instagram.",
+      "program": "We publish the weekly schedule on Facebook and Instagram.",
       "wishTitle": "Your match missing?",
-      "wishText": "Send us an email with the sport you would like to watch.",
+      "wishText": "Send us an email with the sport you would like to watch. We'll see what we can do.",
       "facts": [
         "6 HD screens",
         "TV and satellite system",
@@ -154,7 +191,7 @@
       ],
       "musiciansTitle": "Who has played here",
       "lineupTitle": "Who's playing this weekend",
-      "lineup": "Who's playing goes up on Facebook and Instagram.",
+      "lineup": "We announce who is playing on Facebook and Instagram.",
       "facts": [
         "Friday and Saturday",
         "from 21:30",
@@ -168,7 +205,7 @@
       "h1": "Pub quiz",
       "lead": "Once a month, with lots of prizes. The quiz is usually booked out on the day we announce it on Facebook.",
       "nextTitle": "Next date",
-      "next": "The date goes up on Facebook first and books out fast.",
+      "next": "The next date is announced on Facebook. Be quick.",
       "howTitle": "How to sign up your team",
       "steps": [
         "Call the pub or send us a message.",
@@ -228,15 +265,16 @@
       "h1": "About us",
       "lead": "Céad míle fáilte. A hundred thousand welcomes.",
       "text": [
-        "In Ireland, friends and neighbours meet at the pub and are greeted by name. That is how we do it on Börsenbrücke too."
+        "The Irish Pub in the Fleetenkieker sits in the heart of Hamburg, on Börsenbrücke. We bring Irish pub culture to the city.",
+        "In Ireland, friends and neighbours meet at the pub and are greeted by name. That is how we want it here too: ceol agus craic, music and good company."
       ],
       "nameTitle": "The name",
-      "name": "In Hamburg, a Fleetenkieker was one of the men who patrolled the Fleete, the city's canals, by boat.",
+      "name": "In Hamburg, a Fleetenkieker was one of the men who patrolled the Fleete, the city's canals, by boat. Fleet is the northern German word for a navigable canal.",
       "teamTitle": "Who runs the pub",
       "team": "Fleetenkieker Irish Pub UG, managing director Glenn Stockdale.",
       "signature": "The Fleetenkieker team",
       "houseTitle": "The house",
-      "house": "Neighbours drop in after work, fans come for the match, guests arrive from all over the world. At the bar it rarely takes long before you get talking.",
+      "house": "The pub is on Börsenbrücke in the old town, a few steps from the town hall. Neighbours drop in after work, fans come for the match and guests arrive from all over the world. At the bar you sit side by side, and it rarely takes long before you get talking.",
       "facts": [
         "Börsenbrücke 10",
         "Hamburg's old town",
@@ -287,9 +325,9 @@
       "h1": "Contact & directions",
       "lead": "Book a table by phone or email.",
       "reserveTitle": "Reservations",
-      "reserveText": "With date, time and number of guests, by phone or email.",
+      "reserveText": "Call us or send an email with date, time and number of guests.",
       "mapTitle": "Map",
-      "mapNote": "The map only loads from Google Maps after you click.",
+      "mapNote": "The map only loads from Google Maps after you click. Data is then sent to Google.",
       "mapButton": "Load map",
       "mapExternal": "Open in Google Maps",
       "mapIframeTitle": "Google map: Börsenbrücke 10, Hamburg",

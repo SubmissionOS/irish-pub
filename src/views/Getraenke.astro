@@ -7,12 +7,11 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.getraenke;
 ---
-
-<div class="split">
-  <section class="chalk" aria-labelledby="tap-title">
-    <h2 id="tap-title">{p.tapTitle}</h2>
-    <p class="chalk__note">{p.tapNote}</p>
-    <table>
+<div class="menu">
+  <details class="acc" open>
+    <summary><h2>{p.tapTitle}</h2></summary>
+    <p class="acc__note">{p.tapNote}</p>
+    <table class="menu__table">
       <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.p03}</th><th scope="col">{p.tapHead.p05}</th></tr></thead>
       <tbody>
         {vorschlag.fass.map((b) => (
@@ -20,27 +19,22 @@ const p = t(lang).pages.getraenke;
         ))}
       </tbody>
     </table>
-  </section>
-  <figure class="photo">
-    <Photo file={site.barPhoto} alt={p.barAlt} sizes="(min-width: 40rem) 640px, 100vw" />
-    <figcaption>{p.barCaption}</figcaption>
-  </figure>
+  </details>
+  {vorschlag.karte.map((g) => (
+    <details class="acc">
+      <summary><h2>{g.title[lang]}</h2></summary>
+      {g.note && <p class="acc__note">{g.note[lang]}</p>}
+      <ul class="chalk__list">
+        {g.items.map((it) => (
+          <li><span class="chalk__name">{it.name[lang]}</span><span class="chalk__price">{eur(it.price, lang)}</span></li>
+        ))}
+      </ul>
+    </details>
+  ))}
+  <p class="acc__note">{p.priceNote}</p>
 </div>
 
-<section class="section chalk" aria-labelledby="board-title">
-  <h2 id="board-title">{p.boardTitle}</h2>
-  <div class="groups">
-    {vorschlag.karte.map((g) => (
-      <div>
-        <h3>{g.title[lang]}</h3>
-        {g.note && <p class="chalk__note">{g.note[lang]}</p>}
-        <ul class="chalk__list">
-          {g.items.map((it) => (
-            <li><span class="chalk__name">{it.name[lang]}</span><span class="chalk__price">{eur(it.price, lang)}</span></li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-  <p class="chalk__note">{p.priceNote}</p>
-</section>
+<figure class="g-section photo">
+  <Photo file={site.barPhoto} alt={p.barAlt} sizes="(min-width: 40rem) 640px, 100vw" />
+  <figcaption>{p.barCaption}</figcaption>
+</figure>

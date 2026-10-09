@@ -1,0 +1,2 @@
+Originalfassung der Texte vor dem Kürzen für Mobil (Umbau Grün, Oktober 2026).
+Die Website liest diese Dateien nicht. Zum Zurückholen einzelne Texte nach src/content/de.json bzw. en.json kopieren.

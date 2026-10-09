@@ -15,9 +15,9 @@
     "legal": "Rechtliches",
     "oclock": "Uhr",
     "draftCredit": "Designentwurf von GuddiWeb",
-    "barOpen": "Offen bis {time} Uhr",
-    "barToday": "Öffnet heute {time} Uhr",
-    "barTomorrow": "Öffnet morgen {time} Uhr",
+    "barOpen": "Heute: geöffnet bis {time} Uhr",
+    "barToday": "Öffnet heute um {time} Uhr",
+    "barTomorrow": "Öffnet morgen um {time} Uhr",
     "barStatic": "Öffnungszeiten",
     "route": "Route",
     "actions": "Schnellzugriff",
@@ -78,35 +78,72 @@
       "title": "Irish Pub in the Fleetenkieker, Hamburg",
       "description": "Irischer Pub an der Börsenbrücke in Hamburg: 16 Biere vom Fass, Live-Sport auf sechs Bildschirmen, Live-Musik am Freitag und Samstag, monatliches Pub Quiz.",
       "h1": "Ein irischer Pub an der Börsenbrücke",
+      "lead": "Fassbier, Fußball, Rugby und Livemusik mitten in der Hamburger Altstadt. Kommen Sie rein, wir kennen Sie bald beim Namen.",
       "welcomeTitle": "Céad míle fáilte",
       "welcomeSub": "Hunderttausend Willkommen.",
-      "awardsTitle": "Ausgezeichnet von den Irish Hospitality Global Awards",
-      "awardsLink": "Alle Auszeichnungen und Presse",
-      "entriesTitle": "Was hier passiert",
-      "entries": [
+      "welcome": [
+        "Der Irish Pub in the Fleetenkieker bringt irische Pub-Kultur ins Herz von Hamburg. In Irland ist der Pub der Ort, an dem sich Freunde und Nachbarn treffen und mit Namen begrüßt werden. Genau so halten wir es auch hier.",
+        "Bei uns gibt es Ceol agus craic: Musik und gute Gesellschaft. Am Tresen, vor dem Spiel oder beim Quiz."
+      ],
+      "signature": "Das Fleetenkieker-Team",
+      "highlightsTitle": "Was hier passiert",
+      "highlights": [
         {
           "key": "live-sport",
-          "label": "Live-Sport",
-          "icon": "tv"
+          "title": "Live-Sport auf sechs Bildschirmen",
+          "text": "Bundesliga, Premier League, Rugby, GAA, NFL, Formel 1 und mehr in HD."
         },
         {
           "key": "live-musik",
-          "label": "Live-Musik",
-          "icon": "note"
+          "title": "Livemusik am Wochenende",
+          "text": "Jeden Freitag und Samstag ab 21:30 Uhr spielen Musiker aus Deutschland, Irland und darüber hinaus."
         },
         {
           "key": "getraenke",
-          "label": "16 Biere vom Fass",
-          "icon": "tap"
+          "title": "16 Biere vom Fass",
+          "text": "Ale, Lager, IPA und Stout, dazu Craft Beer, Whiskey und Cocktails."
         },
         {
           "key": "pub-quiz",
-          "label": "Pub Quiz",
-          "icon": "quiz"
+          "title": "Pub Quiz einmal im Monat",
+          "text": "Bis zu sieben Leute pro Team, viele Preise. Meist am Tag der Ankündigung ausgebucht."
         }
       ],
-      "photoAlt": "St. Patrick's Day im Irish Pub in the Fleetenkieker",
-      "contactTitle": "Kommen Sie vorbei"
+      "awardsTitle": "Ausgezeichnet von den Irish Hospitality Global Awards",
+      "awardsLink": "Alle Auszeichnungen und Presse",
+      "wayTitle": "Anfahrt",
+      "wayText": "Sie finden uns an der Börsenbrücke 10 in der Hamburger Altstadt.",
+      "wayLink": "Karte und Kontakt",
+      "ctaReserve": "Tisch reservieren",
+      "ctaPhone": "Anrufen",
+      "stats": [
+        {
+          "value": "16",
+          "label": "Biere vom Fass"
+        },
+        {
+          "value": "6",
+          "label": "HD-Bildschirme"
+        },
+        {
+          "value": "Fr + Sa",
+          "label": "Live-Musik ab 21:30 Uhr"
+        },
+        {
+          "value": "4",
+          "label": "Auszeichnungen"
+        }
+      ],
+      "wallAlt": {
+        "67137274": "St. Patrick's Day im Pub",
+        "67137275": "Team Fleet beim HSH Nordbank Run",
+        "67137277": "Die Bar mit 16 Zapfhähnen",
+        "67137281": "Halloween-Party im Pub"
+      },
+      "weekTitle": "Die Woche im Pub",
+      "weekSport": "Live-Sport laut Programm",
+      "weekMusic": "Live-Musik ab 21:30 Uhr",
+      "weekQuiz": "Einmal im Monat: Pub Quiz. Den Termin kündigen wir auf Facebook an."
     },
     "live-sport": {
       "title": "Live-Sport | Irish Pub in the Fleetenkieker",
@@ -131,9 +168,9 @@
         "Tennis"
       ],
       "programTitle": "Diese Woche",
-      "program": "Das Wochenprogramm steht auf Facebook und Instagram.",
+      "program": "Das Wochenprogramm veröffentlichen wir auf Facebook und Instagram.",
       "wishTitle": "Ihr Spiel fehlt?",
-      "wishText": "Schreiben Sie uns, welche Sportart Sie sehen möchten.",
+      "wishText": "Schreiben Sie uns, welche Sportart Sie sehen möchten. Wir schauen, was sich machen lässt.",
       "facts": [
         "6 HD-Bildschirme",
         "TV- und Satellitensystem",
@@ -154,7 +191,7 @@
       ],
       "musiciansTitle": "Wer hier schon gespielt hat",
       "lineupTitle": "Wer an diesem Wochenende spielt",
-      "lineup": "Wer spielt, steht auf Facebook und Instagram.",
+      "lineup": "Wer an welchem Abend spielt, kündigen wir auf Facebook und Instagram an.",
       "facts": [
         "Freitag und Samstag",
         "ab 21:30 Uhr",
@@ -168,7 +205,7 @@
       "h1": "Pub Quiz",
       "lead": "Einmal im Monat, mit vielen Preisen. Das Quiz ist meist an dem Tag ausgebucht, an dem wir es auf Facebook ankündigen.",
       "nextTitle": "Nächster Termin",
-      "next": "Der Termin steht zuerst auf Facebook und ist schnell ausgebucht.",
+      "next": "Der nächste Termin wird auf Facebook angekündigt. Schnell sein lohnt sich.",
       "howTitle": "So melden Sie Ihr Team an",
       "steps": [
         "Rufen Sie im Pub an oder schreiben Sie uns.",
@@ -228,15 +265,16 @@
       "h1": "Über uns",
       "lead": "Céad míle fáilte. Hunderttausend Willkommen.",
       "text": [
-        "In Irland treffen sich im Pub Freunde und Nachbarn und werden mit Namen begrüßt. So halten wir es auch an der Börsenbrücke."
+        "Der Irish Pub in the Fleetenkieker liegt im Herzen von Hamburg, an der Börsenbrücke. Wir bringen irische Pub-Kultur in die Stadt.",
+        "In Irland treffen sich im Pub Freunde und Nachbarn und werden mit Namen begrüßt. So soll es auch bei uns sein: Ceol agus craic, Musik und gute Gesellschaft."
       ],
       "nameTitle": "Der Name",
-      "name": "Fleetenkieker nannte man in Hamburg die Männer, die auf den Fleeten, den Kanälen der Stadt, mit Booten Patrouille fuhren.",
+      "name": "Fleetenkieker nannte man in Hamburg die Männer, die mit Booten auf den Fleeten, den Kanälen der Stadt, Patrouille fuhren. Fleet ist das norddeutsche Wort für einen schiffbaren Kanal.",
       "teamTitle": "Wer den Pub führt",
       "team": "Fleetenkieker Irish Pub UG, Geschäftsführer Glenn Stockdale.",
       "signature": "Das Fleetenkieker-Team",
       "houseTitle": "Das Haus",
-      "house": "Nachbarn kommen nach Feierabend, Fans zum Spiel, Gäste aus aller Welt. Am Tresen dauert es selten lange, bis man ins Gespräch kommt.",
+      "house": "Der Pub liegt an der Börsenbrücke in der Altstadt, ein paar Schritte vom Rathaus. Hier kommen Nachbarn nach Feierabend, Fans zum Spiel und Gäste aus aller Welt. Am Tresen sitzt man nebeneinander, und meist dauert es nicht lange, bis man ins Gespräch kommt.",
       "facts": [
         "Börsenbrücke 10",
         "Hamburger Altstadt",
@@ -287,9 +325,9 @@
       "h1": "Kontakt & Anfahrt",
       "lead": "Reservieren Sie per Telefon oder E-Mail.",
       "reserveTitle": "Reservieren",
-      "reserveText": "Mit Datum, Uhrzeit und Personenzahl, per Telefon oder E-Mail.",
+      "reserveText": "Rufen Sie uns an oder schreiben Sie eine E-Mail mit Datum, Uhrzeit und Personenzahl.",
       "mapTitle": "Karte",
-      "mapNote": "Die Karte lädt erst nach Ihrem Klick von Google Maps.",
+      "mapNote": "Die Karte wird erst nach Ihrem Klick von Google Maps geladen. Dabei werden Daten an Google übertragen.",
       "mapButton": "Karte laden",
       "mapExternal": "In Google Maps öffnen",
       "mapIframeTitle": "Google-Maps-Karte: Börsenbrücke 10, Hamburg",

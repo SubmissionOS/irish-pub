@@ -15,11 +15,7 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
       <p>{p.reserveText}</p>
       <p class="big-line"><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
     </section>
-    <section class="section" aria-labelledby="addr-title">
-      <h2 id="addr-title">{d.ui.addressTitle}</h2>
-      <address class="big-line">{site.name}<br />{site.street}<br />{site.zip} {site.city}</address>
-    </section>
-    <section class="section" aria-labelledby="hours-title">
+    <section class="g-section" aria-labelledby="hours-title">
       <h2 id="hours-title">{d.ui.hoursTitle}</h2>
       <table class="hours-table">
         <tbody>{week.map((h) => <tr><th scope="row">{d.days[h.day]}</th><td>{fmtTime(h.open)}–{fmtTime(h.close)}</td></tr>)}</tbody>
@@ -38,7 +34,7 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
         </div>
       </div>
     </section>
-    <section class="section" aria-labelledby="transit-title">
+    <section class="g-section" aria-labelledby="transit-title">
       <h2 id="transit-title">{p.transitTitle}</h2>
       <p>{p.transit}</p>
     </section>

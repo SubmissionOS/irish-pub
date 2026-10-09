@@ -5,11 +5,10 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const p = t(lang).pages.speisen;
 ---
-
-<section class="chalk" aria-label={p.h1}>
-  {vorschlag.speisen.map((g) => (
-    <>
-      <h3>{g.title[lang]}</h3>
+<div class="menu">
+  {vorschlag.speisen.map((g, i) => (
+    <details class="acc" open={i === 0}>
+      <summary><h2>{g.title[lang]}</h2></summary>
       <ul class="chalk__list">
         {g.items.map((it) => (
           <li>
@@ -19,7 +18,7 @@ const p = t(lang).pages.speisen;
           </li>
         ))}
       </ul>
-    </>
+    </details>
   ))}
-  <p class="chalk__note">{p.allergens} {p.priceNote}</p>
-</section>
+  <p class="acc__note">{p.allergens}</p>
+</div>

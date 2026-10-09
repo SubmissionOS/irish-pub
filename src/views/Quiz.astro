@@ -7,28 +7,25 @@ const { lang } = Astro.props;
 const d = t(lang);
 const p = d.pages['pub-quiz'];
 ---
+<section aria-labelledby="how-title">
+  <h2 id="how-title">{p.howTitle}</h2>
+  <ol class="steps">{p.steps.map((s) => <li>{s}</li>)}</ol>
+  <p class="textlinks">
+    <a href={site.phoneHref}>{site.phone}</a>
+    <a href={`mailto:${site.email}?subject=Pub%20Quiz`}>{site.email}</a>
+  </p>
+</section>
 
-<div class="split">
-  <section aria-labelledby="how-title">
-    <h2 id="how-title">{p.howTitle}</h2>
-    <ol class="steps">{p.steps.map((s) => <li>{s}</li>)}</ol>
-    <div class="actions">
-      <a class="btn" href={site.phoneHref}>{site.phone}</a>
-      <a class="btn btn--line" href={`mailto:${site.email}?subject=Pub%20Quiz`}>{site.email}</a>
-    </div>
-  </section>
-  <section aria-labelledby="next-title">
-    <h2 id="next-title">{p.nextTitle}</h2>
-    <p class="next">{p.next}</p>
-    <p><a class="btn btn--line" href={site.social.facebook} rel="noopener">Facebook</a></p>
-  </section>
-</div>
+<section class="g-section" aria-labelledby="next-title">
+  <h2 id="next-title">{p.nextTitle}</h2>
+  <p>{p.next} <a href={site.social.facebook} rel="noopener">Facebook</a></p>
+</section>
 
-<section class="section" aria-labelledby="photos-title">
+<section class="g-section" aria-labelledby="photos-title">
   <h2 id="photos-title">{p.photosTitle}</h2>
-  <div class="masonry">
+  <ul class="swipe swipe--photos">
     {site.quizPhotos.map((f) => (
-      <figure><Photo file={f} alt={p.photoAlt} sizes="(min-width: 100rem) 30vw, (min-width: 40rem) 45vw, 100vw" /></figure>
+      <li><Photo file={f} alt={p.photoAlt} sizes="(min-width: 64rem) 320px, 75vw" /></li>
     ))}
-  </div>
+  </ul>
 </section>

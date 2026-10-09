@@ -1,5 +1,6 @@
 ---
-// Mobile Aktionsleiste: Status, Anrufen, Route. Nur unter 62rem sichtbar.
+// Mobile Aktionsleiste: Status links, Anrufen und Route als runde Icons rechts.
+// Erscheint erst, wenn Kurstafel bzw. Seitenkopf aus dem Bild gescrollt sind. Nur unter 62rem.
 import site from '../content/site.json';
 import { t, href, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
@@ -11,8 +12,12 @@ const cfg = { hours: site.hours, open: u.barOpen, today: u.barToday, tomorrow: u
   <a class="actionbar__status" href={href(lang, 'kontakt-anfahrt')}>
     <span class="lamp" data-ab-lamp aria-hidden="true"></span><span data-ab-text>{u.barStatic}</span>
   </a>
-  <a href={site.phoneHref}>{u.call}</a>
-  <a href={site.routeLink} rel="noopener">{u.route}</a>
+  <a class="actionbar__icon" href={site.phoneHref} aria-label={u.call}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5l2.6 3.4-1.6 2.3a11 11 0 0 0 7.2 7.2l2.3-1.6 3.4 2.6-1.4 3.1C10.6 20.8 3.2 13.4 3.5 4.9z" /></svg>
+  </a>
+  <a class="actionbar__icon" href={site.routeLink} rel="noopener" aria-label={u.route}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.4" /></svg>
+  </a>
 </nav>
 
 <script>
@@ -27,5 +32,11 @@ const cfg = { hours: site.hours, open: u.barOpen, today: u.barToday, tomorrow: u
     };
     render();
     setInterval(render, 30_000);
+    const target = document.querySelector('[data-board]') ?? document.querySelector('main .head');
+    if (target && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => el.classList.toggle('is-visible', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(target);
+    } else {
+      el.classList.add('is-visible');
+    }
   }
 </script>
