@@ -39,3 +39,17 @@ Solange `draft: true` in `src/content/site.json` steht, trägt jede Seite `noind
 ## Hosting-Header
 
 Die Hosting-Plattform ist nicht erkennbar. Deshalb gibt es keine `_headers`, `vercel.json` oder `netlify.toml`.
+
+## Umbau Grün (9. Oktober 2026)
+
+Gemessen mit `LH_PORT=4400 LH_PAGES=",getraenke/,kontakt-anfahrt/" node scripts/lighthouse.mjs gruen`. Werte: Performance / Barrierefreiheit / Best Practices / SEO.
+
+| Seite | Mobil vorher (Modernisierung) | Mobil nachher | Desktop vorher | Desktop nachher |
+|---|---|---|---|---|
+| Start | 99 / 100 / 100 / 69 | 99 / 100 / 100 / 69 | 100 / 100 / 100 / 69 | 100 / 100 / 100 / 69 |
+| Getränke | 99 / 100 / 100 / 69 | 100 / 100 / 100 / 69 | 100 / 100 / 100 / 69 | 100 / 100 / 100 / 69 |
+| Kontakt | 100 / 100 / 100 / 66 | 100 / 100 / 100 / 66 | 100 / 100 / 100 / 66 | 100 / 100 / 100 / 66 |
+
+SEO bleibt wegen des gewollten noindex unter 95. Mit `PUBLIC_DRAFT=false` lag SEO bei der letzten Gegenprobe auf allen Seiten bei 100; an Meta-Tags, Canonical und hreflang hat der Umbau nichts geändert.
+
+Neue Kontraste: Gold auf Flaschengrün 5,7 : 1, Kreide auf Flaschengrün 10,4 : 1, Kreide auf Tiefgrün 13,5 : 1, Fleetgrau #a9c2b6 auf Flaschengrün 6,6 : 1, Koboldgrün-hell #5fbf86 (Link-Hover) auf Flaschengrün 5,6 : 1. Koboldgrün #2f8f5b (3,1 : 1) nur für Linien und Flächen.

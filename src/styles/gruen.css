@@ -213,7 +213,7 @@ p { max-width: 58ch; }
 /* Sport: Anzeigetafel-Streifen */
 .head__screens { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; max-width: 34rem; }
 .head__screens li { aspect-ratio: 16 / 10; background: var(--tiefgruen); border: 1px solid rgba(212, 169, 74, .55); display: grid; place-items: end start; padding: 4px 6px; }
-.head__screens span { font-size: .8rem; font-weight: 600; color: var(--gold); }
+.head__screens span { font-size: 1rem; font-weight: 600; color: var(--gold); }
 .head__screens li:nth-child(2n) { background: #0f2e22; }
 /* Musik: Bühnenschild */
 .head__stage { display: inline-block; padding: 1.25rem 1.75rem 1.4rem; border: 1px solid var(--gold); border-radius: 3px; background: var(--tiefgruen); box-shadow: 0 0 0 5px var(--tiefgruen), 0 0 0 6px rgba(212, 169, 74, .45); }
@@ -339,7 +339,7 @@ p { margin-bottom: var(--s2); }
 .welcome-photo .welcome__title { font-size: clamp(1.9rem, 4vw + 1rem, 3.2rem); color: var(--kreide); line-height: 1.1; }
 .welcome-photo .welcome__sub { font-family: var(--f-text); font-weight: 500; font-size: 1.05rem; color: var(--gold-hell); font-style: normal; }
 @media (min-width: 64rem) {
-  .welcome-photo { margin-inline: 0; max-width: 60rem; }
+  .welcome-photo { margin-inline: 0; max-width: 800px; }
   .welcome-photo img { aspect-ratio: 16 / 9; border: 2px solid var(--holz); }
 }
 
@@ -372,7 +372,7 @@ p { margin-bottom: var(--s2); }
 .menu > .acc__note { margin-top: var(--s2); }
 .menu__table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .menu__table th, .menu__table td { text-align: left; padding: 8px 0; border-bottom: 1px solid rgba(239, 233, 220, .1); font-weight: 500; }
-.menu__table thead th { color: var(--fleetgrau); font-size: .95rem; }
+.menu__table thead th { color: var(--fleetgrau); font-size: 1rem; }
 .menu__table td, .menu__table thead th + th { text-align: right; white-space: nowrap; padding-left: var(--s2); }
 .menu .chalk__list li { padding: 8px 0; }
 .menu .chalk__name { font-size: 1.05rem; font-weight: 600; }
@@ -446,6 +446,11 @@ p { margin-bottom: var(--s2); }
   .contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; align-items: start; max-width: 60rem; }
   .contact-block h2, .contact-block address { grid-column: 1; }
   .contact-block .hours-mini { grid-column: 2; grid-row: 1 / span 3; }
+}
+
+@media (min-width: 75rem) {
+  .hero--sign { grid-template-columns: minmax(0, 1fr) minmax(24rem, 30rem); gap: 3rem; }
+  .wordmark__a, .wordmark__c { font-size: clamp(3rem, 4.2vw, 6rem); }
 }
 
 /* Schibsted: Tabellenziffern sperren Doppelpunkt und Komma, daher überall proportional */

@@ -1,17 +1,18 @@
 // Lighthouse für Start, Getränke, Galerie, Kontakt (mobil und Desktop). Aufruf: node scripts/lighthouse.mjs <label>
-// Erwartet einen laufenden Preview-Server auf :4321 und CHROME_PATH (z. B. Playwright-Chromium).
+// Erwartet einen laufenden Preview-Server (Port per LH_PORT, Standard 4321; Seiten per LH_PAGES) und CHROME_PATH (z. B. Playwright-Chromium).
 import { execFileSync } from 'node:child_process';
 import { readFileSync, mkdirSync, existsSync } from 'node:fs';
 
 const label = process.argv[2] ?? 'lauf';
-const pages = ['', 'getraenke/', 'galerie/', 'kontakt-anfahrt/'];
+const pages = (process.env.LH_PAGES ?? ',getraenke/,galerie/,kontakt-anfahrt/').split(',');
+const port = process.env.LH_PORT ?? '4321';
 const cats = ['performance', 'accessibility', 'best-practices', 'seo'];
 mkdirSync('lh', { recursive: true });
 const rows = [];
 for (const form of ['mobil', 'desktop']) {
   for (const p of pages) {
     const out = `lh/${label}-${form}-${p.replace(/\//g, '') || 'start'}.json`;
-    const args = ['lighthouse', `http://localhost:4321/${p}`, '--output=json', `--output-path=${out}`, '--quiet',
+    const args = ['lighthouse', `http://localhost:${port}/${p}`, '--output=json', `--output-path=${out}`, '--quiet',
       '--chrome-flags=--headless=new --no-sandbox', '--only-categories=' + cats.join(',')];
     args.push(form === 'mobil' ? '--form-factor=mobile' : '--preset=desktop');
     try { execFileSync('npx', args, { stdio: 'ignore', shell: true }); } catch {}
