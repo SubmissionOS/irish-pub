@@ -89,4 +89,50 @@ a:hover { color: var(--koboldgruen-hell); }
 /* Haarlinien und Ogham in Gold, ruhiger */
 .stage::before { opacity: .6; }
 
+/* ===== Teil 2: Schrift (weg vom Steckbrief-Look) =====
+   Überschriften Libre Caslon Text 700 (gemaltes Schild, gemischte Schreibweise),
+   alles andere Schibsted Grotesk, Uncial Antiqua nur als Mini-Akzent. Drei Dateien, nur Latin. */
+@font-face {
+  font-family: 'Libre Caslon Text'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../../node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Schibsted Grotesk Variable'; font-style: normal; font-weight: 400 900; font-display: swap;
+  src: url('../../node_modules/@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face { font-family: 'Caslon Fallback'; src: local('Georgia Bold'), local('Georgia'); font-weight: 700; size-adjust: 108%; ascent-override: 86%; descent-override: 26%; }
+@font-face { font-family: 'Schibsted Fallback'; src: local('Arial'); size-adjust: 101%; ascent-override: 98%; descent-override: 26%; }
+
+:root {
+  --f-display: 'Libre Caslon Text', 'Caslon Fallback', Georgia, serif;
+  --f-text: 'Schibsted Grotesk Variable', 'Schibsted Fallback', Arial, sans-serif;
+  --f-board: var(--f-text);
+  --f-sign: var(--f-display);
+}
+body { font-family: var(--f-text); font-size: clamp(1rem, .2vw + .95rem, 1.0625rem); line-height: 1.55; }
+html { font-synthesis: none; }
+
+/* Keine Kapitälchen, keine Versalien: Überschriften, Kurstafel, Navigation in gemischter Schreibweise */
+h1, h2, h3, .plaque__name, .musician__name, .board__title, .board__day, .foot h2, .welcome__title {
+  font-family: var(--f-display); font-weight: 700; text-transform: none; font-variant: normal; letter-spacing: -.005em; line-height: 1.12;
+}
+.welcome__title { font-family: var(--f-akzent); font-weight: 400; }
+h1 { font-size: clamp(2.2rem, 3.4vw + 1.1rem, 4.4rem); }
+h2 { font-size: clamp(1.55rem, 1.3vw + 1.1rem, 2.4rem); }
+h3 { font-size: clamp(1.2rem, .5vw + 1.05rem, 1.45rem); }
+.signs a, .rail.is-open .signs a {
+  font-family: var(--f-text); text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 1.05rem;
+}
+.rail.is-open .signs a { font-size: 1.25rem; }
+.plaque__small, .plaque__addr { font-family: var(--f-text); text-transform: none; letter-spacing: 0; }
+.plaque__name { font-size: 1.25rem; }
+@media (min-width: 64rem) { .plaque__name { font-size: 1.4rem; } }
+.btn, .facts li, .actionbar a, .lang a, .rail__phone, .board__row dd, .board__row dt, .chalk, .chalk__name, .chalk__price,
+.stats__label, .weekstrip, .screen li, .genres li, figcaption, .press__outlet, .sub-aside, .foot {
+  font-family: var(--f-text); letter-spacing: 0; text-transform: none;
+}
+.stats .stats__value { font-family: var(--f-display); font-weight: 700; }
+.lead { font-size: 1.1rem; line-height: 1.5; }
+p { max-width: 58ch; }
+
 /* GRUEN-ENDE */
