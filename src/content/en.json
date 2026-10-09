@@ -24,7 +24,8 @@
     "related": "You might also like",
     "reserveTitle": "Book a table",
     "reserveText": "Call us or send an email with date, time and number of guests.",
-    "asideTitle": "Today and this week"
+    "asideTitle": "Today and this week",
+    "reserveShort": "Book"
   },
   "nav": {
     "start": "Home",
@@ -51,7 +52,7 @@
   ],
   "board": {
     "title": "Today at the pub",
-    "staticDay": "This week",
+    "staticDay": "Börsenbrücke 10",
     "open": "Open until {time}",
     "closedToday": "Closed, opens today at {time}",
     "closedTomorrow": "Closed, opens tomorrow at {time}",
@@ -170,7 +171,8 @@
         "6 HD screens",
         "TV and satellite system",
         "14 sports"
-      ]
+      ],
+      "tag": "6 HD screens, TV and satellite"
     },
     "live-musik": {
       "title": "Live music | Irish Pub in the Fleetenkieker",
@@ -190,7 +192,8 @@
         "Friday and Saturday",
         "from 21:30",
         "Folk, rock, current hits"
-      ]
+      ],
+      "tag": "Fri and Sat from 21:30"
     },
     "pub-quiz": {
       "title": "Pub quiz | Irish Pub in the Fleetenkieker",
@@ -211,7 +214,9 @@
         "Once a month",
         "Up to 7 per team",
         "Sign up by phone or email"
-      ]
+      ],
+      "tag": "Once a month, up to 7 per team",
+      "action": "Sign up your team"
     },
     "getraenke": {
       "title": "Drinks | Irish Pub in the Fleetenkieker",
@@ -233,7 +238,8 @@
         "16 beers on tap",
         "Whiskey and cocktails",
         "Alcohol-free choice"
-      ]
+      ],
+      "tag": "16 beers on tap"
     },
     "speisen": {
       "title": "Food | Irish Pub in the Fleetenkieker",
@@ -246,7 +252,8 @@
         "A short, fresh menu",
         "Small and big appetites",
         "Allergens on request"
-      ]
+      ],
+      "tag": "A short, fresh menu"
     },
     "ueber-uns": {
       "title": "About us | Irish Pub in the Fleetenkieker",
@@ -268,7 +275,8 @@
         "Börsenbrücke 10",
         "Hamburg's old town",
         "Ceol agus craic"
-      ]
+      ],
+      "tag": "Céad míle fáilte"
     },
     "auszeichnungen-presse": {
       "title": "Awards & press | Irish Pub in the Fleetenkieker",
@@ -283,7 +291,8 @@
         "4 awards",
         "2017 to 2019",
         "5 press articles"
-      ]
+      ],
+      "tag": "Irish Hospitality Global Awards"
     },
     "galerie": {
       "title": "Gallery | Irish Pub in the Fleetenkieker",
@@ -303,7 +312,8 @@
         "10 photos",
         "St Patrick's Day",
         "Halloween"
-      ]
+      ],
+      "tag": "A few nights at the pub"
     },
     "kontakt-anfahrt": {
       "title": "Contact & directions | Irish Pub in the Fleetenkieker",

@@ -1,23 +1,85 @@
 ---
-// Rahmen jeder Unterseite: Kopfband mit Faktenleiste, Inhalt mit klebender Seitenspalte, Verweise, Reservierungsband.
+// Rahmen jeder Unterseite: eigener Kopf je Seite (kein Eyebrow, kein Lead mit Buttonpaar),
+// Inhalt mit Seitenspalte (nur Desktop), zwei Verweise.
 import site from '../content/site.json';
+import TapRow from './TapRow.astro';
+import Photo from './Photo.astro';
 import { t, href, fmtTime, related, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang; page: PageKey }
 const { lang, page } = Astro.props;
 const d = t(lang);
-const p = d.pages[page] as { h1: string; lead?: string; facts?: string[]; description: string };
+const p = d.pages[page] as { h1: string; tag?: string; action?: string };
 const legal = page === 'impressum' || page === 'datenschutz';
 const noAside = legal || page === 'galerie';
 const rel = related[page];
 const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day === day)!);
-const reserveHref = page === 'kontakt-anfahrt' ? `mailto:${site.email}` : href(lang, 'kontakt-anfahrt');
+const bandIds = ['67137274', '67137281', '67137278', '67137275'];
+const band = bandIds.map((id) => site.gallery.find((g) => g.id === id)!);
 ---
-<header class="headband">
-  <h1>{p.h1}</h1>
-  {p.lead && <p class="lead">{p.lead}</p>}
-  {p.facts && (
-    <ul class="facts">{p.facts.map((f) => <li>{f}</li>)}</ul>
+<header class={`head head--${page}`}>
+  {page === 'live-sport' && (
+    <>
+      <ol class="head__screens" aria-hidden="true">
+        {[1, 2, 3, 4, 5, 6].map((n) => <li><span>TV {n}</span></li>)}
+      </ol>
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+    </>
   )}
+  {page === 'live-musik' && (
+    <div class="head__stage">
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+    </div>
+  )}
+  {page === 'getraenke' && (
+    <>
+      <TapRow />
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+    </>
+  )}
+  {page === 'speisen' && (
+    <div class="head__chalk">
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+    </div>
+  )}
+  {page === 'pub-quiz' && (
+    <div class="head__note">
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+      <a class="head__action" href={site.phoneHref}>{p.action}</a>
+    </div>
+  )}
+  {page === 'ueber-uns' && (
+    <>
+      <h1 class="head__big">{p.h1}</h1>
+      <p class="head__tag head__tag--ga" lang="ga">{p.tag}</p>
+    </>
+  )}
+  {page === 'galerie' && (
+    <>
+      <div class="head__band" aria-hidden="true">
+        {band.map((g) => <Photo file={`${g.id}.${g.ext}`} alt="" sizes="(min-width: 64rem) 20vw, 40vw" />)}
+      </div>
+      <h1>{p.h1}</h1>
+    </>
+  )}
+  {page === 'kontakt-anfahrt' && (
+    <div class="head__sign">
+      <h1>{p.h1}</h1>
+      <address>{site.street}<br />{site.zip} {site.city}</address>
+      <a class="head__action" href={site.routeLink} rel="noopener">{d.ui.route}</a>
+    </div>
+  )}
+  {page === 'auszeichnungen-presse' && (
+    <>
+      <h1>{p.h1}</h1>
+      <p class="head__tag">{p.tag}</p>
+    </>
+  )}
+  {legal && <h1>{p.h1}</h1>}
 </header>
 
 {noAside ? (
@@ -33,35 +95,16 @@ const reserveHref = page === 'kontakt-anfahrt' ? `mailto:${site.email}` : href(l
         </tbody>
       </table>
       <p><a class="sub-aside__phone" href={site.phoneHref}>{site.phone}</a></p>
-      <a class="btn" href={reserveHref}>{d.ui.reserveTitle}</a>
     </aside>
   </div>
 )}
 
 {rel && (
-  <section class="related" aria-labelledby="related-title">
-    <h2 id="related-title">{d.ui.related}</h2>
+  <nav class="related" aria-label={d.ui.related}>
     <ul>
-      {rel.map((k) => {
-        const rp = d.pages[k] as { lead?: string };
-        return (
-          <li>
-            <h3><a href={href(lang, k)}>{d.nav[k]}</a></h3>
-            {rp.lead && <p>{rp.lead}</p>}
-          </li>
-        );
-      })}
+      {rel.map((k) => (
+        <li><a href={href(lang, k)}>{d.nav[k]}</a></li>
+      ))}
     </ul>
-  </section>
-)}
-
-{!legal && (
-  <section class="reserve" aria-labelledby="reserve-title">
-    <h2 id="reserve-title">{d.ui.reserveTitle}</h2>
-    <p>{d.ui.reserveText}</p>
-    <div class="actions">
-      <a class="btn" href={site.phoneHref}>{site.phone}</a>
-      <a class="btn btn--line" href={`mailto:${site.email}`}>{site.email}</a>
-    </div>
-  </section>
+  </nav>
 )}

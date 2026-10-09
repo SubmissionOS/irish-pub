@@ -21,53 +21,59 @@ const config = {
 };
 ---
 <section class="board" aria-labelledby="board-title" data-board={JSON.stringify(config)}>
+  <slot name="kobold" />
   <div class="board__frame">
-    <header class="board__head">
-      <h2 id="board-title" class="board__title">{b.title}</h2>
-      <p class="board__day flap" style="--i:0" data-day>{b.staticDay}</p>
-    </header>
+    <h2 id="board-title" class="board__title flap" style="--i:0">{b.title}, <span data-day>{b.staticDay}</span></h2>
+    <p class="board__status flap" style="--i:1">
+      <span class="lamp" data-lamp aria-hidden="true"></span>
+      <span data-status>{b.staticStatus}</span>
+      <span class="ga" lang="ga" data-ga-status></span>
+    </p>
     <dl class="board__rows">
-      <div class="board__row flap" style="--i:1">
-        <dt>{b.statusLabel}<span class="ga" lang="ga" data-ga-status></span></dt>
-        <dd><span class="lamp" data-lamp aria-hidden="true"></span><span data-status>{b.staticStatus}</span></dd>
-      </div>
       <div class="board__row flap" style="--i:2">
-        <dt>{b.sportLabel}<span class="ga" lang="ga">{site.irish.sport}</span></dt>
-        <dd><a href={site.social.facebook} rel="noopener">{b.sportValue}</a></dd>
-      </div>
-      <div class="board__row flap" style="--i:3">
         <dt>{b.musicLabel}<span class="ga" lang="ga">{site.irish.music}</span></dt>
         <dd><a href={href(lang, 'live-musik')} data-music>{b.musicValue}</a></dd>
+      </div>
+      <div class="board__row flap" style="--i:3">
+        <dt>{b.sportLabel}<span class="ga" lang="ga">{site.irish.sport}</span></dt>
+        <dd><a href={site.social.facebook} rel="noopener">{b.sportValue}</a></dd>
       </div>
       <div class="board__row flap" style="--i:4">
         <dt>{b.quizLabel}</dt>
         <dd><a href={href(lang, 'pub-quiz')}>{b.quizValue}</a></dd>
       </div>
     </dl>
-    <table class="board__week flap" style="--i:5">
-      <caption>{b.weekLabel}</caption>
-      <tbody>
-        {week.map((h) => (
-          <tr data-weekday={h.day}>
-            <th scope="row">{d.days[h.day]}<span class="today-tag" hidden>{b.todayMark}</span></th>
-            <td>{fmtTime(h.open)}–{fmtTime(h.close)}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-    <p class="board__note">{b.note}</p>
+    <details class="board__week flap" style="--i:5">
+      <summary>{b.weekLabel}</summary>
+      <table>
+        <tbody>
+          {week.map((h) => (
+            <tr data-weekday={h.day}>
+              <th scope="row">{d.days[h.day]}<span class="today-tag" hidden>{b.todayMark}</span></th>
+              <td>{fmtTime(h.open)}–{fmtTime(h.close)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="board__note">{b.note}</p>
+    </details>
+    <p class="board__actions flap" style="--i:6">
+      <a href={site.phoneHref}>{d.ui.call}</a>
+      <a href={site.routeLink} rel="noopener">{d.ui.route}</a>
+      <a href={href(lang, 'kontakt-anfahrt')}>{d.ui.reserveShort}</a>
+    </p>
   </div>
 </section>
 
 <script>
-  import { pubState, type Hours } from "../lib/pubstate";
+  import { pubState, type Hours } from '../lib/pubstate';
   type Cfg = {
     hours: Hours[]; musicDays: number[]; days: string[];
     open: string; closedToday: string; closedTomorrow: string; musicValue: string; musicTonight: string;
     gaOpen: string; gaClosed: string;
   };
   const textOf = (cfg: Cfg, s: ReturnType<typeof pubState>) =>
-    (s.kind === "open" ? cfg.open : s.kind === "today" ? cfg.closedToday : cfg.closedTomorrow).replace("{time}", s.time);
+    (s.kind === 'open' ? cfg.open : s.kind === 'today' ? cfg.closedToday : cfg.closedTomorrow).replace('{time}', s.time);
 
   function render(el: HTMLElement) {
     const cfg: Cfg = JSON.parse(el.dataset.board!);

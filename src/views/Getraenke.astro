@@ -1,6 +1,5 @@
 ---
 import Photo from '../components/Photo.astro';
-import TapRow from '../components/TapRow.astro';
 import site from '../content/site.json';
 import vorschlag from '../content/vorschlag.json';
 import { t, eur, type Lang } from '../lib/i18n';
@@ -13,7 +12,6 @@ const p = t(lang).pages.getraenke;
   <section class="chalk" aria-labelledby="tap-title">
     <h2 id="tap-title">{p.tapTitle}</h2>
     <p class="chalk__note">{p.tapNote}</p>
-    <TapRow />
     <table>
       <thead><tr><th scope="col">{p.tapHead.name}</th><th scope="col">{p.tapHead.p03}</th><th scope="col">{p.tapHead.p05}</th></tr></thead>
       <tbody>

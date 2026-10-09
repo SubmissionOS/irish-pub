@@ -24,7 +24,8 @@
     "related": "Das könnte Sie auch interessieren",
     "reserveTitle": "Tisch reservieren",
     "reserveText": "Rufen Sie uns an oder schreiben Sie eine E-Mail mit Datum, Uhrzeit und Personenzahl.",
-    "asideTitle": "Heute und diese Woche"
+    "asideTitle": "Heute und diese Woche",
+    "reserveShort": "Reservieren"
   },
   "nav": {
     "start": "Start",
@@ -51,7 +52,7 @@
   ],
   "board": {
     "title": "Heute im Pub",
-    "staticDay": "Diese Woche",
+    "staticDay": "Börsenbrücke 10",
     "open": "Geöffnet bis {time} Uhr",
     "closedToday": "Geschlossen, öffnet heute um {time} Uhr",
     "closedTomorrow": "Geschlossen, öffnet morgen um {time} Uhr",
@@ -170,7 +171,8 @@
         "6 HD-Bildschirme",
         "TV- und Satellitensystem",
         "14 Sportarten"
-      ]
+      ],
+      "tag": "6 HD-Bildschirme, TV und Satellit"
     },
     "live-musik": {
       "title": "Live-Musik | Irish Pub in the Fleetenkieker",
@@ -190,7 +192,8 @@
         "Freitag und Samstag",
         "ab 21:30 Uhr",
         "Folk, Rock, aktuelle Hits"
-      ]
+      ],
+      "tag": "Fr und Sa ab 21:30 Uhr"
     },
     "pub-quiz": {
       "title": "Pub Quiz | Irish Pub in the Fleetenkieker",
@@ -211,7 +214,9 @@
         "Einmal im Monat",
         "Bis 7 pro Team",
         "Anmeldung per Telefon oder E-Mail"
-      ]
+      ],
+      "tag": "Einmal im Monat, bis 7 pro Team",
+      "action": "Team anmelden"
     },
     "getraenke": {
       "title": "Getränke | Irish Pub in the Fleetenkieker",
@@ -233,7 +238,8 @@
         "16 Biere vom Fass",
         "Whiskey und Cocktails",
         "Alkoholfreie Auswahl"
-      ]
+      ],
+      "tag": "16 Biere vom Fass"
     },
     "speisen": {
       "title": "Speisen | Irish Pub in the Fleetenkieker",
@@ -246,7 +252,8 @@
         "Wenige, frische Gerichte",
         "Kleiner und großer Hunger",
         "Allergene auf Nachfrage"
-      ]
+      ],
+      "tag": "Wenige, dafür frische Gerichte"
     },
     "ueber-uns": {
       "title": "Über uns | Irish Pub in the Fleetenkieker",
@@ -268,7 +275,8 @@
         "Börsenbrücke 10",
         "Hamburger Altstadt",
         "Ceol agus craic"
-      ]
+      ],
+      "tag": "Céad míle fáilte"
     },
     "auszeichnungen-presse": {
       "title": "Auszeichnungen & Presse | Irish Pub in the Fleetenkieker",
@@ -283,7 +291,8 @@
         "4 Auszeichnungen",
         "2017 bis 2019",
         "5 Presseberichte"
-      ]
+      ],
+      "tag": "Irish Hospitality Global Awards"
     },
     "galerie": {
       "title": "Galerie | Irish Pub in the Fleetenkieker",
@@ -303,7 +312,8 @@
         "10 Fotos",
         "St. Patrick's Day",
         "Halloween"
-      ]
+      ],
+      "tag": "Ein paar Abende aus dem Pub"
     },
     "kontakt-anfahrt": {
       "title": "Kontakt & Anfahrt | Irish Pub in the Fleetenkieker",
