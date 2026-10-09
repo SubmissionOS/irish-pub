@@ -25,7 +25,11 @@
     "reserveTitle": "Book a table",
     "reserveText": "Call us or send an email with date, time and number of guests.",
     "asideTitle": "Today and this week",
-    "reserveShort": "Book"
+    "reserveShort": "Book",
+    "rainbow": "At the end of the rainbow: Börsenbrücke 10.",
+    "notFoundTitle": "Page not found",
+    "notFoundText": "No gold here. The leprechaun will show you the way back.",
+    "notFoundLink": "Back to the home page"
   },
   "nav": {
     "start": "Home",

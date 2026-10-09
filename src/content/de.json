@@ -25,7 +25,11 @@
     "reserveTitle": "Tisch reservieren",
     "reserveText": "Rufen Sie uns an oder schreiben Sie eine E-Mail mit Datum, Uhrzeit und Personenzahl.",
     "asideTitle": "Heute und diese Woche",
-    "reserveShort": "Reservieren"
+    "reserveShort": "Reservieren",
+    "rainbow": "Am Ende des Regenbogens: Börsenbrücke 10.",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Hier liegt kein Gold. Der Kobold zeigt Ihnen den Weg zurück.",
+    "notFoundLink": "Zur Startseite"
   },
   "nav": {
     "start": "Start",

@@ -1,5 +1,6 @@
 ---
 import site from '../content/site.json';
+import Coins from '../components/Coins.astro';
 import { t, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -9,9 +10,7 @@ const p = d.pages['auszeichnungen-presse'];
 
 <section aria-labelledby="aw-title">
   <h2 id="aw-title">{p.awardsTitle}</h2>
-  <ul class="awards-list">
-    {site.awards.map((a) => <li lang="en"><span>{a.title} {a.region}</span><span>{a.year}</span></li>)}
-  </ul>
+  <Coins label={p.awardsTitle} />
   <p><a href={site.awardsSource} rel="noopener">{p.source}</a></p>
 </section>
 

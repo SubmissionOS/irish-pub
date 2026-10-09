@@ -1,5 +1,6 @@
 ---
 import Board from '../components/Board.astro';
+import Kobold from '../components/Kobold.astro';
 import Ogham from '../components/Ogham.astro';
 import Photo from '../components/Photo.astro';
 import site from '../content/site.json';
@@ -19,7 +20,7 @@ const week = [1, 2, 3, 4, 5, 6, 0].map((day) => site.hours.find((h) => h.day ===
     <span class="wordmark__b">in the</span>
     <span class="wordmark__c">Fleetenkieker</span>
   </h1>
-  <Board lang={lang} />
+  <Board lang={lang}><Kobold pose="luegt" slot="kobold" /></Board>
 </section>
 
 <ul class="stats" aria-label={p.highlightsTitle}>

@@ -253,4 +253,38 @@ p { max-width: 58ch; }
 }
 .related a:hover { border-color: var(--koboldgruen-hell); color: var(--koboldgruen-hell); }
 
+/* ===== Teil 4: Kobold mit Goldtopf ===== */
+.kobold { display: block; height: auto; }
+/* lugt über den oberen Rand der Kurstafel und schaut hinein */
+.board .kobold--luegt { position: absolute; top: -62px; right: 1.25rem; width: 76px; z-index: 2; }
+.board:has(.kobold--luegt) { margin-top: 4.5rem; }
+@media (min-width: 75rem) { .board .kobold--luegt { width: 92px; top: -76px; } }
+/* sitzt auf dem Goldtopf in der Fußzeile */
+.foot__kobold { grid-column: 1 / -1; display: flex; align-items: flex-end; gap: 1rem; }
+.foot__kobold .kobold { width: 64px; flex: none; }
+.foot__kobold p { margin: 0; color: var(--fleetgrau); }
+.foot__kobold .foot__toast { font-size: 1.4rem; color: var(--gold-hell); }
+/* Münze glänzt einmal beim Laden */
+@media (prefers-reduced-motion: no-preference) {
+  .kobold__shine { animation: glanz 1.2s ease-out .6s 1 both; }
+  @keyframes glanz { 0%, 100% { fill: #d4a94a; } 45% { fill: #fff3c4; } }
+}
+/* 404 */
+.notfound { display: grid; gap: 1.5rem; align-items: center; max-width: 46rem; padding-block: 2rem 4rem; }
+.notfound .kobold { width: 140px; }
+@media (min-width: 48rem) { .notfound { grid-template-columns: 180px 1fr; } .notfound .kobold { width: 180px; } }
+
+/* Auszeichnungen als Goldmünzen */
+.coins { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+.coin {
+  width: 9.5rem; aspect-ratio: 1; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 1rem; background: var(--gold); color: var(--tiefgruen);
+  box-shadow: inset 0 0 0 4px var(--gold), inset 0 0 0 5px rgba(12, 36, 27, .45);
+  line-height: 1.15;
+}
+.coin__year { font-family: var(--f-display); font-weight: 700; font-size: 1.6rem; }
+.coin__title { font-size: .95rem; font-weight: 600; margin-top: .2rem; }
+.coin__region { font-size: .9rem; }
+
 /* GRUEN-ENDE */

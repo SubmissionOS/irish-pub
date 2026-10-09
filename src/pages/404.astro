@@ -1,0 +1,19 @@
+---
+// 404-Seite: schlicht, mit winkendem Kobold und Link zur Startseite.
+import Layout from '../layouts/Layout.astro';
+import Kobold from '../components/Kobold.astro';
+import { t } from '../lib/i18n';
+const de = t('de').ui;
+const en = t('en').ui;
+---
+<Layout lang="de" page="start" title={`404 | ${de.notFoundTitle}`}>
+  <section class="notfound">
+    <Kobold pose="winkt" />
+    <div>
+      <h1>{de.notFoundTitle}</h1>
+      <p>{de.notFoundText}</p>
+      <p lang="en">{en.notFoundText}</p>
+      <a class="btn" href="/">{de.notFoundLink}</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,15 @@
+---
+// Auszeichnungen als vier Goldmünzen (belegt: Irish Hospitality Global Awards 2017 bis 2019).
+import site from '../content/site.json';
+interface Props { label: string }
+const { label } = Astro.props;
+---
+<ul class="coins" aria-label={label}>
+  {site.awards.map((a) => (
+    <li class="coin" lang="en">
+      <span class="coin__year">{a.year}</span>
+      <span class="coin__title">{a.title}</span>
+      <span class="coin__region">{a.region}</span>
+    </li>
+  ))}
+</ul>

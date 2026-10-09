@@ -59,3 +59,11 @@ Alles hier ist entweder von GuddiWeb vorgeschlagen oder aus einer externen Quell
 | Start | Kennzahlen | 16 Biere, 6 Bildschirme, Fr + Sa ab 21:30, 4 Auszeichnungen: alles belegt |
 | Start | Die Woche im Pub | „Live-Sport laut Programm“ an jedem Tag: belegt ist nur, dass es ein Wochenprogramm gibt, nicht dass jeden Tag Sport läuft. Bitte bestätigen |
 | Unterseiten | Faktenleisten | Aus belegten Angaben zusammengesetzt. Ausnahme Speisen: „Allergene auf Nachfrage“ entspricht dem vorgegebenen Allergen-Satz |
+
+## Umbau Grün (Oktober 2026)
+
+| Seite | Stelle | Inhalt |
+|---|---|---|
+| Fußzeile, alle Seiten | Gag 1 | „Am Ende des Regenbogens: Börsenbrücke 10.“ / „At the end of the rainbow: Börsenbrücke 10.“ |
+| 404 | Gag 2 | „Hier liegt kein Gold. Der Kobold zeigt Ihnen den Weg zurück.“ / „No gold here. The leprechaun will show you the way back.“ |
+| Start, Fußzeile, 404 | Kobold | Eigene Figur von GuddiWeb (SVG), keine Vorlage. Ob der Inhaber eine Maskottchen-Figur möchte, bitte abstimmen |

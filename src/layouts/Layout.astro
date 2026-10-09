@@ -12,6 +12,7 @@ import '../styles/modern.css';
 import '../styles/gruen.css';
 // GRUEN-ENDE
 import ActionBar from '../components/ActionBar.astro';
+import Kobold from '../components/Kobold.astro';
 // MODERN-START Teil 4: Schriften vorladen
 import fontDisplay from '@fontsource/libre-caslon-text/files/libre-caslon-text-latin-700-normal.woff2?url';
 import fontText from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
@@ -19,12 +20,12 @@ import fontText from '@fontsource-variable/schibsted-grotesk/files/schibsted-gro
 import site from '../content/site.json';
 import { t, href, mainNav, legalNav, fmtTime, type Lang, type PageKey } from '../lib/i18n';
 
-interface Props { lang: Lang; page: PageKey; jsonLd?: object }
+interface Props { lang: Lang; page: PageKey; jsonLd?: object; title?: string; noindex?: boolean }
 const { lang, page, jsonLd } = Astro.props;
 const d = t(lang);
 // Entwurfs-Flag aus site.json, für Messungen per PUBLIC_DRAFT=false abschaltbar
 const draft = import.meta.env.PUBLIC_DRAFT === 'false' ? false : site.draft;
-const meta = d.pages[page] as { title: string; description: string };
+const meta = { ...(d.pages[page] as { title: string; description: string }), ...(Astro.props.title ? { title: Astro.props.title } : {}) };
 const other: Lang = lang === 'de' ? 'en' : 'de';
 const abs = (p: string) => new URL(p, site.url).href;
 const canonical = abs(href(lang, page));
@@ -127,7 +128,10 @@ const year = new Date().getFullYear();
             {legalNav.map((k) => <li><a href={href(lang, k)} aria-current={k === page ? 'page' : undefined}>{d.nav[k]}</a></li>)}
           </ul>
         </div>
-        <p class="foot__toast" lang="ga">{site.irish.toast}</p>
+        <div class="foot__kobold">
+          <Kobold pose="sitzt" />
+          <p><span class="foot__toast" lang="ga">{site.irish.toast}</span><br />{d.ui.rainbow}</p>
+        </div>
         <p class="foot__copy muted">© {year} {site.company.name}<br />{d.ui.draftCredit}</p>
       </footer>
       <ActionBar lang={lang} />
