@@ -23,3 +23,16 @@ Ausgangsstand: Tag `vor-modernisierung`. Alles zurück: `git reset --hard vor-mo
 | Modern-3 Retro | View-Transition 150 ms, Messing-Haarlinien, Tabellenziffern, Fokus und Hover | `2dfff8a` | `git revert 2dfff8a` |
 | Modern-4 Schrift | IM Fell English SC, Source Serif 4, Uncial Antiqua, nur Latin, Preload, Fallback-Metriken | `2315eb5` | `git revert 2315eb5` |
 | Modern-5 Lighthouse | Lokale Fotos als AVIF/WebP, keine Hotlinks, statische Texturen, Galerie volle Breite, LIGHTHOUSE.md | `18d6faf` | `git revert 18d6faf` |
+
+## Umbau Grün (Western zu Irish Pub, mobil zuerst)
+
+Ausgangsstand: Tag `vor-gruen`. Alles zurück: `git reset --hard vor-gruen`. Styles in `src/styles/gruen.css` (Layout-Block GRUEN-START/ENDE). Originaltexte vor dem Kürzen: `src/content/lang/`.
+
+| Teil | Inhalt | Commit | Zurücknehmen |
+|---|---|---|---|
+| Gruen-1 Farbe | Flaschen- und Tiefgrün, Gold flach, Holz nur als Einfassung, keine Planken und kein Rauschen | `e8f6493` | `git revert e8f6493` |
+| Gruen-2 Schrift | Libre Caslon Text 700 und Schibsted Grotesk, keine Kapitälchen und Versalien | `d012aff` | `git revert d012aff` |
+| Gruen-3 Hero | Wortmarke plus Kurstafel, Aktionszeile in der Tafel, Wochenzeiten aufklappbar, eigener Kopf je Unterseite | `03d8fa3` | `git revert 03d8fa3` |
+| Gruen-4 Kobold | Eigener Leprechaun in drei Posen, Goldmünzen für Auszeichnungen, zwei Gag-Zeilen, 404-Seite | `6a13989` | `git revert 6a13989` |
+| Gruen-5 Mobil | Kurze Texte, Wischreihen, Akkordeons, Chips, Startseite in fünf Blöcken, kompakte Fußzeile, Aktionsleiste nach der Tafel | `91dc200` | `git revert 91dc200` |
+| Gruen-6 Prüfung | Korrekturen nach Screenshots, Lighthouse-Messung | `6c7ffbb` | `git revert 6c7ffbb` |
